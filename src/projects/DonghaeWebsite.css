@@ -1,0 +1,335 @@
+/* ── 베이스 ── */
+.dongw {
+  font-family: 'Pretendard', 'Inter', sans-serif;
+  color: #1A1A2E;
+  background: #fff;
+  --blue:       #005FA3;
+  --blue-light: #E8F4FB;
+  --blue-mid:   #1A7FCC;
+}
+
+/* ── Nav ── */
+.dongw__nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255,255,255,.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,95,163,.1);
+}
+.dongw__nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 40px; height: 64px;
+  display: flex; align-items: center; gap: 48px;
+}
+.dongw__logo {
+  display: flex; align-items: center; gap: 8px;
+  flex-shrink: 0;
+}
+.dongw__logo-mark {
+  width: 32px; height: 32px; border-radius: 8px;
+  background: var(--blue);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 12px; font-weight: 800;
+}
+.dongw__logo-text {
+  font-size: 15px; font-weight: 800;
+  letter-spacing: -.02em; color: var(--blue);
+}
+.dongw__menu {
+  list-style: none; display: flex; gap: 32px; flex: 1;
+}
+.dongw__menu li {
+  font-size: 14px; font-weight: 500; color: #555;
+  cursor: pointer; padding: 4px 0;
+  position: relative; transition: color .15s;
+}
+.dongw__menu li::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px; background: var(--blue);
+  transform: scaleX(0); transform-origin: left; transition: transform .2s;
+}
+.dongw__menu li:hover { color: var(--blue); }
+.dongw__menu li:hover::after { transform: scaleX(1); }
+.dongw__nav-right { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.dongw__nav-btn {
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  border: 1px solid var(--blue); border-radius: 6px;
+  padding: 6px 14px; cursor: pointer; transition: background .15s, color .15s;
+}
+.dongw__nav-btn:hover { background: var(--blue); color: #fff; }
+.dongw__nav-icon {
+  color: #666; cursor: pointer; display: flex; align-items: center;
+  transition: color .15s;
+}
+.dongw__nav-icon:hover { color: var(--blue); }
+
+/* ── Hero ── */
+.dongw__hero {
+  position: relative; height: 92vh; min-height: 600px;
+  display: flex; align-items: center;
+  overflow: hidden;
+}
+.dongw__hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(160deg, rgba(0,30,70,.7) 0%, rgba(0,80,140,.4) 50%, rgba(0,120,180,.2) 100%),
+    linear-gradient(180deg, #0A4A8A 0%, #1A7FCC 40%, #5AC0E0 75%, #A0D8F0 100%);
+}
+/* 바다 파도 느낌 */
+.dongw__hero-bg::before {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,50,100,.3) 100%);
+}
+.dongw__hero-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    radial-gradient(ellipse 60% 40% at 70% 30%, rgba(100,200,255,.15) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 20% 70%, rgba(0,60,120,.2) 0%, transparent 50%);
+}
+.dongw__hero-content {
+  position: relative; z-index: 2;
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  width: 100%;
+}
+.dongw__hero-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .18em;
+  color: rgba(255,255,255,.6); margin-bottom: 20px;
+}
+.dongw__hero-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(64px, 9vw, 140px);
+  font-weight: 900; line-height: .9;
+  letter-spacing: -.04em; color: #fff;
+  margin-bottom: 28px;
+}
+.dongw__hero-desc {
+  font-size: 17px; line-height: 1.75;
+  color: rgba(255,255,255,.8); margin-bottom: 40px;
+  word-break: keep-all;
+}
+.dongw__hero-cta {
+  display: inline-flex; align-items: center;
+  padding: 14px 32px; background: #fff; color: var(--blue);
+  border-radius: 100px; font-size: 14px; font-weight: 700;
+  letter-spacing: .02em; cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+  box-shadow: 0 4px 24px rgba(0,0,0,.15);
+}
+.dongw__hero-cta:hover {
+  transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,.2);
+}
+.dongw__hero-scroll {
+  position: absolute; right: 56px; bottom: 48px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  z-index: 2;
+}
+.dongw__hero-scroll span {
+  font-family: 'Inter', sans-serif;
+  font-size: 9px; letter-spacing: .2em; color: rgba(255,255,255,.5);
+  writing-mode: vertical-rl;
+}
+.dongw__hero-scroll-line {
+  width: 1px; height: 48px;
+  background: linear-gradient(180deg, rgba(255,255,255,.5) 0%, transparent 100%);
+}
+.dongw__hero-number {
+  position: absolute; right: 40px; top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(120px, 16vw, 220px);
+  font-weight: 900; color: rgba(255,255,255,.06);
+  line-height: 1; user-select: none; z-index: 1;
+  letter-spacing: -.06em;
+}
+
+/* ── OUR DEEP AND BLUE ── */
+.dongw__eastsea {
+  background: var(--blue-light);
+  padding: 100px 0;
+}
+.dongw__eastsea-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.dongw__eastsea-sub {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  color: var(--blue-mid); margin-bottom: 12px;
+}
+.dongw__eastsea-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(40px, 5vw, 72px);
+  font-weight: 900; letter-spacing: -.04em; line-height: .95;
+  color: var(--blue); margin-bottom: 24px;
+}
+.dongw__eastsea-desc {
+  font-size: 16px; line-height: 1.85; color: #446688;
+  margin-bottom: 36px; word-break: keep-all;
+}
+.dongw__eastsea-btn {
+  font-size: 14px; font-weight: 600; color: var(--blue);
+  border: none; background: none; cursor: pointer;
+  border-bottom: 1.5px solid var(--blue); padding-bottom: 2px;
+  transition: opacity .2s;
+}
+.dongw__eastsea-btn:hover { opacity: .65; }
+.dongw__eastsea-right {
+  display: grid; grid-template-rows: 2fr 1fr; gap: 12px; height: 380px;
+}
+.dongw__eastsea-img {
+  border-radius: 16px;
+}
+.dongw__eastsea-img--main {
+  background: linear-gradient(145deg, #2A7FBB 0%, #1A5A90 50%, #0A3A68 100%);
+}
+.dongw__eastsea-img--sub {
+  background: linear-gradient(145deg, #5ABFE0 0%, #2A9ABB 100%);
+}
+
+/* ── SUNRISE CITY ── */
+.dongw__sunrise {
+  background: #fff; padding: 100px 0;
+}
+.dongw__sunrise-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+}
+.dongw__sunrise-header { margin-bottom: 56px; }
+.dongw__sunrise-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  color: var(--blue-mid); margin-bottom: 10px;
+}
+.dongw__sunrise-title {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(40px, 5vw, 80px);
+  font-weight: 900; letter-spacing: -.04em; line-height: .95;
+  color: #1A1A2E; margin-bottom: 12px;
+}
+.dongw__sunrise-sub { font-size: 16px; color: #778899; }
+.dongw__sunrise-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+}
+.dongw__spot {
+  border-radius: 16px; overflow: hidden; cursor: pointer;
+  transition: transform .25s; position: relative;
+}
+.dongw__spot:hover { transform: translateY(-6px); }
+.dongw__spot-img {
+  height: 260px;
+  background: var(--spot-color);
+  position: relative;
+}
+.dongw__spot-img::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(160deg, rgba(255,255,255,.08) 0%, rgba(0,0,0,.2) 100%);
+}
+.dongw__spot-info {
+  padding: 18px 20px; background: #F5F8FB;
+}
+.dongw__spot-sub {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--blue-mid); margin-bottom: 4px;
+}
+.dongw__spot-title {
+  font-size: 16px; font-weight: 700; color: #1A1A2E; letter-spacing: -.01em;
+}
+
+/* ── 코스 ── */
+.dongw__courses {
+  background: #F5F8FB; padding: 100px 0;
+}
+.dongw__courses-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+}
+.dongw__courses-header { margin-bottom: 56px; }
+.dongw__courses-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  color: var(--blue-mid); margin-bottom: 10px;
+}
+.dongw__courses-title {
+  font-size: clamp(32px, 4vw, 56px); font-weight: 800;
+  letter-spacing: -.03em; color: #1A1A2E;
+}
+.dongw__courses-list {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+}
+.dongw__course {
+  background: #fff; border-radius: 20px;
+  overflow: hidden; box-shadow: 0 2px 20px rgba(0,60,120,.06);
+  transition: transform .25s, box-shadow .25s;
+}
+.dongw__course:hover {
+  transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,60,120,.12);
+}
+.dongw__course-thumb {
+  height: 180px; position: relative;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  padding: 16px 20px;
+}
+.dongw__course-icon { font-size: 28px; }
+.dongw__course-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 48px; font-weight: 900;
+  color: rgba(255,255,255,.18); line-height: 1; letter-spacing: -.04em;
+}
+.dongw__course-body { padding: 20px 20px 24px; }
+.dongw__course-sub {
+  font-size: 11px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: #99AABB; margin-bottom: 6px;
+}
+.dongw__course-title {
+  font-size: 20px; font-weight: 800; letter-spacing: -.02em;
+  color: #1A1A2E; margin-bottom: 10px;
+}
+.dongw__course-desc {
+  font-size: 13px; line-height: 1.7; color: #778899;
+  margin-bottom: 20px; word-break: keep-all;
+}
+.dongw__course-btn {
+  font-size: 13px; font-weight: 600; color: var(--blue);
+  border: none; background: none; cursor: pointer;
+  padding: 0; transition: opacity .2s;
+}
+.dongw__course-btn:hover { opacity: .6; }
+
+/* ── Footer ── */
+.dongw__footer {
+  background: #0B2A4A; padding: 40px 0;
+}
+.dongw__footer-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.dongw__footer-logo {
+  display: flex; align-items: center; gap: 10px;
+  color: rgba(255,255,255,.7); font-size: 14px; font-weight: 600;
+}
+.dongw__footer-copy {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px; color: rgba(255,255,255,.3); letter-spacing: .03em;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .dongw__sunrise-grid { grid-template-columns: repeat(2, 1fr); }
+  .dongw__courses-list  { grid-template-columns: repeat(2, 1fr); }
+  .dongw__eastsea-inner { grid-template-columns: 1fr; }
+  .dongw__eastsea-right { height: 260px; grid-template-rows: 1fr; grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .dongw__nav-inner { padding: 0 20px; gap: 16px; }
+  .dongw__menu { display: none; }
+  .dongw__hero-content { padding: 0 24px; }
+  .dongw__hero-number { display: none; }
+  .dongw__sunrise-grid  { grid-template-columns: 1fr 1fr; }
+  .dongw__courses-list  { grid-template-columns: 1fr; }
+  .dongw__eastsea-inner,
+  .dongw__sunrise-inner,
+  .dongw__courses-inner { padding: 0 24px; }
+  .dongw__footer-inner  { flex-direction: column; gap: 12px; text-align: center; }
+}
