@@ -26,24 +26,35 @@ export default function DonghaeWebsite({ onBack }) {
           <h1 className="dongw__cover-title">Web<br/>Design</h1>
           <p className="dongw__cover-sub">동해관광 메인 pc/mobile web</p>
         </div>
+        
+        {/* ── 목업 컨테이너 ── */}
         <div className="dongw__cover-mockups">
+          
+          {/* 💡 노트북 목업 세트 (스크롤 주머니 구조 반영) */}
           <div className="dongw__cover-laptop">
             <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
-            <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
+            <div className="dongw__laptop-body">
+              <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
+            </div>
           </div>
+
+          {/* 💡 모바일 목업 세트 (스크롤 주머니 구조 반영) */}
           <div className="dongw__cover-phone">
             <img src={phoneFrame} alt="phone frame" className="dongw__phone-frame" />
-            <img src={mobileWeb} alt="동해관광 모바일 메인" className="dongw__phone-screen" />
+            <div className="dongw__phone-body">
+              <img src={mobileWeb} alt="동해관광 모바일 메인" className="dongw__phone-screen" />
+            </div>
           </div>
+          
         </div>
       </section>
 
       {/* ── 설명 프레임 ── */}
       <section className="dongw__desc">
         <div className="dongw__desc-bg">
-  <div className="dongw__desc-panel dongw__desc-panel--1" />
-  <div className="dongw__desc-panel dongw__desc-panel--2" />
-</div>
+          <div className="dongw__desc-panel dongw__desc-panel--1" />
+          <div className="dongw__desc-panel dongw__desc-panel--2" />
+        </div>
         <div className="dongw__desc-left">
           <div className="dongw__par">
             <h3 className="dongw__par-title">Problem</h3>
