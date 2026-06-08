@@ -5,7 +5,7 @@ const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안
 const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png"
 const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
 const laptopFrame = "/images/donghae/browser/mac.png"
-const phoneFrame = "https://www.figma.com/api/mcp/asset/d7e12ad9-afd5-481d-a1da-3b4ca511fc92"
+const phoneFrame = "/images/donghae/iphone.png"
 
 const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd"
 const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb"

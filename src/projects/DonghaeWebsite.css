@@ -25,6 +25,7 @@
   padding: 60px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   min-height: 680px;
   overflow: hidden;
   position: relative;
@@ -58,9 +59,8 @@
   top: 0;
   bottom: 0;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 20px;
-  position: relative;
   z-index: 2;
 }
 
@@ -137,7 +137,7 @@
 .dongw__bg-sheet--left {
   width: 56%;
   height: 140%;
-  right: 36%;
+  right: 42%;
   top: -20%;
   transform: rotate(-25deg) skewX(6deg);
   opacity: 0.5;
@@ -146,7 +146,7 @@
 .dongw__bg-sheet--right {
   width: 56%;
   height: 140%;
-  right: -6%;
+  right: -4%;
   top: -20%;
   transform: rotate(-25deg) skewX(6deg);
   opacity: 0.5;
