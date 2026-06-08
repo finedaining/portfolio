@@ -1,146 +1,63 @@
 import './DonghaeWebsite.css'
 
-const COURSES = [
-  { id: 1, title: '해안코스', sub: '동해 바다의 정취', desc: '망상해수욕장부터 추암 촛대바위까지 동해안의 절경을 따라 걷는 코스', color: '#3A7FBB', icon: '🌊' },
-  { id: 2, title: '트레킹코스', sub: '천혜의 자연 속으로', desc: '두타산 무릉계곡과 청옥산을 잇는 숲길 트레킹 코스', color: '#4A8A5A', icon: '🌲' },
-  { id: 3, title: '인생샷코스', sub: '남해성 가르치다', desc: '논골담길 벽화마을, 묵호등대, 어달해변 포토스팟 모음', color: '#B06A8A', icon: '📷' },
-  { id: 4, title: '알정봉코스', sub: '하늘과 맞닿은 곳', desc: '두타산 알정봉에서 동해 전경을 한눈에 바라보는 파노라마 코스', color: '#7A6ABB', icon: '⛰️' },
-]
+const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e"
+const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
+const laptopFrame = "https://www.figma.com/api/mcp/asset/7229e62a-9fc0-4c91-835e-440be9680689"
+const phoneFrame = "https://www.figma.com/api/mcp/asset/d7e12ad9-afd5-481d-a1da-3b4ca511fc92"
 
-const SUNRISE_SPOTS = [
-  { title: '추암 촛대바위', sub: '일출 명소', color: '#2A6EA8' },
-  { title: '망상해수욕장', sub: '에메랄드 바다', color: '#3A8FCC' },
-  { title: '무릉계곡', sub: '계곡 트레킹', color: '#1A5C8A' },
-  { title: '논골담길', sub: '감성 골목', color: '#4AACCC' },
-]
+const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd"
+const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb"
+const subPhoneFrame = "https://www.figma.com/api/mcp/asset/d20c8788-4879-4894-b948-58b10cb3701d"
 
 export default function DonghaeWebsite({ onBack }) {
   return (
     <div className="dongw">
+      <button className="dongw__back" onClick={onBack}>← 포트폴리오로</button>
 
-      {/* ── Nav ── */}
-      <nav className="dongw__nav">
-        <div className="dongw__nav-inner">
-          <button onClick={onBack} style={{marginRight:'16px', background:'none', border:'none', cursor:'pointer', fontSize:'14px'}}>← 포트폴리오로</button>
-          <div className="dongw__logo">
-            <span className="dongw__logo-mark">관광</span>
-            <span className="dongw__logo-text">동해시</span>
-          </div>
-          <ul className="dongw__menu">
-            <li>관광지</li>
-            <li>관광코스</li>
-            <li>관광안내</li>
-            <li>여행정보</li>
-          </ul>
-          <div className="dongw__nav-right">
-            <button className="dongw__nav-btn">로그인</button>
-            <button className="dongw__nav-icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-            </button>
-          </div>
+      {/* ── 표지 프레임 ── */}
+      <section className="dongw__cover">
+        <div className="dongw__cover-text">
+          <h1 className="dongw__cover-title">Web<br/>Design</h1>
+          <p className="dongw__cover-sub">동해관광 메인 pc/mobile web</p>
         </div>
-      </nav>
-
-      {/* ── Hero ── */}
-      <section className="dongw__hero">
-        <div className="dongw__hero-bg" />
-        <div className="dongw__hero-content">
-          <p className="dongw__hero-eyebrow">DONGHAESI · GANGWON · KOREA</p>
-          <h1 className="dongw__hero-title">SEA<br/>EXPERIENCE</h1>
-          <p className="dongw__hero-desc">
-            동해의 모든 바다 활동과 웅장한 산에서<br/>
-            잊지 못할 추억을 만들러 오세요.
-          </p>
-          <button className="dongw__hero-cta">동해 여행 시작하기</button>
-        </div>
-        <div className="dongw__hero-scroll">
-          <span>SCROLL</span>
-          <div className="dongw__hero-scroll-line" />
-        </div>
-        <div className="dongw__hero-number">2</div>
-      </section>
-
-      {/* ── OUR DEEP AND BLUE ── */}
-      <section className="dongw__eastsea">
-        <div className="dongw__eastsea-inner">
-          <div className="dongw__eastsea-left">
-            <p className="dongw__eastsea-sub">OUR DEEP AND BLUE</p>
-            <h2 className="dongw__eastsea-title">EAST SEA</h2>
-            <p className="dongw__eastsea-desc">
-              대한민국의 동쪽 끝, 맑고 투명한 바다와<br/>
-              웅장한 백두대간이 만나는 곳.<br/>
-              동해에서만 느낄 수 있는 특별한 경험을 전합니다.
-            </p>
-            <button className="dongw__eastsea-btn">더 알아보기 →</button>
+        <div className="dongw__cover-mockups">
+          <div className="dongw__cover-laptop">
+            <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
+            <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
           </div>
-          <div className="dongw__eastsea-right">
-            <div className="dongw__eastsea-img dongw__eastsea-img--main" />
-            <div className="dongw__eastsea-img dongw__eastsea-img--sub" />
+          <div className="dongw__cover-phone">
+            <img src={phoneFrame} alt="phone frame" className="dongw__phone-frame" />
+            <img src={mobileWeb} alt="동해관광 모바일 메인" className="dongw__phone-screen" />
           </div>
         </div>
       </section>
 
-      {/* ── SUNRISE CITY ── */}
-      <section className="dongw__sunrise">
-        <div className="dongw__sunrise-inner">
-          <div className="dongw__sunrise-header">
-            <p className="dongw__sunrise-eyebrow">EXPLORE DONGHAE</p>
-            <h2 className="dongw__sunrise-title">SUNRISE CITY</h2>
-            <p className="dongw__sunrise-sub">해가 가장 먼저 뜨는 도시, 동해의 대표 명소</p>
+      {/* ── 설명 프레임 ── */}
+      <section className="dongw__desc">
+        <div className="dongw__desc-left">
+          <div className="dongw__par">
+            <h3 className="dongw__par-title">Problem</h3>
+            <p className="dongw__par-body">화면 내 요소들이 밀집되어 있고 시각적 위계가 불분명해 사용자가 정보를 빠르게 인지하기 어렵습니다. 정보량이 많음에도 불구하고 구조적인 정리가 부족해 전체적으로 복잡하고 정신없는 인상을 주었습니다.</p>
           </div>
-          <div className="dongw__sunrise-grid">
-            {SUNRISE_SPOTS.map((s, i) => (
-              <div key={i} className="dongw__spot" style={{ '--spot-color': s.color }}>
-                <div className="dongw__spot-img" />
-                <div className="dongw__spot-info">
-                  <p className="dongw__spot-sub">{s.sub}</p>
-                  <h3 className="dongw__spot-title">{s.title}</h3>
-                </div>
-              </div>
-            ))}
+          <div className="dongw__par">
+            <h3 className="dongw__par-title">Action</h3>
+            <p className="dongw__par-body">동해 관광의 시원한 이미지를 표현하기 위해 바다를 연상시키는 컬러(#0072BB)를 메인 컬러로 사용했습니다. 전체적으로 깔끔한 인상을 주기 위해 여백과 사진 배치, 타이포그래피의 균형에 신경썼습니다.</p>
+          </div>
+          <div className="dongw__par">
+            <h3 className="dongw__par-title">Result</h3>
+            <p className="dongw__par-body">정돈된 레이아웃과 시원한 컬러 톤으로, 사용자가 정보를 한눈에 파악할 수 있게 되었습니다. 스카이 블루 컬러(#0072BB)를 중심으로 통일감을 주어 동해의 청량한 분위기를 효과적으로 전달할 수 있습니다.</p>
+          </div>
+          <p className="dongw__credit">포토샵, 개인작업 100%</p>
+          <p className="dongw__label">동해관광 서브<br/>pc web 리디자인</p>
+        </div>
+        <div className="dongw__desc-right">
+          <img src={subWeb} alt="동해관광 서브 PC" className="dongw__sub-mac" />
+          <div className="dongw__sub-phone-wrap">
+            <img src={subPhoneFrame} alt="phone frame" className="dongw__sub-phone-frame" />
+            <img src={subMobile} alt="동해관광 서브 모바일" className="dongw__sub-phone-screen" />
           </div>
         </div>
       </section>
-
-      {/* ── 관광 코스 ── */}
-      <section className="dongw__courses">
-        <div className="dongw__courses-inner">
-          <div className="dongw__courses-header">
-            <p className="dongw__courses-eyebrow">TRAVEL COURSE</p>
-            <h2 className="dongw__courses-title">동해 여행코스</h2>
-          </div>
-          <div className="dongw__courses-list">
-            {COURSES.map((c) => (
-              <div key={c.id} className="dongw__course">
-                <div className="dongw__course-thumb" style={{ background: c.color }}>
-                  <span className="dongw__course-icon">{c.icon}</span>
-                  <span className="dongw__course-num">0{c.id}</span>
-                </div>
-                <div className="dongw__course-body">
-                  <p className="dongw__course-sub">{c.sub}</p>
-                  <h3 className="dongw__course-title">{c.title}</h3>
-                  <p className="dongw__course-desc">{c.desc}</p>
-                  <button className="dongw__course-btn">코스 보기 →</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Footer ── */}
-      <footer className="dongw__footer">
-        <div className="dongw__footer-inner">
-          <div className="dongw__footer-logo">
-            <span className="dongw__logo-mark">관광</span>
-            <span>동해시 문화관광</span>
-          </div>
-          <p className="dongw__footer-copy">© 2024 동해시청. All rights reserved.</p>
-        </div>
-      </footer>
-
     </div>
   )
 }
