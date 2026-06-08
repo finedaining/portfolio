@@ -1,6 +1,7 @@
 import './DonghaeWebsite.css'
 
 const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e"
+const bgSheet = "/images/donghae/browser/main-Safari.png"
 const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
 const laptopFrame = "https://www.figma.com/api/mcp/asset/7229e62a-9fc0-4c91-835e-440be9680689"
 const phoneFrame = "https://www.figma.com/api/mcp/asset/d7e12ad9-afd5-481d-a1da-3b4ca511fc92"
@@ -15,9 +16,9 @@ export default function DonghaeWebsite({ onBack }) {
       <button className="dongw__back" onClick={onBack}>← 포트폴리오로</button>
 
 <div className="dongw__cover-bg">
-  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--1" />
-  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--2" />
-  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--3" />
+  <img src={bgSheet} alt="" className="dongw__bg-sheet dongw__bg-sheet--1" />
+  <img src={bgSheet} alt="" className="dongw__bg-sheet dongw__bg-sheet--2" />
+  <img src={bgSheet} alt="" className="dongw__bg-sheet dongw__bg-sheet--3" />
 </div>  
       {/* ── 표지 프레임 ── */}
       <section className="dongw__cover">
