@@ -14,6 +14,11 @@ export default function DonghaeWebsite({ onBack }) {
     <div className="dongw">
       <button className="dongw__back" onClick={onBack}>← 포트폴리오로</button>
 
+<div className="dongw__cover-bg">
+  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--1" />
+  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--2" />
+  <img src={macWeb} alt="" className="dongw__bg-sheet dongw__bg-sheet--3" />
+</div>  
       {/* ── 표지 프레임 ── */}
       <section className="dongw__cover">
         <div className="dongw__cover-text">
@@ -34,6 +39,10 @@ export default function DonghaeWebsite({ onBack }) {
 
       {/* ── 설명 프레임 ── */}
       <section className="dongw__desc">
+        <div className="dongw__desc-bg">
+  <div className="dongw__desc-panel dongw__desc-panel--1" />
+  <div className="dongw__desc-panel dongw__desc-panel--2" />
+</div>
         <div className="dongw__desc-left">
           <div className="dongw__par">
             <h3 className="dongw__par-title">Problem</h3>
