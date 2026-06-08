@@ -60,6 +60,8 @@
   display: flex;
   align-items: flex-end;
   gap: 20px;
+  position: relative;
+  z-index: 2;
 }
 
 /* ── 노트북 (z-index: 2~3, 배경 시트 위) ── */
@@ -122,7 +124,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
 }
 
 .dongw__bg-sheet {

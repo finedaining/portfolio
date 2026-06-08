@@ -4,7 +4,7 @@ const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1
 const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png"
 const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png"
 const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
-const laptopFrame = "https://www.figma.com/api/mcp/asset/7229e62a-9fc0-4c91-835e-440be9680689"
+const laptopFrame = "/images/donghae/browser/mac.png"
 const phoneFrame = "https://www.figma.com/api/mcp/asset/d7e12ad9-afd5-481d-a1da-3b4ca511fc92"
 
 const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd"
