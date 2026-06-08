@@ -54,9 +54,9 @@
 /* ── [수정] 목업 컨테이너 ── */
 .dongw__cover-mockups {
   position: absolute;
-  right: 60px;
+  right: 160px;
   top: 0;
-  bottom: 0;
+    bottom: 250px;
   display: flex;
   align-items: flex-end; /* 바닥 기준 정렬 */
   gap: 30px;
@@ -102,6 +102,7 @@
 /* ── [수정] 모바일 - 롱 스크롤 완벽 구현 ── */
 .dongw__cover-phone {
   position: relative;
+  top: 150px;
   width: 140px;
   flex-shrink: 0;
   z-index: 3;
