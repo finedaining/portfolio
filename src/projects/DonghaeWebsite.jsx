@@ -1,8 +1,8 @@
 import './DonghaeWebsite.css'
 
 const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e"
-const bgLeft = "/images/donghae/browser/source/2020280070-김다인-웹-pc-메인시안 4.png"
-const bgRight = "/images/donghae/browser/source/2020280070-김다인-웹-pc-메인시안 5.png"
+const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png"
+const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png"
 const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
 const laptopFrame = "https://www.figma.com/api/mcp/asset/7229e62a-9fc0-4c91-835e-440be9680689"
 const phoneFrame = "https://www.figma.com/api/mcp/asset/d7e12ad9-afd5-481d-a1da-3b4ca511fc92"
