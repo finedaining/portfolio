@@ -27,10 +27,10 @@ export default function DonghaeWebsite({ onBack }) {
           <p className="dongw__cover-sub">동해관광 메인 pc/mobile web</p>
         </div>
         
-        {/* ── 목업 컨테이너 ── */}
+        {/* ── 표지 메인 목업 컨테이너 ── */}
         <div className="dongw__cover-mockups">
           
-          {/* 💡 노트북 목업 세트 (스크롤 주머니 구조 반영) */}
+          {/* 노트북 목업 (내부 스크롤 주머니) */}
           <div className="dongw__cover-laptop">
             <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
             <div className="dongw__laptop-body">
@@ -38,7 +38,7 @@ export default function DonghaeWebsite({ onBack }) {
             </div>
           </div>
 
-          {/* 💡 모바일 목업 세트 (스크롤 주머니 구조 반영) */}
+          {/* 메인 모바일 목업 (여기가 휠 스크롤되는 곳!) */}
           <div className="dongw__cover-phone">
             <img src={phoneFrame} alt="phone frame" className="dongw__phone-frame" />
             <div className="dongw__phone-body">
@@ -71,6 +71,8 @@ export default function DonghaeWebsite({ onBack }) {
           <p className="dongw__credit">포토샵, 개인작업 100%</p>
           <p className="dongw__label">동해관광 서브<br/>pc web 리디자인</p>
         </div>
+        
+        {/* 서브 페이지 목업 구간 (여기는 스크롤 없이 고정되는 하단 영역) */}
         <div className="dongw__desc-right">
           <img src={subWeb} alt="동해관광 서브 PC" className="dongw__sub-mac" />
           <div className="dongw__sub-phone-wrap">

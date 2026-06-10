@@ -51,7 +51,7 @@
   color: #333;
   margin: 0;
 }
-/* ── [수정] 목업 컨테이너 ── */
+
 /* ── 목업 컨테이너 (위치 정밀 조율) ── */
 .dongw__cover-mockups {
   position: absolute;
@@ -65,12 +65,12 @@
   padding-bottom: 60px;
 }
 
-/* ── 노트북 컨테이너 (원하는 높이만큼 붕 띄우기) ── */
+/* ── 노트북 컨테이너 ── */
 .dongw__cover-laptop {
   position: relative;
   width: 580px; 
   z-index: 2;
-  transform: translateY(-50px); /* 💡 노트북 위치를 위로 올리고 싶다면 이 수치를 변경하세요! */
+  transform: translateY(-50px); /* 노트북 위치 상단 붕 띄우기 */
 }
 
 /* 맥북 외관 프레임 */
@@ -79,77 +79,81 @@
   display: block;
   position: relative;
   z-index: 3; /* 프레임이 최상단에 와야 안쪽 화면을 이쁘게 덮어줍니다 */
-  pointer-events: none; /* 💡 중요: 마우스 스크롤이 투명 프레임을 뚫고 가도록 처리 */
+  pointer-events: none; /* 마우스 스크롤이 투명 프레임을 뚫고 가도록 처리 */
 }
 
-/* 💡 [핵심] 맥북 내부 액정 틀 영역 스크롤 주머니 */
+/* 맥북 내부 액정 틀 영역 스크롤 주머니 */
 .dongw__laptop-body {
   position: absolute;
-  top: 4.5%;      /* 다인님이 정밀 조율하신 위쪽 여백 */
-  left: 17.9%;    /* 다인님이 정밀 조율하신 왼쪽 여백 */
-  width: 64.4%;   /* 다인님이 정밀 조율하신 가로 크기 */
-  height: 82.5%;  /* 액정 세로 틀에 맞춰서 100% 미만으로 꽉 채웁니다 */
+  top: 4.5%;      
+  left: 17.9%;    
+  width: 64.4%;   
+  height: 82.5%;  
   z-index: 1;
-  
-  overflow-y: auto;   /* 💡 내부에서 긴 시안이 스크롤되도록 선언 */
+  overflow-y: auto;   
   overflow-x: hidden;
-  scrollbar-width: none; /* 스크롤바 바 안 보이게 숨기기 (Firefox) */
+  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
 }
 .dongw__laptop-body::-webkit-scrollbar {
-  display: none; /* 스크롤바 바 안 보이게 숨기기 (Chrome, Safari) */
+  display: none; /* Chrome, Safari 스크롤바 숨기기 */
 }
 
 /* 노트북 내부 진짜 화면 이미지 */
 .dongw__laptop-screen {
   width: 100%;
-  height: auto; /* 💡 중요: 높이를 100%를 초과하게 고정하지 않고 auto로 열어두어야 긴 시안이 부드럽게 밀려 올라갑니다 */
+  height: auto; 
   display: block;
   object-fit: cover;
   object-position: top;
 }
 
-/* ── 모바일 스크롤 세팅 ── */
+/* ── 메인 모바일 전체 감싸는 상자 ── */
 .dongw__cover-phone {
   position: relative;
   width: 140px;
+  height:290px;
+ /* 대충 아이폰 프레임 높이 */
   flex-shrink: 0;
   z-index: 4;
+  bottom: 60px;
+  overflow: hidden;
 }
 
-/* 아이폰 외관 프레임 */
+/* 아이폰 외관 프레임 이미지 */
 .dongw__phone-frame {
   width: 100%;
   display: block;
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
 }
 
-/* 💡 [핵심] 아이폰 내부 액정 틀 영역 스크롤 주머니 */
+/* 메인 아이폰 내부 액정 영역 스크롤 주머니 */
 .dongw__phone-body {
   position: absolute;
   top: 2.5%;
   left: 5.5%;
   width: 89%;
-  height: 95%;
-  z-index: 1;
-  
-  overflow-y: auto;   /* 💡 모바일도 프레임 안에서 스크롤되도록 설정 */
+
+  height: 250px !important;
+
+  overflow-y: auto !important;
   overflow-x: hidden;
-  scrollbar-width: none;
+
+  border-radius: 18px;
+  background: #fff;
 }
 .dongw__phone-body::-webkit-scrollbar {
   display: none;
 }
 
-/* 스마트폰 내부 화면 이미지 */
+/* 메인 모바일 진짜 화면 이미지 (유령 잔상 완벽 제거 완료) */
 .dongw__phone-screen {
   width: 100%;
-  height: auto;
+  height: auto;        /* auto로 열어두어야 원본 롱시안 스크롤이 작동합니다 */
   display: block;
+  position: static;    /* absolute 잔상을 지우기 위해 정적 흐름으로 복구 */
   object-fit: cover;
   object-position: top;
 }
+
 /* ── 배경 시트 (z-index: 1, 가장 뒤) ── */
 .dongw__cover-bg {
   position: absolute;
@@ -250,17 +254,20 @@
   max-height: 400px;
 }
 
+/* 하단 설명창에 들어가는 서브 모바일 레이아웃 */
 .dongw__sub-phone-wrap {
   position: relative;
   width: 120px;
+  z-index: 2;
 }
 
 .dongw__sub-phone-frame {
   width: 100%;
   position: relative;
-  z-index: 2;
+  z-index: 4; /* 프레임이 위로 */
 }
 
+/* 하단 서브 모바일 스크린 (상단 스크롤 영역과 완벽 분리 고정) */
 .dongw__sub-phone-screen {
   position: absolute;
   top: 3%;
