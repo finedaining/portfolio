@@ -32,11 +32,22 @@ export default function DonghaeWebsite({ onBack }) {
           
           {/* 노트북 목업 (내부 스크롤 주머니) */}
           <div className="dongw__cover-laptop">
-            <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
-            <div className="dongw__laptop-body">
-              <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
-            </div>
-          </div>
+  <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
+
+  <div className="dongw__laptop-body">
+    <img
+      src={macWeb}
+      alt="동해관광 PC 메인"
+      className="dongw__laptop-screen"
+    />
+  </div>
+
+  <img
+    src={macWeb}
+    alt=""
+    className="dongw__laptop-long"
+  />
+</div>
 
           {/* 메인 모바일 목업 (여기가 휠 스크롤되는 곳!) */}
           <div className="dongw__cover-phone">

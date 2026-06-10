@@ -34,6 +34,7 @@
 .dongw__cover-text {
   position: relative;
   z-index: 5;
+  top:140px;
 }
 
 .dongw__cover-title {
@@ -44,10 +45,12 @@
   letter-spacing: -4px;
   color: #111;
   margin: 0 0 16px;
+  position:relative;
+  
 }
 
 .dongw__cover-sub {
-  font-size: 16px;
+  font-size: 24px;
   color: #333;
   margin: 0;
 }
@@ -68,9 +71,20 @@
 /* ── 노트북 컨테이너 ── */
 .dongw__cover-laptop {
   position: relative;
-  width: 580px; 
+  width: 580px;
   z-index: 2;
-  transform: translateY(-50px); /* 노트북 위치 상단 붕 띄우기 */
+  transform: translateY(-50px);
+}
+
+/* 뒤로 길게 내려오는 시안 */
+.dongw__laptop-long {
+  position: absolute;
+  width: 70%;
+
+  left: 15%;
+  top: 62%;
+
+  z-index: -1;
 }
 
 /* 맥북 외관 프레임 */
@@ -111,12 +125,12 @@
 .dongw__cover-phone {
   position: relative;
   width: 140px;
-  height:290px;
+ 
  /* 대충 아이폰 프레임 높이 */
   flex-shrink: 0;
   z-index: 4;
-  bottom: 60px;
-  overflow: hidden;
+  top: 240px;
+
 }
 
 /* 아이폰 외관 프레임 이미지 */
