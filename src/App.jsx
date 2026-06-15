@@ -1,6 +1,11 @@
 import { useState, useEffect, useRef } from 'react'
 import ToggleButtonGroup from './components/ToggleButtonGroup'
 import DonghaeWebsite from './projects/DonghaeWebsite'
+import CathKidstonWebsite from './projects/CathKidstonWebsite'
+import JigujabaWebsite from './projects/JigujabaWebsite'
+import InobelWebsite from './projects/InobelWebsite'
+import DodreamWebsite from './projects/DodreamWebsite'
+import VintageHouseWebsite from './projects/VintageHouseWebsite'
 import './App.css'
 
 const PROJECTS = [
@@ -321,10 +326,22 @@ function Contact() {
   )
 }
 
-export default function App() {
-  const [page, setPage] = useState('home')
+const PROJECT_PAGE_MAP = {
+  1: (back) => <DonghaeWebsite onBack={back} />,
+  2: (back) => <CathKidstonWebsite onBack={back} />,
+  3: (back) => <JigujabaWebsite onBack={back} />,
+  4: (back) => <InobelWebsite onBack={back} />,
+  5: (back) => <DodreamWebsite onBack={back} />,
+  6: (back) => <VintageHouseWebsite onBack={back} />,
+}
 
-  if (page === 'donghae') return <DonghaeWebsite onBack={() => setPage('home')} />
+export default function App() {
+  const [page, setPage] = useState(null)
+  const back = () => setPage(null)
+
+  if (page !== null && PROJECT_PAGE_MAP[page]) {
+    return PROJECT_PAGE_MAP[page](back)
+  }
 
   return (
     <>
@@ -332,7 +349,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Works onSelect={(id) => { if (id === 1) setPage('donghae') }} />
+        <Works onSelect={(id) => { if (PROJECT_PAGE_MAP[id]) setPage(id) }} />
         <Contact />
       </main>
     </>

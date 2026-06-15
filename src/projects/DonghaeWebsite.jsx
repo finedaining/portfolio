@@ -9,7 +9,7 @@ const phoneFrame = "/images/donghae/iphone.png"
 
 const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd"
 const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb"
-const subPhoneFrame = "https://www.figma.com/api/mcp/asset/d20c8788-4879-4894-b948-58b10cb3701d"
+const subPhoneFrame = phoneFrame
 
 export default function DonghaeWebsite({ onBack }) {
   return (
@@ -22,41 +22,34 @@ export default function DonghaeWebsite({ onBack }) {
           <img src={bgLeft} alt="" className="dongw__bg-sheet dongw__bg-sheet--left" />
           <img src={bgRight} alt="" className="dongw__bg-sheet dongw__bg-sheet--right" />
         </div>
+        
         <div className="dongw__cover-text">
-          <h1 className="dongw__cover-title">Web<br/>Design</h1>
+          <h1 className="dongw__cover-title">Web<br />Design</h1>
           <p className="dongw__cover-sub">동해관광 메인 pc/mobile web</p>
         </div>
-        
+
         {/* ── 표지 메인 목업 컨테이너 ── */}
         <div className="dongw__cover-mockups">
-          
-          {/* 노트북 목업 (내부 스크롤 주머니) */}
+
+          {/* 💻 맥북 목업 (단 1개의 웹시안만 존재하며 밑으로 탈출함) */}
           <div className="dongw__cover-laptop">
-  <img src={laptopFrame} alt="laptop" className="dongw__laptop-frame" />
+            {/* 맥북 하드웨어 프레임 */}
+            <img src={laptopFrame} alt="Macbook Frame" className="dongw__laptop-frame" />
+            
+            {/* 💡 맥북 액정 위치에서 시작해 아래로 길게 흐르는 진짜 단 하나의 시안 */}
+            <div className="dongw__laptop-body">
+              <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
+            </div>
+          </div>
 
-  <div className="dongw__laptop-body">
-    <img
-      src={macWeb}
-      alt="동해관광 PC 메인"
-      className="dongw__laptop-screen"
-    />
-  </div>
-
-  <img
-    src={macWeb}
-    alt=""
-    className="dongw__laptop-long"
-  />
-</div>
-
-          {/* 메인 모바일 목업 (여기가 휠 스크롤되는 곳!) */}
+          {/* 📱 메인 모바일 목업 (핸드폰 안에서 깔끔하게 스크롤됨) */}
           <div className="dongw__cover-phone">
             <img src={phoneFrame} alt="phone frame" className="dongw__phone-frame" />
             <div className="dongw__phone-body">
               <img src={mobileWeb} alt="동해관광 모바일 메인" className="dongw__phone-screen" />
             </div>
           </div>
-          
+
         </div>
       </section>
 
@@ -66,6 +59,7 @@ export default function DonghaeWebsite({ onBack }) {
           <div className="dongw__desc-panel dongw__desc-panel--1" />
           <div className="dongw__desc-panel dongw__desc-panel--2" />
         </div>
+        
         <div className="dongw__desc-left">
           <div className="dongw__par">
             <h3 className="dongw__par-title">Problem</h3>
@@ -80,15 +74,17 @@ export default function DonghaeWebsite({ onBack }) {
             <p className="dongw__par-body">정돈된 레이아웃과 시원한 컬러 톤으로, 사용자가 정보를 한눈에 파악할 수 있게 되었습니다. 스카이 블루 컬러(#0072BB)를 중심으로 통일감을 주어 동해의 청량한 분위기를 효과적으로 전달할 수 있습니다.</p>
           </div>
           <p className="dongw__credit">포토샵, 개인작업 100%</p>
-          <p className="dongw__label">동해관광 서브<br/>pc web 리디자인</p>
+          <p className="dongw__label">동해관광 서브<br />pc web 리디자인</p>
         </div>
-        
-        {/* 서브 페이지 목업 구간 (여기는 스크롤 없이 고정되는 하단 영역) */}
+
+        {/* 하단 서브 고정 목업 구간 */}
         <div className="dongw__desc-right">
           <img src={subWeb} alt="동해관광 서브 PC" className="dongw__sub-mac" />
           <div className="dongw__sub-phone-wrap">
             <img src={subPhoneFrame} alt="phone frame" className="dongw__sub-phone-frame" />
-            <img src={subMobile} alt="동해관광 서브 모바일" className="dongw__sub-phone-screen" />
+            <div className="dongw__sub-phone-body">
+              <img src={subMobile} alt="동해관광 서브 모바일" className="dongw__sub-phone-screen" />
+            </div>
           </div>
         </div>
       </section>

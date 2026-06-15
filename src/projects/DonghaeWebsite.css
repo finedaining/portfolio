@@ -27,14 +27,14 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 680px;
-  overflow: hidden;
   position: relative;
+  overflow: visible; /* 💡 맥북 아래로 긴 시안이 튀어나와 보여야 하므로 무조건 visible! */
 }
 
 .dongw__cover-text {
   position: relative;
   z-index: 5;
-  top:140px;
+  top: 140px;
 }
 
 .dongw__cover-title {
@@ -45,8 +45,7 @@
   letter-spacing: -4px;
   color: #111;
   margin: 0 0 16px;
-  position:relative;
-  
+  position: relative;
 }
 
 .dongw__cover-sub {
@@ -55,67 +54,56 @@
   margin: 0;
 }
 
-/* ── 목업 컨테이너 (위치 정밀 조율) ── */
+/* ── 목업 컨테이너 (바닥 정렬) ── */
 .dongw__cover-mockups {
   position: absolute;
   right: 120px;
   top: 0;
   bottom: 0;
   display: flex;
-  align-items: flex-end; /* 기기들을 바닥 기준으로 정렬 */
+  align-items: flex-end; 
   gap: 40px;
   z-index: 2;
   padding-bottom: 60px;
 }
 
-/* ── 노트북 컨테이너 ── */
+/* ── 노트북 전체 박스 ── */
 .dongw__cover-laptop {
   position: relative;
   width: 580px;
   z-index: 2;
-  transform: translateY(-50px);
+  overflow: visible; /* 💡 시안 탈출을 위해 여기도 visible */
 }
 
-/* 뒤로 길게 내려오는 시안 */
-.dongw__laptop-long {
-  position: absolute;
-  width: 70%;
-
-  left: 15%;
-  top: 62%;
-
-  z-index: -1;
-}
-
-/* 맥북 외관 프레임 */
+/* 맥북 기기 외관 프레임 */
 .dongw__laptop-frame {
   width: 100%;
   display: block;
   position: relative;
-  z-index: 3; /* 프레임이 최상단에 와야 안쪽 화면을 이쁘게 덮어줍니다 */
-  pointer-events: none; /* 마우스 스크롤이 투명 프레임을 뚫고 가도록 처리 */
+  z-index: 3; /* 프레임이 시안 이미지 위에 얹어집니다 */
+  pointer-events: none; /* 마우스 휠이 투명 영역을 통과하도록 설정 */
 }
 
-/* 맥북 내부 액정 틀 영역 스크롤 주머니 */
+/* 💡 [대수술] 맥북 내부 화면 영역 주머니 -> 스크롤바 가두지 않고 무조건 뚫리게 처리 */
 .dongw__laptop-body {
   position: absolute;
   top: 4.5%;      
-  left: 17.9%;    
-  width: 64.4%;   
-  height: 82.5%;  
-  z-index: 1;
-  overflow-y: auto;   
+  left: 14.8%;    
+  width: 70.4%;   
+  height: 160%;   /* 🔥 핵심: 높이를 100% 이상 줘서 기기 키보드 밑으로 뚫고 나오게 만듦 */
+  z-index: 1;     /* 🔥 프레임(3)보다 뒤에 있어서 자연스럽게 밑에서 튀어나옴 */
+  
+  overflow-y: auto; 
   overflow-x: hidden;
-  scrollbar-width: none; /* Firefox 스크롤바 숨기기 */
+  scrollbar-width: none; 
 }
 .dongw__laptop-body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari 스크롤바 숨기기 */
+  display: none;
 }
-
-/* 노트북 내부 진짜 화면 이미지 */
+/* 노트북 안의 진짜 웹 사이트 단 하나의 스크린 */
 .dongw__laptop-screen {
   width: 100%;
-  height: auto; 
+  height: auto; /* 💡 고정 없이 auto여야 롱 시안이 정상 작동하고, 부모 body 폭에 맞춰 쭉 늘어납니다 */
   display: block;
   object-fit: cover;
   object-position: top;
@@ -125,18 +113,18 @@
 .dongw__cover-phone {
   position: relative;
   width: 140px;
- 
- /* 대충 아이폰 프레임 높이 */
   flex-shrink: 0;
   z-index: 4;
   top: 240px;
-
 }
 
 /* 아이폰 외관 프레임 이미지 */
 .dongw__phone-frame {
   width: 100%;
   display: block;
+  position: relative;
+  z-index: 5;
+  pointer-events: none;
 }
 
 /* 메인 아이폰 내부 액정 영역 스크롤 주머니 */
@@ -145,25 +133,24 @@
   top: 2.5%;
   left: 5.5%;
   width: 89%;
-
-  height: 250px !important;
-
-  overflow-y: auto !important;
+  height: 180%;   /* 🔥 핵심: 높이를 확 늘려서 폰 프레임 바닥 아래로 빠져나오게 만듦 */
+  z-index: 3;     /* 🔥 폰 껍데기 프레임(5)보다 뒤에 위치 */
+  
+  overflow-y: auto;
   overflow-x: hidden;
-
   border-radius: 18px;
   background: #fff;
+  scrollbar-width: none;
 }
 .dongw__phone-body::-webkit-scrollbar {
   display: none;
 }
-
-/* 메인 모바일 진짜 화면 이미지 (유령 잔상 완벽 제거 완료) */
+/* 메인 모바일 진짜 화면 이미지 */
 .dongw__phone-screen {
   width: 100%;
-  height: auto;        /* auto로 열어두어야 원본 롱시안 스크롤이 작동합니다 */
+  height: auto;        
   display: block;
-  position: static;    /* absolute 잔상을 지우기 위해 정적 흐름으로 복구 */
+  position: static;    
   object-fit: cover;
   object-position: top;
 }
@@ -278,20 +265,27 @@
 .dongw__sub-phone-frame {
   width: 100%;
   position: relative;
-  z-index: 4; /* 프레임이 위로 */
+  z-index: 4;
 }
 
-/* 하단 서브 모바일 스크린 (상단 스크롤 영역과 완벽 분리 고정) */
-.dongw__sub-phone-screen {
+/* 하단 서브 모바일 스크린 */
+.dongw__sub-phone-body {
   position: absolute;
   top: 3%;
   left: 5%;
   width: 90%;
   height: 94%;
+  overflow: hidden;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.dongw__sub-phone-screen {
+  width: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
   object-position: top;
-  z-index: 1;
-  border-radius: 20px;
 }
 
 .dongw__desc-bg {

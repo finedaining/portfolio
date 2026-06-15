@@ -1,0 +1,230 @@
+/* ── ProjectPage.css : 모든 프로젝트 페이지 공통 스타일 ── */
+
+.pp {
+  min-height: 100vh;
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+}
+
+.pp__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+.pp__back:hover { color: #111; }
+
+/* ────────────────────────────────────────
+   표지 섹션
+──────────────────────────────────────── */
+.pp__cover {
+  border-radius: 20px;
+  min-height: 640px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.pp__cover-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--cover-from, #333) 0%,
+    var(--cover-to, #666) 100%
+  );
+}
+
+/* 왼쪽: 큰 타이틀 */
+.pp__cover-title-area {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
+  min-width: 240px;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.pp__cover-h1 {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: clamp(52px, 7vw, 110px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -3px;
+  color: #fff;
+  margin: 0 0 16px;
+}
+
+.pp__cover-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* 가운데: 목업 플레이스홀더 */
+.pp__cover-mocks {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 28px;
+  padding: 60px 20px;
+}
+
+/* 오른쪽: PAR 블록들 */
+.pp__cover-par {
+  position: relative;
+  z-index: 2;
+  flex: 0 0 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 60px 60px 20px;
+}
+
+.pp__par-block {
+  padding: 22px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.pp__par-block:last-child { border-bottom: none; }
+
+.pp__par-label {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  margin: 0 0 8px;
+  letter-spacing: 0.04em;
+}
+
+.pp__par-text {
+  font-size: 12px;
+  line-height: 1.78;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* ────────────────────────────────────────
+   플레이스홀더 목업 도형
+──────────────────────────────────────── */
+.pp__mock {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+/* 아이폰 세로형 */
+.pp__mock--phone {
+  width: 130px;
+  height: 270px;
+  border-radius: 22px;
+}
+
+/* 두 번째 폰 – 살짝 내려서 겹쳐 보이게 */
+.pp__mock--phone-offset {
+  width: 130px;
+  height: 270px;
+  border-radius: 22px;
+  align-self: flex-end;
+  margin-bottom: 40px;
+}
+
+/* 브라우저/맥북 가로형 */
+.pp__mock--browser {
+  width: 420px;
+  height: 270px;
+  border-radius: 12px;
+}
+
+/* 설명 섹션에서 쓰는 보조 가로 목업 */
+.pp__mock--wide {
+  width: 100%;
+  max-width: 420px;
+  height: 240px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* 설명 섹션 작은 폰 */
+.pp__mock--phone-sm {
+  width: 100px;
+  height: 200px;
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* ────────────────────────────────────────
+   설명 섹션
+──────────────────────────────────────── */
+.pp__desc {
+  border-radius: 20px;
+  background: #f4f4f1;
+  padding: 60px;
+  display: flex;
+  gap: 60px;
+  min-height: 340px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 설명 섹션 오른쪽 컬러 패널 (accent) */
+.pp__desc::after {
+  content: '';
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 62%;
+  background: linear-gradient(
+    141deg,
+    var(--desc-panel1, #e8e8e5) 0%,
+    var(--desc-panel2, #d4d4d0) 100%
+  );
+  pointer-events: none;
+}
+
+.pp__desc-left {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.pp__credit {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.pp__label {
+  font-size: 24px;
+  font-weight: 500;
+  color: #111;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.pp__desc-right {
+  flex: 1;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
