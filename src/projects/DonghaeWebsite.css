@@ -28,7 +28,7 @@
   justify-content: flex-start;
   min-height: 680px;
   position: relative;
-  overflow: visible; /* 💡 맥북 아래로 긴 시안이 튀어나와 보여야 하므로 무조건 visible! */
+  overflow: visible; 
 }
 
 .dongw__cover-text {
@@ -70,40 +70,43 @@
 /* ── 노트북 전체 박스 ── */
 .dongw__cover-laptop {
   position: relative;
+  bottom: 140px;
   width: 580px;
   z-index: 2;
-  overflow: visible; /* 💡 시안 탈출을 위해 여기도 visible */
+  overflow: visible; 
 }
 
-/* 맥북 기기 외관 프레임 */
+/* 맥북 프레임 */
 .dongw__laptop-frame {
   width: 100%;
   display: block;
   position: relative;
-  z-index: 3; /* 프레임이 시안 이미지 위에 얹어집니다 */
-  pointer-events: none; /* 마우스 휠이 투명 영역을 통과하도록 설정 */
+  z-index: 3;
+  pointer-events: none;
 }
 
-/* 💡 [대수술] 맥북 내부 화면 영역 주머니 -> 스크롤바 가두지 않고 무조건 뚫리게 처리 */
+/* 맥북 내부 화면 영역 주머니 */
 .dongw__laptop-body {
   position: absolute;
-  top: 4.5%;      
-  left: 14.8%;    
-  width: 70.4%;   
-  height: 160%;   /* 🔥 핵심: 높이를 100% 이상 줘서 기기 키보드 밑으로 뚫고 나오게 만듦 */
-  z-index: 1;     /* 🔥 프레임(3)보다 뒤에 있어서 자연스럽게 밑에서 튀어나옴 */
+  top: 4.4%;      
+  left: 12.7%;    
+  width: 74.8%;   
+  height: 160%;   /* 💡 오타 수정 완료 */
+  z-index: 1;   
   
   overflow-y: auto; 
   overflow-x: hidden;
   scrollbar-width: none; 
 }
+
 .dongw__laptop-body::-webkit-scrollbar {
   display: none;
 }
-/* 노트북 안의 진짜 웹 사이트 단 하나의 스크린 */
+
+/* 노트북 안의 웹 사이트 스크린 */
 .dongw__laptop-screen {
   width: 100%;
-  height: auto; /* 💡 고정 없이 auto여야 롱 시안이 정상 작동하고, 부모 body 폭에 맞춰 쭉 늘어납니다 */
+  height: auto; 
   display: block;
   object-fit: cover;
   object-position: top;
@@ -133,8 +136,8 @@
   top: 2.5%;
   left: 5.5%;
   width: 89%;
-  height: 180%;   /* 🔥 핵심: 높이를 확 늘려서 폰 프레임 바닥 아래로 빠져나오게 만듦 */
-  z-index: 3;     /* 🔥 폰 껍데기 프레임(5)보다 뒤에 위치 */
+  height: 180%;
+  z-index: 3;     
   
   overflow-y: auto;
   overflow-x: hidden;
@@ -142,9 +145,11 @@
   background: #fff;
   scrollbar-width: none;
 }
+
 .dongw__phone-body::-webkit-scrollbar {
   display: none;
 }
+
 /* 메인 모바일 진짜 화면 이미지 */
 .dongw__phone-screen {
   width: 100%;
