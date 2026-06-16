@@ -233,98 +233,10 @@
   border-radius: 20px;
   padding: 60px;
   display: flex;
-  gap: 60px;
-  min-height: 520px;
+  gap: 48px;
+  min-height: 600px;
   position: relative;
-}
-
-.dongw__desc-left {
-  flex: 0 0 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.dongw__par-title {
-  font-size: 26px;
-  font-weight: 700;
-  color: #111;
-  margin: 0 0 8px;
-}
-
-.dongw__par-body {
-  font-size: 13px;
-  color: #444;
-  line-height: 1.75;
-  margin: 0;
-}
-
-.dongw__credit {
-  font-size: 13px;
-  color: #888;
-  margin: 0;
-}
-
-.dongw__label {
-  font-size: 26px;
-  color: #111;
-  margin: 0;
-  line-height: 1.3;
-}
-
-.dongw__desc-right {
-  flex: 1;
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 2;
-}
-
-.dongw__sub-mac {
-  width: 62%;
-  border-radius: 8px;
-  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
-  object-fit: cover;
-  object-position: top;
-  max-height: 400px;
-}
-
-/* 하단 설명창에 들어가는 서브 모바일 레이아웃 */
-.dongw__sub-phone-wrap {
-  position: relative;
-  width: 120px;
-  z-index: 2;
-}
-
-.dongw__sub-phone-frame {
-  width: 100%;
-  position: relative;
-  z-index: 4;
-}
-
-/* 하단 서브 모바일 스크린 */
-.dongw__sub-phone-body {
-  position: absolute;
-  top: 3%;
-  left: 5%;
-  width: 90%;
-  height: 94%;
   overflow: hidden;
-  border-radius: 20px;
-  z-index: 1;
-}
-
-.dongw__sub-phone-screen {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: top;
 }
 
 .dongw__desc-bg {
@@ -341,13 +253,410 @@
 }
 
 .dongw__desc-panel--1 {
-  right: 0; width: 62%;
+  right: 0; width: 65%;
   background: linear-gradient(141deg, #ecede2 0%, #bfc3d1 100%);
 }
 
-
 .dongw__desc-panel--2 {
-  right: 3%; width: 57%;
+  right: 3%; width: 60%;
   background: linear-gradient(145deg, #f5f5f5 7%, #d2d2d2 104%);
+}
+
+/* ── 왼쪽 텍스트 영역 ── */
+.dongw__desc-left {
+  flex: 0 0 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.dongw__par-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 6px;
+}
+
+.dongw__par-body {
+  font-size: 12px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* 툴 / 기여도 */
+.dongw__tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.dongw__tool-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.dongw__ps-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.dongw__ps-vec {
+  position: absolute;
+  inset: 20% 15% 25% 25%;
+  width: 60%;
+  height: 55%;
+  object-fit: contain;
+}
+
+.dongw__tool-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+.dongw__tool-bar-track {
+  background: #d9d9d9;
+  border-radius: 4px;
+  height: 5px;
+  width: 100%;
+}
+
+.dongw__tool-bar-fill {
+    background: #007aff;
+    border-radius: 4px;
+    height: 100%;
+    width: 100%;
+}
+
+.dongw__tool-label {
+  font-size: 12px;
+  color: #474747;
+}
+
+.dongw__label {
+  font-size: 22px;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* ── 오른쪽: 브라우저 + 폰 ── */
+.dongw__desc-right {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 사파리 브라우저 목업 */
+.dongw__browser {
+  background: #38393a;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 1px rgba(0,0,0,0.7), 0 11px 16px rgba(0,0,0,0.3), 0 5px 27px rgba(0,0,0,0.2);
+  border: 0.3px solid #070707;
+  display: flex;
+  flex-direction: column;
+  max-height: 480px;
+
+  width: 520px;
+  flex: none;
+
+  border-radius: 6px;
+
+  position: relative;
+  left:200px;
+
+}
+
+.dongw__browser-bar {
+  background: #191c1f;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  flex-shrink: 0;
+  position: relative;
+  gap: 8px;
+  box-shadow: inset 0 0.3px 0 rgba(255,255,255,0.4), inset -0.5px 0 0 #47494b, inset 0.5px 0 0 #47494c;
+}
+
+.dongw__browser-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.dongw__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.dongw__dot--close  { background: #ff5f57; }
+.dongw__dot--min    { background: #febc2e; }
+.dongw__dot--full   { background: #28c840; }
+
+.dongw__browser-url {
+  flex: 1;
+  background: #0c0f12;
+  border-radius: 6px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+  margin: 0 40px;
+}
+
+.dongw__browser-screen {
+  overflow: hidden;
+  flex: 1;
+}
+
+.dongw__browser-screen img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* 서브 아이폰 목업 */
+.dongw__sub-phone {
+  position: relative;
+  left:240px;
+  width: 140px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.dongw__sub-phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dongw__sub-island {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.4%;
+  width: 28.8%;
+  height: 4.1%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6%;
+}
+
+.dongw__sub-island-bar {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: 99px;
+}
+
+.dongw__sub-island-camera {
+  position: relative;
+  z-index: 1;
+  width: 26%;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+
+.dongw__sub-phone-screen {
+  position: absolute;
+  top: 1.3%;
+  left: 3.4%;
+  width: 93.1%;
+  bottom: 1.5%;
+  overflow: hidden;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.dongw__sub-phone-screen img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* ── 서브페이지 롱스크린 섹션 ── */
+.dongw__screen {
+  background: rgba(0, 114, 187, 0.08);
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dongw__screen-text {
+  position: relative;
+  z-index: 5;
+  top: 140px;
+}
+
+.dongw__screen-title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  color: #111;
+  margin: 0 0 16px;
+}
+
+.dongw__screen-sub {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.dongw__screen-mockups {
+  position: absolute;
+  right: 120px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  z-index: 2;
+  padding-bottom: 60px;
+}
+
+/* 맥북 전체 박스 */
+.dongw__screen-laptop {
+  position: relative;
+  bottom: 140px;
+  width: 580px;
+  z-index: 2;
+  overflow: visible;
+}
+
+.dongw__screen-laptop-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dongw__screen-laptop-body {
+  position: absolute;
+  top: 4.4%;
+  left: 12.7%;
+  width: 74.8%;
+  height: 160%;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.dongw__screen-laptop-body::-webkit-scrollbar {
+  display: none;
+}
+
+.dongw__screen-laptop-screen {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}
+
+/* 아이폰 전체 박스 */
+.dongw__screen-phone {
+  position: relative;
+  width: 140px;
+  flex-shrink: 0;
+  z-index: 4;
+  bottom: 160px;
+  overflow: visible;
+}
+
+.dongw__screen-phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.dongw__screen-island {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.4%;
+  width: 28.8%;
+  height: 4.1%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6%;
+}
+
+.dongw__screen-island-bar {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: 99px;
+}
+
+.dongw__screen-island-camera {
+  position: relative;
+  z-index: 1;
+  width: 26%;
+  opacity: 0.6;
+  border-radius: 50%;
+}
+
+.dongw__screen-phone-content {
+  position: absolute;
+  top: 1.3%;
+  left: 3.4%;
+  width: 93.1%;
+  height: 240%;
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: 24px;
+  scrollbar-width: none;
+}
+
+.dongw__screen-phone-content::-webkit-scrollbar {
+  display: none;
+}
+
+.dongw__screen-phone-content img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
