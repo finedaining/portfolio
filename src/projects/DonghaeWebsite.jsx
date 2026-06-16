@@ -1,17 +1,63 @@
-import './DonghaeWebsite.css'
+import React from 'react';
+import './DonghaeWebsite.css';
 
-const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e"
-const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png"
-const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png"
-const mobileWeb = "https://www.figma.com/api/mcp/asset/3e0ed64e-057e-4e69-be14-53a1ec4b8cdc"
-const laptopFrame = "/images/donghae/browser/mac.png"
-const phoneFrame = "/images/donghae/iphone.png"
+const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e";
+const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png";
+const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png";
+const laptopFrame = "/images/donghae/browser/mac.png";
+const phoneFrame = "/images/donghae/iphone.png";
 
-const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd"
-const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb"
-const subPhoneFrame = phoneFrame
+// 피그마에서 가져온 새 아이폰 목업 에셋
+const figmaPhoneFrame  = "https://www.figma.com/api/mcp/asset/2fc0eae4-ba85-447d-b9f1-a36dcf12e9f8";
+const figmaPhoneScreen = "https://www.figma.com/api/mcp/asset/5f450d2c-20c0-4437-84b6-1aa0a4e787e0";
+const figmaCamera      = "https://www.figma.com/api/mcp/asset/b0977398-9d85-454c-921c-ecb58ea4f34f";
+
+const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd";
+const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb";
+const subPhoneFrame = phoneFrame;
 
 export default function DonghaeWebsite({ onBack }) {
+  const phoneContainerRef = React.useRef(null);
+  const outerContainerRef = React.useRef(null);
+  const outerImageRef = React.useRef(null);
+  const scrollYRef = React.useRef(0);
+
+  // 마우스 휠 이벤트를 직접 감지하여 자연스럽게 이미지를 변형(Transform)시킵니다.
+  React.useEffect(() => {
+    const phoneArea = phoneContainerRef.current;
+    if (!phoneArea) return;
+
+    const handleWheel = (e) => {
+      // 폰 영역 위에서 휠을 굴릴 때 브라우저 전체 페이지가 함께 스크롤되는 현상을 막아줍니다.
+      e.preventDefault();
+
+      const outerContainer = outerContainerRef.current;
+      const outerImage = outerImageRef.current;
+      if (!outerContainer || !outerImage) return;
+
+      // 움직일 수 있는 최대 범위 계산
+      const maxOuterScroll = outerImage.offsetHeight - outerContainer.clientHeight;
+      if (maxOuterScroll <= 0) return;
+
+      // 휠 방향과 속도에 따라 좌표 업데이트 (e.deltaY 가 양수면 아래로, 음수면 위로)
+      scrollYRef.current += e.deltaY;
+
+      // 최소/최대 범위 제한 (Clamping)
+      if (scrollYRef.current < 0) scrollYRef.current = 0;
+      if (scrollYRef.current > maxOuterScroll) scrollYRef.current = maxOuterScroll;
+
+      // 움직임 반영
+      outerImage.style.transform = `translateY(-${scrollYRef.current}px)`;
+    };
+
+    // 브라우저 튕김 방지를 위해 passive: false 옵션을 인스턴스에 직접 바인딩합니다.
+    phoneArea.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+      phoneArea.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
+
   return (
     <div className="dongw">
       <button className="dongw__back" onClick={onBack}>← 포트폴리오로</button>
@@ -22,7 +68,7 @@ export default function DonghaeWebsite({ onBack }) {
           <img src={bgLeft} alt="" className="dongw__bg-sheet dongw__bg-sheet--left" />
           <img src={bgRight} alt="" className="dongw__bg-sheet dongw__bg-sheet--right" />
         </div>
-        
+
         <div className="dongw__cover-text">
           <h1 className="dongw__cover-title">Web<br />Design</h1>
           <p className="dongw__cover-sub">동해관광 메인 pc/mobile web</p>
@@ -31,35 +77,36 @@ export default function DonghaeWebsite({ onBack }) {
         {/* ── 표지 메인 목업 컨테이너 ── */}
         <div className="dongw__cover-mockups">
 
-          {/* 💻 맥북 목업 (단 1개의 웹시안만 존재하며 밑으로 탈출함) */}
+          {/* 💻 맥북 목업 */}
           <div className="dongw__cover-laptop">
-            {/* 맥북 하드웨어 프레임 */}
             <img src={laptopFrame} alt="Macbook Frame" className="dongw__laptop-frame" />
-            
-            {/* 💡 맥북 액정 위치에서 시작해 아래로 길게 흐르는 진짜 단 하나의 시안 */}
             <div className="dongw__laptop-body">
               <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
             </div>
           </div>
 
-          {/* 📱 메인 모바일 목업 (핸드폰 안에서 깔끔하게 스크롤됨) */}
+          {/* 📱 피그마 아이폰 목업 */}
           <div className="dongw__cover-phone">
-            <img src={phoneFrame} alt="phone frame" className="dongw__phone-frame" />
-            <div className="dongw__phone-body">
-              <img src={mobileWeb} alt="동해관광 모바일 메인" className="dongw__phone-screen" />
+            <img src={figmaPhoneFrame} alt="iPhone frame" className="dongw__phone-frame" />
+            <div className="dongw__island">
+              <div className="dongw__island-bar" />
+              <img src={figmaCamera} alt="" className="dongw__island-camera" />
+            </div>
+            <div className="dongw__phone-content">
+              <img src={figmaPhoneScreen} alt="동해관광 모바일 메인" />
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* ── 설명 프레임 ── */}
+      {/* ── 설명 프레임 (유지) ── */}
       <section className="dongw__desc">
         <div className="dongw__desc-bg">
           <div className="dongw__desc-panel dongw__desc-panel--1" />
           <div className="dongw__desc-panel dongw__desc-panel--2" />
         </div>
-        
+
         <div className="dongw__desc-left">
           <div className="dongw__par">
             <h3 className="dongw__par-title">Problem</h3>
@@ -77,7 +124,6 @@ export default function DonghaeWebsite({ onBack }) {
           <p className="dongw__label">동해관광 서브<br />pc web 리디자인</p>
         </div>
 
-        {/* 하단 서브 고정 목업 구간 */}
         <div className="dongw__desc-right">
           <img src={subWeb} alt="동해관광 서브 PC" className="dongw__sub-mac" />
           <div className="dongw__sub-phone-wrap">
@@ -89,5 +135,5 @@ export default function DonghaeWebsite({ onBack }) {
         </div>
       </section>
     </div>
-  )
+  );
 }
