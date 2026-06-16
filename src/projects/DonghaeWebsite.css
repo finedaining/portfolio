@@ -28,8 +28,9 @@
   justify-content: flex-start;
   min-height: 680px;
   position: relative;
-  overflow: visible; 
+  overflow:hidden;
 }
+
 
 .dongw__cover-text {
   position: relative;
@@ -122,6 +123,8 @@
   overflow: visible;
 }
 
+
+
 /* 아이폰 프레임 (피그마 에셋 — z-index 높아서 위에 얹힘) */
 .dongw__phone-frame {
   width: 100%;
@@ -164,15 +167,18 @@
 /* 폰 액정 내부 스크롤 영역 */
 .dongw__phone-content {
   position: absolute;
+
   top: 1.3%;
   left: 3.4%;
+
   width: 93.1%;
-  bottom: 1.5%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  height: 240%;     /* 중요 */
+
+  overflow: visible;
   border-radius: 36px;
+
   z-index: 1;
-  scrollbar-width: none;
+  overflow-y:auto;
 }
 
 .dongw__phone-content::-webkit-scrollbar {
@@ -181,9 +187,9 @@
 
 .dongw__phone-content img {
   width: 100%;
+  height: auto;
   display: block;
 }
-
 
 /* ── 배경 시트 (z-index: 1, 가장 뒤) ── */
 .dongw__cover-bg {
