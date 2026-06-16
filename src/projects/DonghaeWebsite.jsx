@@ -8,9 +8,9 @@ const laptopFrame = "/images/donghae/browser/mac.png";
 const phoneFrame = "/images/donghae/iphone.png";
 
 // 피그마에서 가져온 새 아이폰 목업 에셋
-const figmaPhoneFrame  = "https://www.figma.com/api/mcp/asset/2fc0eae4-ba85-447d-b9f1-a36dcf12e9f8";
+const figmaPhoneFrame = "https://www.figma.com/api/mcp/asset/2fc0eae4-ba85-447d-b9f1-a36dcf12e9f8";
 const figmaPhoneScreen = "https://www.figma.com/api/mcp/asset/5f450d2c-20c0-4437-84b6-1aa0a4e787e0";
-const figmaCamera      = "https://www.figma.com/api/mcp/asset/b0977398-9d85-454c-921c-ecb58ea4f34f";
+const figmaCamera = "https://www.figma.com/api/mcp/asset/b0977398-9d85-454c-921c-ecb58ea4f34f";
 
 const subWeb = "https://www.figma.com/api/mcp/asset/8e510992-23f6-4160-80cd-e87acbf9b2dd";
 const subMobile = "https://www.figma.com/api/mcp/asset/c0268ba2-7069-41bc-b426-033de58e2fbb";
@@ -65,8 +65,6 @@ export default function DonghaeWebsite({ onBack }) {
       {/* ── 표지 프레임 ── */}
       <section className="dongw__cover">
         <div className="dongw__cover-bg">
-          <img src={bgLeft} alt="" className="dongw__bg-sheet dongw__bg-sheet--left" />
-          <img src={bgRight} alt="" className="dongw__bg-sheet dongw__bg-sheet--right" />
         </div>
 
         <div className="dongw__cover-text">

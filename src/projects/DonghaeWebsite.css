@@ -175,11 +175,14 @@
   height: 240%;     /* 중요 */
 
   overflow: visible;
-  border-radius: 36px;
+
 
   z-index: 1;
   overflow-y:auto;
+
+  border-radius: 24px;
 }
+
 
 .dongw__phone-content::-webkit-scrollbar {
   display: none;
