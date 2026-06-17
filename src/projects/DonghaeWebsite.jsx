@@ -8,17 +8,17 @@ const laptopFrame = "/images/donghae/browser/mac.png";
 const phoneFrame = "/images/donghae/iphone.png";
 
 // 피그마에서 가져온 새 아이폰 목업 에셋 (표지 섹션)
-const figmaPhoneFrame  = "https://www.figma.com/api/mcp/asset/2fc0eae4-ba85-447d-b9f1-a36dcf12e9f8";
+const figmaPhoneFrame = "https://www.figma.com/api/mcp/asset/2fc0eae4-ba85-447d-b9f1-a36dcf12e9f8";
 const figmaPhoneScreen = "https://www.figma.com/api/mcp/asset/5f450d2c-20c0-4437-84b6-1aa0a4e787e0";
-const figmaCamera      = "https://www.figma.com/api/mcp/asset/b0977398-9d85-454c-921c-ecb58ea4f34f";
+const figmaCamera = "https://www.figma.com/api/mcp/asset/b0977398-9d85-454c-921c-ecb58ea4f34f";
 
 // 피그마 설명 섹션 에셋
-const subPcPage      = "https://www.figma.com/api/mcp/asset/be16f47f-8752-427d-919b-b24956488daa";
-const subMobilePage  = "https://www.figma.com/api/mcp/asset/13697420-bab5-4d12-8e8a-634f782839d0";
+const subPcPage = "https://www.figma.com/api/mcp/asset/be16f47f-8752-427d-919b-b24956488daa";
+const subMobilePage = "https://www.figma.com/api/mcp/asset/13697420-bab5-4d12-8e8a-634f782839d0";
 const subIphoneFrame = "https://www.figma.com/api/mcp/asset/2f6434e3-d13c-4d6f-9460-a3cc8ceec2cc";
-const subCamera      = "https://www.figma.com/api/mcp/asset/d825226e-5ce2-4ceb-9f6d-5e25279d9702";
-const psIconBg       = "https://www.figma.com/api/mcp/asset/11414a26-a93c-44f1-b9ff-a69231a033cf";
-const psIconVec      = "https://www.figma.com/api/mcp/asset/6b1c3f16-8c57-4dc8-9269-a9001fa62605";
+const subCamera = "https://www.figma.com/api/mcp/asset/d825226e-5ce2-4ceb-9f6d-5e25279d9702";
+const psIconBg = "https://www.figma.com/api/mcp/asset/11414a26-a93c-44f1-b9ff-a69231a033cf";
+const psIconVec = "https://www.figma.com/api/mcp/asset/6b1c3f16-8c57-4dc8-9269-a9001fa62605";
 
 export default function DonghaeWebsite({ onBack }) {
   const phoneContainerRef = React.useRef(null);
@@ -26,39 +26,68 @@ export default function DonghaeWebsite({ onBack }) {
   const outerImageRef = React.useRef(null);
   const scrollYRef = React.useRef(0);
 
-  // 마우스 휠 이벤트를 직접 감지하여 자연스럽게 이미지를 변형(Transform)시킵니다.
+  const browserContainerRef = React.useRef(null);
+  const browserImageRef = React.useRef(null);
+  const browserScrollYRef = React.useRef(0);
+
+  // 1. 폰 영역 휠 이벤트
   React.useEffect(() => {
     const phoneArea = phoneContainerRef.current;
     if (!phoneArea) return;
 
     const handleWheel = (e) => {
-      // 폰 영역 위에서 휠을 굴릴 때 브라우저 전체 페이지가 함께 스크롤되는 현상을 막아줍니다.
       e.preventDefault();
 
       const outerContainer = outerContainerRef.current;
       const outerImage = outerImageRef.current;
+
       if (!outerContainer || !outerImage) return;
 
-      // 움직일 수 있는 최대 범위 계산
       const maxOuterScroll = outerImage.offsetHeight - outerContainer.clientHeight;
+
       if (maxOuterScroll <= 0) return;
 
-      // 휠 방향과 속도에 따라 좌표 업데이트 (e.deltaY 가 양수면 아래로, 음수면 위로)
       scrollYRef.current += e.deltaY;
 
-      // 최소/최대 범위 제한 (Clamping)
       if (scrollYRef.current < 0) scrollYRef.current = 0;
       if (scrollYRef.current > maxOuterScroll) scrollYRef.current = maxOuterScroll;
 
-      // 움직임 반영
       outerImage.style.transform = `translateY(-${scrollYRef.current}px)`;
     };
 
-    // 브라우저 튕김 방지를 위해 passive: false 옵션을 인스턴스에 직접 바인딩합니다.
-    phoneArea.addEventListener('wheel', handleWheel, { passive: false });
+    phoneArea.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      phoneArea.removeEventListener('wheel', handleWheel);
+      phoneArea.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
+  // 2. 브라우저 영역 휠 이벤트
+  React.useEffect(() => {
+    const browser = browserContainerRef.current;
+    const image = browserImageRef.current;
+
+    if (!browser || !image) return;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+
+      const maxScroll = image.offsetHeight - browser.clientHeight;
+
+      if (maxScroll <= 0) return;
+
+      browserScrollYRef.current += e.deltaY;
+
+      if (browserScrollYRef.current < 0) browserScrollYRef.current = 0;
+      if (browserScrollYRef.current > maxScroll) browserScrollYRef.current = maxScroll;
+
+      image.style.transform = `translateY(-${browserScrollYRef.current}px)`;
+    };
+
+    browser.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      browser.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -68,8 +97,7 @@ export default function DonghaeWebsite({ onBack }) {
 
       {/* ── 표지 프레임 ── */}
       <section className="dongw__cover">
-        <div className="dongw__cover-bg">
-        </div>
+        <div className="dongw__cover-bg"></div>
 
         <div className="dongw__cover-text">
           <h1 className="dongw__cover-title">Web<br />Design</h1>
@@ -78,17 +106,16 @@ export default function DonghaeWebsite({ onBack }) {
 
         {/* ── 표지 메인 목업 컨테이너 ── */}
         <div className="dongw__cover-mockups">
-
           {/* 💻 맥북 목업 */}
           <div className="dongw__cover-laptop">
             <img src={laptopFrame} alt="Macbook Frame" className="dongw__laptop-frame" />
-            <div className="dongw__laptop-body">
-              <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" />
+            <div className="dongw__laptop-body" ref={outerContainerRef}>
+              <img src={macWeb} alt="동해관광 PC 메인" className="dongw__laptop-screen" ref={outerImageRef} />
             </div>
           </div>
 
           {/* 📱 피그마 아이폰 목업 */}
-          <div className="dongw__cover-phone">
+          <div className="dongw__cover-phone" ref={phoneContainerRef}>
             <img src={figmaPhoneFrame} alt="iPhone frame" className="dongw__phone-frame" />
             <div className="dongw__island">
               <div className="dongw__island-bar" />
@@ -98,7 +125,6 @@ export default function DonghaeWebsite({ onBack }) {
               <img src={figmaPhoneScreen} alt="동해관광 모바일 메인" />
             </div>
           </div>
-
         </div>
       </section>
 
@@ -159,47 +185,25 @@ export default function DonghaeWebsite({ onBack }) {
         {/* 오른쪽: 브라우저 + 아이폰 목업 */}
         <div className="dongw__desc-right">
           {/* 사파리 브라우저 목업 */}
-          <div className="dongw__browser">
+          <div className="dongw__screen-browser">
             <div className="dongw__browser-bar">
               <div className="dongw__browser-dots">
                 <span className="dongw__dot dongw__dot--close" />
                 <span className="dongw__dot dongw__dot--min" />
                 <span className="dongw__dot dongw__dot--full" />
               </div>
-              <div className="dongw__browser-url">donghae.go.kr</div>
+              <div className="dongw__browser-url">
+                donghae.go.kr
+              </div>
             </div>
-            <div className="dongw__browser-screen">
-              <img src={subPcPage} alt="동해관광 서브 PC" />
-            </div>
-          </div>
 
-          {/* 서브 아이폰 목업 */}
-          <div className="dongw__sub-phone">
-            <img src={subIphoneFrame} alt="iPhone frame" className="dongw__sub-phone-frame" />
-            <div className="dongw__sub-island">
-              <div className="dongw__sub-island-bar" />
-              <img src={subCamera} alt="" className="dongw__sub-island-camera" />
-            </div>
-            <div className="dongw__sub-phone-screen">
-              <img src={subMobilePage} alt="동해관광 서브 모바일" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── 서브페이지 롱스크린 섹션 ── */}
-      <section className="dongw__screen">
-        <div className="dongw__screen-text">
-          <h2 className="dongw__screen-title">Sub<br />Page</h2>
-          <p className="dongw__screen-sub">동해관광 서브 pc/mobile web</p>
-        </div>
-
-        <div className="dongw__screen-mockups">
-          {/* 💻 맥북 */}
-          <div className="dongw__screen-laptop">
-            <img src={laptopFrame} alt="Macbook Frame" className="dongw__screen-laptop-frame" />
-            <div className="dongw__screen-laptop-body">
-              <img src={subPcPage} alt="동해관광 서브 PC" className="dongw__screen-laptop-screen" />
+            <div className="dongw__screen-browser-body" ref={browserContainerRef}>
+              <img
+                ref={browserImageRef}
+                src={subPcPage}
+                alt="동해관광 서브 PC"
+                className="dongw__screen-browser-image"
+              />
             </div>
           </div>
 
@@ -214,9 +218,9 @@ export default function DonghaeWebsite({ onBack }) {
               <img src={subMobilePage} alt="동해관광 서브 모바일" />
             </div>
           </div>
+
         </div>
       </section>
-
     </div>
   );
 }
