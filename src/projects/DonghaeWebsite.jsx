@@ -1,7 +1,7 @@
 import React from 'react';
 import './DonghaeWebsite.css';
 
-const macWeb = "https://www.figma.com/api/mcp/asset/76a43c6c-c81f-40eb-bece-39c1a004534e";
+const macWeb = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안.jpg";
 const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png";
 const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png";
 const laptopFrame = "/images/donghae/browser/mac.png";
@@ -22,15 +22,17 @@ const psIconVec = "https://www.figma.com/api/mcp/asset/6b1c3f16-8c57-4dc8-9269-a
 
 export default function DonghaeWebsite({ onBack }) {
   const phoneContainerRef = React.useRef(null);
+  const phoneScreenRef = React.useRef(null);
+  const phoneScrollYRef = React.useRef(0);
+
   const outerContainerRef = React.useRef(null);
   const outerImageRef = React.useRef(null);
-  const scrollYRef = React.useRef(0);
 
   const browserContainerRef = React.useRef(null);
   const browserImageRef = React.useRef(null);
   const browserScrollYRef = React.useRef(0);
 
-  // 1. 폰 영역 휠 이벤트
+  // 1. 폰 영역 휠 이벤트 → 폰 이미지 translateY 스크롤
   React.useEffect(() => {
     const phoneArea = phoneContainerRef.current;
     if (!phoneArea) return;
@@ -38,21 +40,17 @@ export default function DonghaeWebsite({ onBack }) {
     const handleWheel = (e) => {
       e.preventDefault();
 
-      const outerContainer = outerContainerRef.current;
-      const outerImage = outerImageRef.current;
+      const phoneScreen = phoneScreenRef.current;
+      if (!phoneScreen) return;
 
-      if (!outerContainer || !outerImage) return;
+      const maxScroll = phoneScreen.offsetHeight - phoneArea.clientHeight;
+      if (maxScroll <= 0) return;
 
-      const maxOuterScroll = outerImage.offsetHeight - outerContainer.clientHeight;
+      phoneScrollYRef.current += e.deltaY;
+      if (phoneScrollYRef.current < 0) phoneScrollYRef.current = 0;
+      if (phoneScrollYRef.current > maxScroll) phoneScrollYRef.current = maxScroll;
 
-      if (maxOuterScroll <= 0) return;
-
-      scrollYRef.current += e.deltaY;
-
-      if (scrollYRef.current < 0) scrollYRef.current = 0;
-      if (scrollYRef.current > maxOuterScroll) scrollYRef.current = maxOuterScroll;
-
-      outerImage.style.transform = `translateY(-${scrollYRef.current}px)`;
+      phoneScreen.style.transform = `translateY(-${phoneScrollYRef.current}px)`;
     };
 
     phoneArea.addEventListener("wheel", handleWheel, { passive: false });
@@ -122,7 +120,7 @@ export default function DonghaeWebsite({ onBack }) {
               <img src={figmaCamera} alt="" className="dongw__island-camera" />
             </div>
             <div className="dongw__phone-content">
-              <img src={figmaPhoneScreen} alt="동해관광 모바일 메인" />
+              <img src={figmaPhoneScreen} alt="동해관광 모바일 메인" ref={phoneScreenRef} />
             </div>
           </div>
         </div>

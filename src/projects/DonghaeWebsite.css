@@ -386,6 +386,8 @@
 
   z-index: 5;
 
+  border-radius: 6px 6px 0 0;
+
 }
 
 .dongw__browser-dots {
@@ -600,6 +602,7 @@
   flex-shrink: 0;
   z-index: 4;
   bottom: 160px;
+  left:180px;
   overflow: visible;
 }
 
@@ -666,6 +669,8 @@
 .dongw__screen-browser {
   width: 580px;
   position: relative;
+  bottom:300px;
+  left:150px;
   overflow: visible;
 }
 
