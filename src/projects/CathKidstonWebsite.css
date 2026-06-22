@@ -1,0 +1,247 @@
+.cath {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.cath__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+/* ── 표지 프레임 ── */
+.cath__cover {
+  background: #efefef;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+}
+
+/* 배경 타원 */
+.cath__cover-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cath__bg-ellipse {
+  position: absolute;
+
+  width: 1800px;
+  max-width: none;
+
+  left: 50%;
+  bottom: -200px;
+
+  top: auto;
+
+  transform: translateX(-50%);
+
+  opacity: 1;
+
+  object-fit: contain;
+}
+
+/* 폰 목업 */
+.cath__cover-mockups {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  outline:3px solid red;
+}
+
+.cath__phone-mockup {
+  height: 620px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+/* 오른쪽 - PAR */
+.cath__cover-right {
+  position: absolute;
+  right: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 380px;
+}
+
+.cath__par-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.cath__par-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.cath__par-body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* (서브) 하단 타이틀 */
+.cath__cover-title-area {
+  position: absolute;
+  left: 60px;
+  bottom: 52px;
+  z-index: 2;
+}
+
+.cath__cover-title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(56px, 8vw, 120px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  color: #fff;
+  margin: 0 0 12px;
+}
+
+.cath__cover-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+}
+
+/* ── 설명 프레임 ── */
+.cath__desc {
+  background: #f0f0f0;
+  border-radius: 20px;
+  padding: 60px;
+  display: flex;
+  gap: 48px;
+  min-height: 440px;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+}
+
+.cath__desc-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.cath__desc-panel {
+  position: absolute;
+  top: 0; bottom: 0;
+}
+
+.cath__desc-panel--1 {
+  right: 0; width: 65%;
+  background: linear-gradient(141deg, #ede0dc 0%, #d9c4be 100%);
+}
+
+.cath__desc-panel--2 {
+  right: 3%; width: 60%;
+  background: linear-gradient(145deg, #f5eded 7%, #e0cece 104%);
+}
+
+/* 왼쪽 */
+.cath__desc-left {
+  flex: 0 0 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cath__credit {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+.cath__label {
+  font-size: 26px;
+  color: #111;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* 오른쪽 - 아이폰 */
+.cath__desc-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cath__sub-phone {
+  position: relative;
+  width: 160px;
+}
+
+.cath__sub-phone-frame {
+  width: 100%;
+  display: block;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.cath__sub-island {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.4%;
+  width: 28.8%;
+  height: 4.1%;
+  z-index: 4;
+}
+
+.cath__sub-island-bar {
+  position: absolute;
+  inset: 0;
+  background: #000;
+  border-radius: 99px;
+}
+
+.cath__sub-phone-screen {
+  position: absolute;
+  top: 1.3%;
+  left: 3.4%;
+  width: 93.1%;
+  bottom: 1.5%;
+  overflow: hidden;
+  border-radius: 30px;
+  z-index: 1;
+}
+
+.cath__sub-phone-screen img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top;
+}

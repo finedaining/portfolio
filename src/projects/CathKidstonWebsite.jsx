@@ -1,4 +1,10 @@
-import './ProjectPage.css'
+import React from 'react';
+import './CathKidstonWebsite.css';
+
+const phoneMockup  = "/images/cathkidston/phone-mockup.png";
+const bgEllipse    = "/images/cathkidston/bg-ellipse.png";
+const iphoneFrame  = "/images/cathkidston/iphone-frame.png";
+const phoneScreen  = "/images/cathkidston/phone-screen.png";
 
 const PAR = [
   {
@@ -13,57 +19,73 @@ const PAR = [
     label: 'Result',
     text: '브랜드 아이덴티티를 반영한 일관된 비주얼 언어로 크리스마스 시즌 한정 상품의 프리미엄 이미지를 강화하였습니다. 혜택 정보의 체계적인 구조화로 소비자 이해도를 높였습니다.',
   },
-]
+];
 
 export default function CathKidstonWebsite({ onBack }) {
   return (
-    <div className="pp">
-      <button className="pp__back" onClick={onBack}>← 포트폴리오로</button>
+    <div className="cath">
+      <button className="cath__back" onClick={onBack}>← 포트폴리오로</button>
 
-      {/* ── 표지 ── */}
-      <section
-        className="pp__cover"
-        style={{ '--cover-from': '#2B080A', '--cover-to': '#5A1218' }}
-      >
-        <div className="pp__cover-bg" />
+      {/* ── 표지 프레임 ── */}
+      <section className="cath__cover">
 
-        <div className="pp__cover-title-area">
-          <h1 className="pp__cover-h1">Web<br />Design</h1>
-          <p className="pp__cover-sub">캐스키드슨 상세페이지 리디자인</p>
+        {/* 배경 */}
+        <div className="cath__cover-bg">
+          <img src={bgEllipse} alt="" className="cath__bg-ellipse" />
         </div>
 
-        <div className="pp__cover-mocks">
-          <div className="pp__mock pp__mock--phone" />
-          <div className="pp__mock pp__mock--phone-offset" />
+        {/* 왼쪽 - 폰 목업 */}
+        <div className="cath__cover-mockups">
+          <img src={phoneMockup} alt="캐스키드슨 폰 목업" className="cath__phone-mockup" />
         </div>
 
-        <div className="pp__cover-par">
-          {PAR.map(({ label, text }) => (
-            <div key={label} className="pp__par-block">
-              <h3 className="pp__par-label">{label}</h3>
-              <p className="pp__par-text">{text}</p>
-            </div>
-          ))}
+        {/* 오른쪽 - PAR + 타이틀 */}
+        <div className="cath__cover-right">
+          <div className="cath__par-list">
+            {PAR.map(({ label, text }) => (
+              <div key={label} className="cath__par">
+                <h3 className="cath__par-title">{label}</h3>
+                <p className="cath__par-body">{text}</p>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* 하단 타이틀 */}
+        <div className="cath__cover-title-area">
+          <h1 className="cath__cover-title">Web<br />Design</h1>
+          <p className="cath__cover-sub">캐스키드슨 상세페이지 리디자인</p>
+        </div>
+
       </section>
 
-      {/* ── 설명 ── */}
-      <section
-        className="pp__desc"
-        style={{
-          '--desc-panel1': '#ede0dc',
-          '--desc-panel2': '#d9c4be',
-        }}
-      >
-        <div className="pp__desc-left">
-          <p className="pp__credit">피그마 · 포토샵, 개인작업 100%</p>
-          <p className="pp__label">캐스키드슨<br />상세페이지 리디자인</p>
+      {/* ── 설명 프레임 ── */}
+      <section className="cath__desc">
+        <div className="cath__desc-bg">
+          <div className="cath__desc-panel cath__desc-panel--1" />
+          <div className="cath__desc-panel cath__desc-panel--2" />
         </div>
-        <div className="pp__desc-right">
-          <div className="pp__mock pp__mock--wide" />
-          <div className="pp__mock pp__mock--phone-sm" />
+
+        {/* 왼쪽 */}
+        <div className="cath__desc-left">
+          <p className="cath__credit">피그마 · 포토샵, 개인작업 100%</p>
+          <p className="cath__label">캐스키드슨<br />상세페이지 리디자인</p>
         </div>
+
+        {/* 오른쪽 - 아이폰 목업 */}
+        <div className="cath__desc-right">
+          <div className="cath__sub-phone">
+            <img src={iphoneFrame} alt="iPhone frame" className="cath__sub-phone-frame" />
+            <div className="cath__sub-island">
+              <div className="cath__sub-island-bar" />
+            </div>
+            <div className="cath__sub-phone-screen">
+              <img src={phoneScreen} alt="캐스키드슨 화면" />
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
-  )
+  );
 }
