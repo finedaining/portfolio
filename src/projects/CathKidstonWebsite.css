@@ -66,15 +66,15 @@
   z-index: 2;
 }
 
-.cath__phone-1 {
+.cath__phone-red {
   position: absolute;
-  left: 380px;
+  left:380px;
   top: 50px;
   height:400px;
   width: auto;
 }
 
-.cath__phone-2 {
+.cath__phone-green {
   position: absolute;
   left: 650px;
   top: 160px;
@@ -112,6 +112,15 @@
   margin: 0;
 }
 
+.cath__par--problem .cath__par-title {
+  color: #000;
+}
+
+.cath__par--problem .cath__par-body {
+  color: #000;
+}
+
+
 /* (서브) 하단 타이틀 */
 .cath__cover-title-area {
   position: absolute;
@@ -141,10 +150,10 @@
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  min-height: 600px;
+  min-height: 520px;
   display: flex;
   align-items: center;
-  background: #1a0406;
+  background: #333;
 }
 
 .cath__detail-bg {
@@ -155,14 +164,18 @@
 }
 
 .cath__detail-velvet {
-  position: absolute;
+ position: absolute;
   top: -35%;          /* 위아래 위치 — 음수면 위로, 양수면 아래로 */
   left: 50%;        /* 좌우 위치 — 50%로 가운데 기준점 설정 */
   transform: translateX(-50%); /* left 50% 기준으로 정중앙 정렬 */
-  width: 120%;      /* 컨테이너보다 20% 더 넓게 */
+  width: 100%;      /* 컨테이너보다 20% 더 넓게 */
   max-width: none;  /* width % 제한 해제 */
   object-fit: cover;
   opacity: 0.85;    /* 투명도 */
+
+  /*inset: 0;
+  height: 100%;
+  object-fit: cover;   ---- 여기 하니까 검정색 부분 오른쪽으로감 ---*/
 }
 
 .cath__detail-left {
@@ -172,13 +185,65 @@
   flex-direction: column;
   gap: 24px;
   position: relative;
+  top:30px;
   z-index: 2;
+  transform: translateY(20px);
+
 }
 
 .cath__detail-toolbar {
-  width: 260px;
-  height: auto;
-  background: transparent;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cath__detail-toolbar-icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+
+.cath__detail-toolbar-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cath__detail-toolbar-bar {
+  position: relative;
+  width: 160px;
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 99px;
+}
+
+.cath__detail-toolbar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #007aff;
+  border-radius: 99px;
+}
+
+.cath__detail-toolbar-dot {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.cath__detail-toolbar-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  white-space: nowrap;
 }
 
 .cath__detail-desc {
@@ -190,7 +255,7 @@
 }
 
 .cath__detail-title {
-  font-size: 22px;
+  font-size: 26px;
   color: #fff;
   margin: 0;
   line-height: 1.3;
@@ -207,13 +272,50 @@
   height: 600px;
 }
 
-.cath__detail-section {
-  height: 100%;
+.cath__detail-layers {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  border: 3px solid red;
+}
+
+.cath__detail-layer-phone {
+  height:550px;
   width: auto;
-  object-fit: cover;
-  object-position: left center;
+  display: block;
+  position: relative;
+  right: 60px;
+  top:25px;
+  z-index: 2;
+}
+
+.cath__detail-layer-letter {
+  position: absolute;
+  left: -180px;
+  top: 420px;
+  height: 180px;
+  width: auto;
+  z-index: 3;
+}
+
+/* 카드 3개 세로 스택 — Figma 666×465px, gap 48px, y=-83 */
+.cath__detail-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;           /* 48px × 0.506 */
+  margin-top: -42px;   /* y=-83 × 0.506, 위로 올림 */
+  flex-shrink: 0;
+}
+
+.cath__detail-layer-cards {
+  height: 235px;     /* 465px × 0.506 */
+  height: auto;
+  width: 420px;
   display: block;
 }
+
+
 
 /* ── 설명 프레임 ── */
 .cath__desc {

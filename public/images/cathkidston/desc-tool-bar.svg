@@ -1,0 +1,39 @@
+<svg width="367" height="61" viewBox="0 0 367 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="367" height="61" fill="#F5F5F5"/>
+<g id="&#236;&#186;&#144;&#236;&#138;&#164;&#237;&#130;&#164;&#235;&#147;&#156;&#236;&#138;&#168; &#236;&#132;&#164;&#235;&#170;&#133;">
+<rect width="1977.72" height="1186.44" transform="translate(-11.3965 -795.498)" fill="#F0F0F0"/>
+<g id="&#236;&#132;&#164;&#235;&#170;&#133;">
+<g id="&#237;&#136;&#180;,&#234;&#184;&#176;&#236;&#151;&#172;&#235;&#143;&#132;">
+<g id="figma">
+<rect id="Rectangle 4573" x="80.9018" y="15.0897" width="274.13" height="4.31215" rx="2.15608" fill="#D9D9D9" stroke="#B8B8B9" stroke-width="0.616021"/>
+<rect id="Rectangle 4574" x="80.6791" y="14.7353" width="264.41" height="5.08346" rx="2.54173" fill="#007AFF" stroke="#006BE0" stroke-width="0.616021"/>
+<g id="Ellipse 844" filter="url(#filter0_d_424_4662)">
+<circle cx="349.168" cy="17.2486" r="12.3204" fill="white"/>
+<circle cx="349.168" cy="17.2486" r="12.1356" stroke="#C4C4C4" stroke-width="0.369613"/>
+</g>
+<g id="Adobe Apps">
+<g id="figma_2">
+<path id="vector" fill-rule="evenodd" clip-rule="evenodd" d="M29.876 31.0485C29.876 26.9659 33.22 23.6562 37.345 23.6562C41.47 23.6562 44.814 26.9659 44.814 31.0485C44.814 35.1311 41.47 38.4408 37.345 38.4408C33.22 38.4408 29.876 35.1311 29.876 31.0485Z" fill="#1ABCFE"/>
+<path id="vector_2" fill-rule="evenodd" clip-rule="evenodd" d="M14.9375 45.8327C14.9375 41.7501 18.2815 38.4404 22.4065 38.4404H29.8756V45.8327C29.8756 49.9153 26.5316 53.2249 22.4065 53.2249C18.2815 53.2249 14.9375 49.9153 14.9375 45.8327Z" fill="#0ACF83"/>
+<path id="vector_3" fill-rule="evenodd" clip-rule="evenodd" d="M29.876 8.87158V23.6561H37.345C41.47 23.6561 44.814 20.3465 44.814 16.2638C44.814 12.1812 41.47 8.87158 37.345 8.87158H29.876Z" fill="#FF7262"/>
+<path id="vector_4" fill-rule="evenodd" clip-rule="evenodd" d="M14.9375 16.2638C14.9375 20.3465 18.2815 23.6561 22.4065 23.6561H29.8756V8.87158H22.4065C18.2815 8.87158 14.9375 12.1812 14.9375 16.2638Z" fill="#F24E1E"/>
+<path id="vector_5" fill-rule="evenodd" clip-rule="evenodd" d="M14.9375 31.0485C14.9375 35.1311 18.2815 38.4408 22.4065 38.4408H29.8756V23.6562H22.4065C18.2815 23.6562 14.9375 26.9659 14.9375 31.0485Z" fill="#A259FF"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_424_4662" x="331.919" y="5.14984e-05" width="34.497" height="34.497" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="2.46409"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_424_4662"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_424_4662" result="shape"/>
+</filter>
+</defs>
+</svg>
