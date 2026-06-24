@@ -1,10 +1,15 @@
 import React from 'react';
 import './CathKidstonWebsite.css';
 
-const phoneMockup  = "/images/cathkidston/phone-mockup.png";
-const bgEllipse    = "/images/cathkidston/bg-ellipse.png";
-const iphoneFrame  = "/images/cathkidston/iphone-frame.png";
-const phoneScreen  = "/images/cathkidston/phone-screen.png";
+const phone1         = "/images/cathkidston/phone-1.png";
+const phone2         = "/images/cathkidston/phone-2.png";
+const bgEllipse      = "/images/cathkidston/bg-ellipse.png";
+const iphoneFrame    = "/images/cathkidston/iphone-frame.png";
+const phoneScreen    = "/images/cathkidston/phone-screen.png";
+const detailVelvetBg = "/images/cathkidston/desc-velvet-bg.png";
+const detailSection  = "/images/cathkidston/desc-section.png";
+const detailPhoneSc  = "/images/cathkidston/desc-phone-screen.png";
+const detailToolBar  = "/images/cathkidston/desc-tool-bar.png";
 
 const PAR = [
   {
@@ -34,9 +39,10 @@ export default function CathKidstonWebsite({ onBack }) {
           <img src={bgEllipse} alt="" className="cath__bg-ellipse" />
         </div>
 
-        {/* 왼쪽 - 폰 목업 */}
+        {/* 왼쪽 - 폰 목업 두 개 */}
         <div className="cath__cover-mockups">
-          <img src={phoneMockup} alt="캐스키드슨 폰 목업" className="cath__phone-mockup" />
+          <img src={phone1} alt="캐스키드슨 첫번째 폰" className="cath__phone-1" />
+          <img src={phone2} alt="캐스키드슨 두번째 폰" className="cath__phone-2" />
         </div>
 
         {/* 오른쪽 - PAR + 타이틀 */}
@@ -59,33 +65,32 @@ export default function CathKidstonWebsite({ onBack }) {
 
       </section>
 
-      {/* ── 설명 프레임 ── */}
-      <section className="cath__desc">
-        <div className="cath__desc-bg">
-          <div className="cath__desc-panel cath__desc-panel--1" />
-          <div className="cath__desc-panel cath__desc-panel--2" />
+      {/* ── 상세 프레임 ── */}
+      <section className="cath__detail">
+        <div className="cath__detail-bg">
+          <img src={detailVelvetBg} alt="" className="cath__detail-velvet" />
         </div>
 
-        {/* 왼쪽 */}
-        <div className="cath__desc-left">
-          <p className="cath__credit">피그마 · 포토샵, 개인작업 100%</p>
-          <p className="cath__label">캐스키드슨<br />상세페이지 리디자인</p>
+        {/* 왼쪽: 텍스트 */}
+        <div className="cath__detail-left">
+          <img src={detailToolBar} alt="피그마, 개인작업 100%" className="cath__detail-toolbar" />
+          <p className="cath__detail-desc">
+            PC 버전과의 시각적 일관성을 유지하는 것을 기본 방향으로 설정하면서,
+            모바일 환경에서는 불필요한 여백을 줄이고 주요 콘텐츠가 한눈에 들어올 수 있도록
+            인터페이스 변수를 세밀하게 조정했습니다. 이를 통해 화면 크기와 사용 맥락이
+            달라져도 동일한 브랜드 경험을 유지할 수 있도록 하였으며, 핵심 요소를 쉽게
+            파악할 수 있는 구조를 구현했습니다.
+          </p>
+          <h2 className="cath__detail-title">캐스키드슨 상세<br />페이지 리디자인</h2>
         </div>
 
-        {/* 오른쪽 - 아이폰 목업 */}
-        <div className="cath__desc-right">
-          <div className="cath__sub-phone">
-            <img src={iphoneFrame} alt="iPhone frame" className="cath__sub-phone-frame" />
-            <div className="cath__sub-island">
-              <div className="cath__sub-island-bar" />
-            </div>
-            <div className="cath__sub-phone-screen">
-              <img src={phoneScreen} alt="캐스키드슨 화면" />
-            </div>
-          </div>
+        {/* 오른쪽: 폰 + 카드 섹션 이미지 */}
+        <div className="cath__detail-right">
+          <img src={detailSection} alt="캐스키드슨 상세페이지 섹션" className="cath__detail-section" />
         </div>
-
       </section>
+
+  
     </div>
   );
 }

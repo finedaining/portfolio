@@ -55,23 +55,31 @@
   object-fit: contain;
 }
 
-/* 폰 목업 */
+/* 폰 목업 컨테이너 */
 .cath__cover-mockups {
   position: absolute;
-  left: 60px;
-  top: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 580px;
+  height: 640px;
   z-index: 2;
-  outline:3px solid red;
 }
 
-.cath__phone-mockup {
-  height: 620px;
+.cath__phone-1 {
+  position: absolute;
+  left: 380px;
+  top: 50px;
+  height:400px;
   width: auto;
-  object-fit: contain;
-  mix-blend-mode: multiply;
+}
+
+.cath__phone-2 {
+  position: absolute;
+  left: 650px;
+  top: 160px;
+  height: 400px;
+  width: auto;
 }
 
 /* 오른쪽 - PAR */
@@ -126,6 +134,85 @@
   font-size: 18px;
   color: rgba(255,255,255,0.8);
   margin: 0;
+}
+
+/* ── 상세 프레임 ── */
+.cath__detail {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  background: #1a0406;
+}
+
+.cath__detail-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cath__detail-velvet {
+  position: absolute;
+  top: -35%;          /* 위아래 위치 — 음수면 위로, 양수면 아래로 */
+  left: 50%;        /* 좌우 위치 — 50%로 가운데 기준점 설정 */
+  transform: translateX(-50%); /* left 50% 기준으로 정중앙 정렬 */
+  width: 120%;      /* 컨테이너보다 20% 더 넓게 */
+  max-width: none;  /* width % 제한 해제 */
+  object-fit: cover;
+  opacity: 0.85;    /* 투명도 */
+}
+
+.cath__detail-left {
+  flex: 0 0 380px;
+  padding: 60px 40px 60px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.cath__detail-toolbar {
+  width: 260px;
+  height: auto;
+  background: transparent;
+}
+
+.cath__detail-desc {
+  font-size: 13px;
+  line-height: 1.85;
+  color: rgba(255,255,255,0.8);
+  margin: 0;
+  word-break: keep-all;
+}
+
+.cath__detail-title {
+  font-size: 22px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cath__detail-right {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+  height: 600px;
+}
+
+.cath__detail-section {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
 }
 
 /* ── 설명 프레임 ── */
