@@ -1,0 +1,329 @@
+.jigu {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.jigu__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+/* ── 공통 로고 배지 ── */
+.jigu__logo {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  height: 40px;
+  width: auto;
+  z-index: 3;
+}
+
+.jigu__logo--dark {
+  /* 로고 자체 색상 유지 */
+}
+
+/* ── 공통 툴 배지 ── */
+.jigu__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.jigu__badge--bottom-left {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  z-index: 3;
+}
+
+.jigu__badge--inline {
+  margin-top: 24px;
+}
+
+.jigu__badge-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.jigu__badge-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.jigu__badge-bar {
+  position: relative;
+  width: 160px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 99px;
+}
+
+.jigu__badge-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #007aff;
+  border-radius: 99px;
+}
+
+.jigu__badge-dot {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #007aff;
+}
+
+.jigu__badge-label {
+  font-size: 12px;
+  color: #474747;
+  white-space: nowrap;
+}
+
+.jigu__badge-label--white {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ── 1. 표지 (Branding) ── */
+.jigu__cover {
+  background: #f0f0f0;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.jigu__cover-left {
+  flex: 0 0 50%;
+  padding: 80px 60px 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.jigu__cover-title {
+  font-size: clamp(64px, 8vw, 120px);
+  font-weight: 400;
+  letter-spacing: -4px;
+  line-height: 0.95;
+  color: #111;
+  margin: 0;
+}
+
+.jigu__cover-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jigu__cover-subtitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.jigu__cover-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+  word-break: keep-all;
+  max-width: 420px;
+}
+
+.jigu__cover-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.jigu__cover-circles {
+  position: absolute;
+  right: -80px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 130%;
+  width: auto;
+  pointer-events: none;
+}
+
+/* ── 2. PC 웹 ── */
+.jigu__pc {
+  background: #f0f0f0;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jigu__pc-mockup-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.jigu__pc-mockup {
+  width: 80%;
+  max-width: 900px;
+  height: auto;
+  display: block;
+}
+
+.jigu__pc-label {
+  position: absolute;
+  bottom: 32px;
+  right: 40px;
+  font-size: 22px;
+  color: #111;
+  margin: 0;
+  z-index: 3;
+}
+
+/* ── 3. 모바일 웹 ── */
+.jigu__mobile {
+  background: #f0f0f0;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.jigu__mobile-left {
+  flex: 0 0 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 680px;
+}
+
+.jigu__mobile-mockup {
+  height: 110%;
+  width: auto;
+  display: block;
+  position: relative;
+  left: -20px;
+}
+
+.jigu__mobile-right {
+  flex: 1;
+  padding: 60px 60px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── 공통 섹션 텍스트 ── */
+.jigu__section-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.jigu__section-title--white {
+  color: #fff;
+}
+
+.jigu__section-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.jigu__section-desc--white {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ── 4. 모바일 앱 ── */
+.jigu__app {
+  background: #178A3B;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.jigu__app-left {
+  flex: 0 0 52%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 680px;
+}
+
+.jigu__app-mockup {
+  height: 130%;
+  width: auto;
+  display: block;
+  position: relative;
+  left: -20px;
+}
+
+.jigu__app-right {
+  flex: 1;
+  padding: 60px 60px 60px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.jigu__app-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+/* app 섹션 배지 바 색상 */
+.jigu__app .jigu__badge-bar {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.jigu__app .jigu__badge-dot {
+  border-color: #fff;
+}

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import ToggleButtonGroup from './components/ToggleButtonGroup'
 import DonghaeWebsite from './projects/DonghaeWebsite'
 import CathKidstonWebsite from './projects/CathKidstonWebsite'
-import JigujabaWebsite from './projects/JigujabaWebsite'
+import JiguJavaWebsite from './projects/JiguJavaWebsite'
 import InobelWebsite from './projects/InobelWebsite'
 import DodreamWebsite from './projects/DodreamWebsite'
 import VintageHouseWebsite from './projects/VintageHouseWebsite'
@@ -329,7 +329,7 @@ function Contact() {
 const PROJECT_PAGE_MAP = {
   1: (back) => <DonghaeWebsite onBack={back} />,
   2: (back) => <CathKidstonWebsite onBack={back} />,
-  3: (back) => <JigujabaWebsite onBack={back} />,
+  3: (back) => <JiguJavaWebsite onBack={back} />,
   4: (back) => <InobelWebsite onBack={back} />,
   5: (back) => <DodreamWebsite onBack={back} />,
   6: (back) => <VintageHouseWebsite onBack={back} />,
