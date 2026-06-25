@@ -99,7 +99,7 @@ export default function CathKidstonWebsite({ onBack }) {
             달라져도 동일한 브랜드 경험을 유지할 수 있도록 하였으며, 핵심 요소를 쉽게
             파악할 수 있는 구조를 구현했습니다.
           </p>
-          <p className="cath__detail-title">캐스키드슨 상세<br />페이지 리디자인</p>
+          <p className="cath__detail-title">캐스키드슨 상세 페이지 리디자인</p>
         </div>
 
         {/* 오른쪽: 레이어별 조합 */}
