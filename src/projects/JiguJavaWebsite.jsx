@@ -1,14 +1,30 @@
 import React from 'react';
 import './JiguJavaWebsite.css';
 
-const logo        = "/images/jigujava/logo.svg";
-const coverCircles= "/images/jigujava/cover-circles.png";
-const pcMockup    = "/images/jigujava/pc-mockup.png";
-const mobileMock  = "/images/jigujava/mobile-mockup.png";
-const appMockup   = "/images/jigujava/app-mockup.png";
-const appIcon     = "/images/jigujava/app-icon.svg";
+const logo         = "/images/jigujava/logo.svg";
+const coverCircles= "/images/jigujava/cover.svg";
 const psIcon      = "/images/jigujava/ps-icon.png";
 const figmaIcon   = "/images/jigujava/Figma-app.png";
+
+/* PC 섹션 */
+const pcBase      = "/images/jigujava/pc-mockup.svg";
+const pcWin1      = "/images/jigujava/zigu-web-pc1.svg";
+const pcWin2      = "/images/jigujava/zigu-web-pc2.svg";
+const pcWin3      = "/images/jigujava/zigu-web-pc3.svg";
+const pcWin4      = "/images/jigujava/zigu-web-pc4.svg";
+
+/* 모바일 웹 섹션 */
+const phoneFull   = "/images/jigujava/zigu-web-phone-full.svg";
+const phone1      = "/images/jigujava/zigu-web-phone1.svg";
+const phone2      = "/images/jigujava/zigu-web-phone2.svg";
+
+/* 모바일 앱 섹션 */
+const appPhone1   = "/images/jigujava/zigu-app-1.svg";
+const appPhone2   = "/images/jigujava/zigu-app-2.svg";
+const appPhone3   = "/images/jigujava/zigu-app-3.svg";
+const appPhone4   = "/images/jigujava/zigu-app-4.svg";
+const appIcon     = "/images/jigujava/zigu-app-icon.svg";
+const appIos      = "/images/jigujava/zigu-app-ios.svg";
 
 export default function JiguJavaWebsite({ onBack }) {
   return (
@@ -47,17 +63,22 @@ export default function JiguJavaWebsite({ onBack }) {
         </div>
       </section>
 
-      {/* ── 2. PC 웹 ── */}
+      {/* ── 2. PC 웹 (레이어 순서 변경 반영 완료) ── */}
       <section className="jigu__pc">
         <img src={logo} alt="지구자바" className="jigu__logo jigu__logo--dark" />
 
-        <div className="jigu__pc-mockup-wrap">
-          <img src={pcMockup} alt="지구자바 pc 웹 목업" className="jigu__pc-mockup" />
+        <div className="jigu__pc-stage">
+          {/* 각 요소의 겹침 관계는 CSS의 z-index에 설정되어 통제됩니다 */}
+          <img src={pcWin1} alt="" className="jigu__pc-win jigu__pc-win--1" />
+          <img src={pcBase} alt="" className="jigu__pc-base" />
+          <img src={pcWin4} alt="" className="jigu__pc-win jigu__pc-win--4" />
+          <img src={pcWin3} alt="" className="jigu__pc-win jigu__pc-win--3" />
+          <img src={pcWin2} alt="" className="jigu__pc-win jigu__pc-win--2" />
         </div>
 
         <p className="jigu__pc-label">지구자바 pc web</p>
 
-        <div className="jigu__badge jigu__badge--bottom-left">
+        <div className="jigu__badge">
           <img src={psIcon} alt="Photoshop" className="jigu__badge-icon" />
           <div className="jigu__badge-bar-wrap">
             <div className="jigu__badge-bar">
@@ -73,8 +94,10 @@ export default function JiguJavaWebsite({ onBack }) {
       <section className="jigu__mobile">
         <img src={logo} alt="지구자바" className="jigu__logo jigu__logo--dark" />
 
-        <div className="jigu__mobile-left">
-          <img src={mobileMock} alt="지구자바 모바일 웹 목업" className="jigu__mobile-mockup" />
+        <div className="jigu__mobile-stage">
+          <img src={phone2} alt="" className="jigu__mobile-phone jigu__mobile-phone--back" />
+          <img src={phone1} alt="" className="jigu__mobile-phone jigu__mobile-phone--front" />
+          <img src={phoneFull} alt="" className="jigu__mobile-phone jigu__mobile-phone--full" />
         </div>
 
         <div className="jigu__mobile-right">
@@ -93,7 +116,7 @@ export default function JiguJavaWebsite({ onBack }) {
             명확하게 경험할 수 있도록 디자인하였습니다.
           </p>
 
-          <div className="jigu__badge jigu__badge--inline">
+          <div className="jigu__badge">
             <img src={psIcon} alt="Photoshop" className="jigu__badge-icon" />
             <div className="jigu__badge-bar-wrap">
               <div className="jigu__badge-bar">
@@ -110,8 +133,12 @@ export default function JiguJavaWebsite({ onBack }) {
       <section className="jigu__app">
         <img src={logo} alt="지구자바" className="jigu__logo" />
 
-        <div className="jigu__app-left">
-          <img src={appMockup} alt="지구자바 앱 목업" className="jigu__app-mockup" />
+        <div className="jigu__app-stage">
+          <img src={appPhone4} alt="" className="jigu__app-phone jigu__app-phone--4" />
+          <img src={appPhone3} alt="" className="jigu__app-phone jigu__app-phone--3" />
+          <img src={appPhone2} alt="" className="jigu__app-phone jigu__app-phone--2" />
+          <img src={appPhone1} alt="" className="jigu__app-phone jigu__app-phone--1" />
+          <img src={appIos}    alt="" className="jigu__app-ios-bg" />
         </div>
 
         <div className="jigu__app-right">
@@ -120,20 +147,20 @@ export default function JiguJavaWebsite({ onBack }) {
           <p className="jigu__section-desc jigu__section-desc--white">
             지구자바는 직관적인 UI·UX 구조와 사용자 중심 인터페이스로 설계하여
             사용자가 앱을 통해 일상 속에서 친환경 라이프를 실천할 수 있도록 했습니다.
-            플로깅과 제로 웨이스트 챌린지에 참여해 리워드를 적립할 수 있도록 서비스 흐름을 구성했으며,
+            플로깅과 제로 웨이스트 챌린지에 참여해 리워드를 적립할 수 있도록 service 흐름을 구성했으며,
             적립된 포인트는 지구자바 제품 구매 및 할인에 사용할 수 있도록 리워드 시스템으로 설계했습니다.
             또한 자연 친화적인 이미지를 전달하기 위해 딥 그린 컬러(#178A3B)를 메인 컬러로 적용하고,
             지구자바 캐릭터 디자인을 더해 브랜드 아이덴티티와 개성을 살렸습니다.
           </p>
 
-          <div className="jigu__badge jigu__badge--inline">
+          <div className="jigu__badge">
             <img src={figmaIcon} alt="Figma" className="jigu__badge-icon" />
             <div className="jigu__badge-bar-wrap">
               <div className="jigu__badge-bar">
                 <div className="jigu__badge-fill" />
                 <div className="jigu__badge-dot" />
               </div>
-              <span className="jigu__badge-label jigu__badge-label--white">피그마, 개인작업 100%</span>
+              <span className="jigu__badge-label">피그마, 개인작업 100%</span>
             </div>
           </div>
         </div>

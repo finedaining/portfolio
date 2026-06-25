@@ -18,36 +18,22 @@
   width: fit-content;
 }
 
-/* ── 공통 로고 배지 ── */
+/* ── 공통 로고 ── */
 .jigu__logo {
   position: absolute;
   top: 16px;
   left: 16px;
   height: 40px;
   width: auto;
-  z-index: 3;
+  z-index: 10;
 }
 
-.jigu__logo--dark {
-  /* 로고 자체 색상 유지 */
-}
-
-/* ── 공통 툴 배지 ── */
+/* ── 공통 툴 배지 기본 구조 ── */
 .jigu__badge {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.jigu__badge--bottom-left {
-  position: absolute;
-  left: 28px;
-  bottom: 28px;
-  z-index: 3;
-}
-
-.jigu__badge--inline {
-  margin-top: 24px;
+  z-index: 10;
 }
 
 .jigu__badge-icon {
@@ -74,22 +60,18 @@
   position: absolute;
   left: 0;
   top: 0;
-  width: 100%;
   height: 100%;
-  background: #007aff;
   border-radius: 99px;
 }
 
 .jigu__badge-dot {
   position: absolute;
-  right: -5px;
   top: 50%;
   transform: translateY(-50%);
   width: 12px;
   height: 12px;
   background: #fff;
   border-radius: 50%;
-  border: 2px solid #007aff;
 }
 
 .jigu__badge-label {
@@ -98,9 +80,84 @@
   white-space: nowrap;
 }
 
-.jigu__badge-label--white {
-  color: rgba(255, 255, 255, 0.8);
+
+/* ── 1. 표지 섹션 전용 배지 스타일 (기여도 75%) ── */
+.jigu__cover .jigu__badge {
+  position: absolute;
+  right: 48px;
+  bottom: 40px;
 }
+
+.jigu__cover .jigu__badge-fill {
+  width: 75%;
+  background: #007aff;
+}
+
+.jigu__cover .jigu__badge-dot {
+  left: calc(75% - 6px);
+  border: 2px solid #007aff;
+}
+
+
+/* ── 2. PC 웹 섹션 전용 배지 스타일 (기여도 100%, 좌하단 고정) ── */
+.jigu__pc .jigu__badge {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  z-index: 20; /* 맨 앞 창보다 위에 뜨도록 고정 */
+}
+
+.jigu__pc .jigu__badge-fill {
+  width: 100%;
+  background: #007aff;
+}
+
+.jigu__pc .jigu__badge-dot {
+  right: -5px;
+  border: 2px solid #007aff;
+}
+
+
+/* ── 3. 모바일 웹 섹션 전용 배지 스타일 (기여도 100%, 본문 아래 인라인) ── */
+.jigu__mobile .jigu__badge {
+  margin-top: 24px;
+}
+
+.jigu__mobile .jigu__badge-fill {
+  width: 100%;
+  background: #007aff;
+}
+
+.jigu__mobile .jigu__badge-dot {
+  right: -5px;
+  border: 2px solid #007aff;
+}
+
+
+/* ── 4. 모바일 앱 섹션 전용 배지 스타일 (기여도 100%, 그린 배경용 화이트 디테일) ── */
+.jigu__app .jigu__badge {
+  margin-top: 24px;
+}
+
+.jigu__app .jigu__badge-bar {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.jigu__app .jigu__badge-fill {
+  width: 100%;
+  background: #fff;
+}
+
+.jigu__app .jigu__badge-dot {
+  right: -5px;
+  border: 2px solid #178A3B;
+  background: #fff;
+}
+
+.jigu__app .jigu__badge-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 
 /* ── 1. 표지 (Branding) ── */
 .jigu__cover {
@@ -115,7 +172,7 @@
 
 .jigu__cover-left {
   flex: 0 0 50%;
-  padding: 80px 60px 80px 60px;
+  padding: 80px 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -163,7 +220,7 @@
 
 .jigu__cover-circles {
   position: absolute;
-  right: -80px;
+  right: -20px;
   top: 50%;
   transform: translateY(-50%);
   height: 130%;
@@ -171,32 +228,70 @@
   pointer-events: none;
 }
 
-/* ── 2. PC 웹 ── */
+
+/* ── 2. PC 웹 (레이어 구조 대폭 수정) ── */
 .jigu__pc {
   background: #f0f0f0;
   border-radius: 20px;
   min-height: 680px;
   position: relative;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.jigu__pc-mockup-wrap {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px;
-  box-sizing: border-box;
+.jigu__pc-stage {
+  position: absolute;
+  inset: 0;
 }
 
-.jigu__pc-mockup {
-  width: 80%;
-  max-width: 900px;
+/* 맥북 베이스 자체의 z-index 설정 */
+.jigu__pc-base {
+  position: absolute;
+  left: 4%;
+  top: -8%;
+  width: 74%;
   height: auto;
-  display: block;
+  z-index: 1; /* 1번창 보다는 위, 나머지 창보다는 아래 */
+}
+
+.jigu__pc-win {
+  position: absolute;
+  height: auto;
+}
+
+/* 창 1: 맥북 화면 안으로 삽입 (가장 뒤) */
+.jigu__pc-win--1 {
+  width: 36.1%;
+  left: 460px;
+  top: 70px;
+  
+  z-index: 2; /* 맥북 base(z-index: 2)보다 뒤로 배치되어 안으로 들어감 */
+}
+
+/* 창 4: 뒤쪽 아랫편 */
+.jigu__pc-win--4 {
+  width: 32.2%;
+  left: 270px;
+  top: 300px;
+  
+  z-index: 3;
+}
+
+/* 창 3: 중간 오른편 */
+.jigu__pc-win--3 {
+  width: 29.8%;
+  right: 600px;
+  top: 260px;
+  
+  z-index: 4;
+}
+
+/* 창 2: 맨 앞으로 튀어나오는 메인 창 */
+.jigu__pc-win--2 {
+  width: 31.3%;
+  left: 230px;
+  bottom: 240px;
+  
+  z-index: 5; /* 레이어 중 가장 최상단 배치 */
 }
 
 .jigu__pc-label {
@@ -206,8 +301,9 @@
   font-size: 22px;
   color: #111;
   margin: 0;
-  z-index: 3;
+  z-index: 10;
 }
+
 
 /* ── 3. 모바일 웹 ── */
 .jigu__mobile {
@@ -220,22 +316,40 @@
   align-items: center;
 }
 
-.jigu__mobile-left {
+.jigu__mobile-stage {
   flex: 0 0 50%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   height: 680px;
+  overflow: hidden;
 }
 
-.jigu__mobile-mockup {
-  height: 110%;
+.jigu__mobile-phone {
+  position: absolute;
+  height: auto;
+}
+
+.jigu__mobile-phone--back {
+  width: 42%;
+  right: 0;
+  bottom: -2%;
+  z-index: 1;
+}
+
+.jigu__mobile-phone--front {
+  width: 76%;
+  left: -4%;
+  top: -4%;
+  z-index: 2;
+}
+
+.jigu__mobile-phone--full {
+  display: none;
+  height: 100%;
   width: auto;
-  display: block;
-  position: relative;
-  left: -20px;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 3;
 }
 
 .jigu__mobile-right {
@@ -245,7 +359,7 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 /* ── 공통 섹션 텍스트 ── */
@@ -273,6 +387,7 @@
   color: rgba(255, 255, 255, 0.85);
 }
 
+
 /* ── 4. 모바일 앱 ── */
 .jigu__app {
   background: #178A3B;
@@ -284,22 +399,55 @@
   align-items: center;
 }
 
-.jigu__app-left {
+.jigu__app-stage {
   flex: 0 0 52%;
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   height: 680px;
+  overflow: hidden;
 }
 
-.jigu__app-mockup {
-  height: 130%;
-  width: auto;
-  display: block;
-  position: relative;
-  left: -20px;
+.jigu__app-phone {
+  position: absolute;
+  height: auto;
+}
+
+.jigu__app-phone--4 {
+  width: 34%;
+  left: 34%;
+  top: -2%;
+  z-index: 1;
+}
+
+.jigu__app-phone--3 {
+  width: 34%;
+  left: 20%;
+  top: 4%;
+  z-index: 2;
+}
+
+.jigu__app-phone--2 {
+  width: 36%;
+  left: 6%;
+  top: 8%;
+  z-index: 3;
+}
+
+.jigu__app-phone--1 {
+  width: 28%;
+  left: -4%;
+  top: 12%;
+  z-index: 4;
+}
+
+.jigu__app-ios-bg {
+  position: absolute;
+  right: -8%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52%;
+  height: auto;
+  z-index: 0;
+  opacity: 0.85;
 }
 
 .jigu__app-right {
@@ -309,7 +457,7 @@
   flex-direction: column;
   gap: 20px;
   position: relative;
-  z-index: 2;
+  z-index: 5;
 }
 
 .jigu__app-icon {
@@ -317,13 +465,4 @@
   height: 80px;
   border-radius: 18px;
   flex-shrink: 0;
-}
-
-/* app 섹션 배지 바 색상 */
-.jigu__app .jigu__badge-bar {
-  background: rgba(255, 255, 255, 0.25);
-}
-
-.jigu__app .jigu__badge-dot {
-  border-color: #fff;
 }
