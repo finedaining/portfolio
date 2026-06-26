@@ -135,7 +135,7 @@
 
 
 /* ── 4. 모바일 앱 섹션 전용 배지 스타일 (기여도 100%, 그린 배경용 화이트 디테일) ── */
-.jigu__app .jigu__badge {
+.jigu__- .jigu__badge {
   margin-top: 24px;
 }
 
@@ -323,33 +323,72 @@
   overflow: hidden;
 }
 
+/* 모바일 배경 블롭 */
+.jigu__mobile-bg {
+  position: absolute;
+  pointer-events: none;
+}
+
+/* bg2: 큰 미디엄그린 타원 — 스테이지 중앙 */
+.jigu__mobile-bg--2 {
+  width: 80%;
+  left: 20%;
+  top: 18%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+/* bg1: 작은 다크그린 타원 — 좌측에 걸침 */
+.jigu__mobile-bg--1 {
+  width: 50%;
+  left: -18%;
+  top: 70%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
 .jigu__mobile-phone {
   position: absolute;
   height: auto;
 }
 
 .jigu__mobile-phone--back {
-  width: 42%;
-  right: 0;
-  bottom: -2%;
+  width: 30%;
+  right:30%;
+  bottom: -3%;
   z-index: 1;
 }
 
 .jigu__mobile-phone--front {
-  width: 76%;
-  left: -4%;
-  top: -4%;
-  z-index: 2;
+  width: 50%;
+  left: 0%;
+  top: 5%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.jigu__mobile-scroll-wrap {
+  position: absolute;
+  width: 250px;
+  left: 70%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .jigu__mobile-phone--full {
-  display: none;
-  height: 100%;
-  width: auto;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  z-index: 3;
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: blur(1.3px);
+  animation: mobile-scroll 14s ease-in-out infinite alternate;
+}
+
+@keyframes mobile-scroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-62%); }
 }
 
 .jigu__mobile-right {
@@ -403,7 +442,6 @@
   flex: 0 0 52%;
   position: relative;
   height: 680px;
-  overflow: hidden;
 }
 
 .jigu__app-phone {
@@ -412,52 +450,53 @@
 }
 
 .jigu__app-phone--4 {
-  width: 34%;
-  left: 34%;
-  top: -2%;
-  z-index: 1;
+  width: 78%;
+  left: 53%;
+  top: 4%;
+  z-index: 4;
 }
 
 .jigu__app-phone--3 {
-  width: 34%;
-  left: 20%;
-  top: 4%;
-  z-index: 2;
-}
-
-.jigu__app-phone--2 {
-  width: 36%;
-  left: 6%;
-  top: 8%;
+  width: 78%;
+  left: 32%;
+  top: 3%;
   z-index: 3;
 }
 
+.jigu__app-phone--2 {
+  width: 78%;
+  left: 10%;
+  top: 10%;
+  z-index: 2;
+}
+
 .jigu__app-phone--1 {
-  width: 28%;
-  left: -4%;
-  top: 12%;
-  z-index: 4;
+  width: 64%;
+  left: 5%;
+  top:20%;
+  z-index: 1;
 }
 
 .jigu__app-ios-bg {
   position: absolute;
-  right: -8%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 52%;
+  right: 0;
+  top: 0;
+  width: 30%;
   height: auto;
   z-index: 0;
   opacity: 0.85;
+  pointer-events: none;
 }
 
 .jigu__app-right {
-  flex: 1;
-  padding: 60px 60px 60px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  position: relative;
-  z-index: 5;
+    flex: 1;
+    padding: 60px 60px 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    top: 90px;
+    z-index: 5;
 }
 
 .jigu__app-icon {

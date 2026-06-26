@@ -14,15 +14,17 @@ const pcWin3      = "/images/jigujava/zigu-web-pc3.svg";
 const pcWin4      = "/images/jigujava/zigu-web-pc4.svg";
 
 /* 모바일 웹 섹션 */
-const phoneFull   = "/images/jigujava/zigu-web-phone-full.svg";
-const phone1      = "/images/jigujava/zigu-web-phone1.svg";
+const mobileBg1   = "/images/jigujava/bg1.svg";
+const mobileBg2   = "/images/jigujava/bg2.svg";
+const phoneFull   = "/images/jigujava/zigu-web-phone-long.png";
+const phone1      = "/images/jigujava/zigu-web-phone1.png";
 const phone2      = "/images/jigujava/zigu-web-phone2.svg";
 
 /* 모바일 앱 섹션 */
-const appPhone1   = "/images/jigujava/zigu-app-1.svg";
-const appPhone2   = "/images/jigujava/zigu-app-2.svg";
-const appPhone3   = "/images/jigujava/zigu-app-3.svg";
-const appPhone4   = "/images/jigujava/zigu-app-4.svg";
+const appPhone1   = "/images/jigujava/zigu-app-1.png";
+const appPhone2   = "/images/jigujava/zigu-app-2.png";
+const appPhone3   = "/images/jigujava/zigu-app-3.png";
+const appPhone4   = "/images/jigujava/zigu-app-4.png";
 const appIcon     = "/images/jigujava/zigu-app-icon.svg";
 const appIos      = "/images/jigujava/zigu-app-ios.svg";
 
@@ -95,10 +97,15 @@ export default function JiguJavaWebsite({ onBack }) {
         <img src={logo} alt="지구자바" className="jigu__logo jigu__logo--dark" />
 
         <div className="jigu__mobile-stage">
+          <img src={mobileBg2} alt="" className="jigu__mobile-bg jigu__mobile-bg--2" />
+          <img src={mobileBg1} alt="" className="jigu__mobile-bg jigu__mobile-bg--1" />
           <img src={phone2} alt="" className="jigu__mobile-phone jigu__mobile-phone--back" />
+          <div className="jigu__mobile-scroll-wrap">
+            <img src={phoneFull} alt="" className="jigu__mobile-phone--full" />
+          </div>
           <img src={phone1} alt="" className="jigu__mobile-phone jigu__mobile-phone--front" />
-          <img src={phoneFull} alt="" className="jigu__mobile-phone jigu__mobile-phone--full" />
         </div>
+
 
         <div className="jigu__mobile-right">
           <h2 className="jigu__section-title">지구자바 mobile web</h2>
@@ -133,12 +140,13 @@ export default function JiguJavaWebsite({ onBack }) {
       <section className="jigu__app">
         <img src={logo} alt="지구자바" className="jigu__logo" />
 
+        <img src={appIos} alt="" className="jigu__app-ios-bg" />
+
         <div className="jigu__app-stage">
           <img src={appPhone4} alt="" className="jigu__app-phone jigu__app-phone--4" />
           <img src={appPhone3} alt="" className="jigu__app-phone jigu__app-phone--3" />
           <img src={appPhone2} alt="" className="jigu__app-phone jigu__app-phone--2" />
           <img src={appPhone1} alt="" className="jigu__app-phone jigu__app-phone--1" />
-          <img src={appIos}    alt="" className="jigu__app-ios-bg" />
         </div>
 
         <div className="jigu__app-right">

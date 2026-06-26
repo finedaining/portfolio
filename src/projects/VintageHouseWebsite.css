@@ -1,0 +1,495 @@
+/* ── 전체 래퍼 ── */
+.vhaus {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.vhaus__back {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+}
+
+/* ── 표지 배경 이미지 (bg.svg 저장 시 반영) ── */
+.vhaus__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── 공통 배지 ── */
+.vhaus__badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vhaus__badge-icon {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.vhaus__badge-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vhaus__badge-bar {
+  position: relative;
+  width: 160px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 99px;
+}
+
+.vhaus__badge-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border-radius: 99px;
+  background: #007aff;
+}
+
+.vhaus__badge-dot {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-radius: 50%;
+  border: 2px solid #007aff;
+}
+
+.vhaus__badge-label {
+  font-size: 12px;
+  color: #474747;
+  white-space: nowrap;
+}
+
+/* ── 공통 섹션 텍스트 ── */
+.vhaus__section-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.5px;
+  font-family: 'Pretendard', sans-serif;
+}
+
+.vhaus__section-desc {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+  word-break: keep-all;
+}
+
+
+/* ══════════════════════════════════════════
+   1. 표지 / 브랜딩
+══════════════════════════════════════════ */
+.vhaus__cover {
+  background: #efe8d8;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch;
+}
+
+.vhaus__cover-logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 20px;
+  color: #5d4d3e;
+  z-index: 10;
+  letter-spacing: -0.5px;
+}
+
+/* 왼쪽 텍스트 영역 */
+.vhaus__cover-left {
+  flex: 0 0 52%;
+  padding: 64px 56px 56px 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.vhaus__cover-title {
+  font-family: 'Arimo', sans-serif;
+  font-size: clamp(64px, 9vw, 93px);
+  font-weight: 500;
+  letter-spacing: -5px;
+  line-height: 0.95;
+  color: #111;
+  margin: 0;
+}
+
+.vhaus__cover-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vhaus__cover-subtitle {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.vhaus__cover-desc {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+  word-break: keep-all;
+  max-width: 520px;
+}
+
+/* 오른쪽 사진 영역 */
+.vhaus__cover-right {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.vhaus__cover-photo {
+  position: absolute;
+  height: auto;
+}
+
+/* 가장 큰 사진 (kitchen, VINTAGE & COZY) */
+.vhaus__cover-photo--1 {
+  width: 48%;
+  left: -2%;
+  top: 3%;
+  z-index: 1;
+}
+
+/* 중간 사진 (방 인테리어) */
+.vhaus__cover-photo--2 {
+  width: 37%;
+  left: 38%;
+  top: 1%;
+  z-index: 2;
+}
+
+/* 작은 사진 (사이드 테이블) */
+.vhaus__cover-photo--3 {
+  width: 26%;
+  left: 65%;
+  top: 5%;
+  z-index: 3;
+}
+
+/* 가장 작은 사진 (brand) */
+.vhaus__cover-photo--4 {
+  width: 22%;
+  left: 74%;
+  top: 28%;
+  z-index: 4;
+}
+
+/* VINTAGE HAUS 로고 박스 */
+.vhaus__cover-logo-box {
+  position: absolute;
+  bottom: 10%;
+  left: 55%;
+  width: 40%;
+  height: auto;
+  z-index: 5;
+}
+
+/* 컬러 팔레트 */
+.vhaus__cover-palette {
+  position: absolute;
+  bottom: 10%;
+  right: -2%;
+  width: 44%;
+  height: auto;
+  z-index: 5;
+}
+
+/* 표지 배지 (40%) */
+.vhaus__cover .vhaus__badge {
+  margin-top: 8px;
+}
+
+.vhaus__cover .vhaus__badge-fill {
+  width: 40%;
+}
+
+.vhaus__cover .vhaus__badge-dot {
+  left: calc(40% - 6px);
+}
+
+
+/* ══════════════════════════════════════════
+   2. 맡은 역할 / 와이어프레임
+══════════════════════════════════════════ */
+.vhaus__wireframe {
+  background: linear-gradient(149deg, #ece6f2 0%, #f1ede4 100%);
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.vhaus__wireframe-logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 20px;
+  color: #5d4d3e;
+  z-index: 10;
+  letter-spacing: -0.5px;
+}
+
+/* 와이어프레임 이미지 스테이지 */
+.vhaus__wireframe-stage {
+  flex: 0 0 52%;
+  position: relative;
+  height: 680px;
+  overflow: hidden;
+}
+
+.vhaus__wf-img {
+  position: absolute;
+  height: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 메인 Hero 블록 (phone wireframe top) */
+.vhaus__wf-img--main {
+  width: 42%;
+  left: 6%;
+  top: 8%;
+  z-index: 2;
+}
+
+/* 카테고리 블록 (phone wireframe middle) */
+.vhaus__wf-img--category {
+  width: 42%;
+  left: 6%;
+  top: calc(8% + 175px);
+  z-index: 2;
+}
+
+/* 이벤트 페이지 (right wireframe) */
+.vhaus__wf-img--event {
+  width: 50%;
+  left: 40%;
+  top: 5%;
+  z-index: 3;
+}
+
+/* 오른쪽 텍스트 영역 */
+.vhaus__wireframe-right {
+  flex: 1;
+  padding: 60px 56px 60px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  position: relative;
+  z-index: 5;
+}
+
+.vhaus__wireframe-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vhaus__role-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.vhaus__role-tag {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  color: #111;
+  margin: 0;
+  font-weight: 400;
+}
+
+.vhaus__role-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.vhaus__role-item {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  color: #444;
+  margin: 0;
+  line-height: 1.6;
+}
+
+
+/* ══════════════════════════════════════════
+   3. 코드 구현 페이지 (웹 목업)
+══════════════════════════════════════════ */
+.vhaus__mockup {
+  background: #f0f0f0;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vhaus__mockup-logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  font-family: 'Zen Old Mincho', serif;
+  font-size: 20px;
+  color: #5d4d3e;
+  z-index: 10;
+  letter-spacing: -0.5px;
+}
+
+.vhaus__mockup-label {
+  position: absolute;
+  top: 60px;
+  left: 140px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  color: #333;
+  margin: 0;
+  z-index: 10;
+}
+
+/* 데코 오브제 */
+.vhaus__deco {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.vhaus__deco--rose {
+  width: 7%;
+  left: 3%;
+  top: 35%;
+}
+
+.vhaus__deco--pastry {
+  width: 9%;
+  left: 8%;
+  bottom: 12%;
+}
+
+.vhaus__deco--plant {
+  width: 6%;
+  right: 1%;
+  bottom: 5%;
+}
+
+.vhaus__deco--leaf {
+  width: 4%;
+  right: 36%;
+  top: 5%;
+}
+
+.vhaus__deco--teacup {
+  width: 7%;
+  right: 2%;
+  top: 30%;
+}
+
+/* 브라우저 목업 아이템 */
+.vhaus__mockup-item {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 5;
+}
+
+.vhaus__mockup-item--main {
+  left: 15%;
+  top: 8%;
+  width: 38%;
+}
+
+.vhaus__mockup-item--event {
+  left: 44%;
+  top: 36%;
+  width: 38%;
+}
+
+.vhaus__mockup-browser {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.vhaus__mockup-tag {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.vhaus__mockup-tag-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #111;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  background: rgba(241, 234, 218, 0.85);
+  padding: 4px 8px;
+  border-radius: 2px;
+}
+
+/* 웹 목업 배지 (Figma 100%) */
+.vhaus__badge--mockup {
+  position: absolute;
+  left: 40px;
+  bottom: 40px;
+  z-index: 10;
+}
+
+.vhaus__badge--mockup .vhaus__badge-fill {
+  width: 100%;
+}
+
+.vhaus__badge--mockup .vhaus__badge-dot {
+  right: -5px;
+  left: auto;
+}
