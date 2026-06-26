@@ -43,10 +43,10 @@ export default function VintageHouseWebsite({ onBack }) {
           <div className="vhaus__cover-info">
             <p className="vhaus__cover-subtitle">빈티지 하우스 (vintage haus)&nbsp; 브랜드 런칭</p>
             <p className="vhaus__cover-desc">
-              빈티지 하우스(Vintage Haus)는 시간의 흔적이 담긴 따뜻한 아름다움을 전하는 프리미엄 빈티지 가구 브랜드입니다.<br />
-              베이지 컬러(#F1EADA)와 딥 브라운 컬러(#584738)를 중심으로 구성하여 차분하고 코지한 무드를 표현하고자 하였습니다.<br />
-              폰트는 Zen Old Mincho와 Noto Sans를 사용해 고풍스러운 감성을 유지하면서도 가독성을 고려해 구성하였습니다.<br />
-              직관적인 화면 구성과 반응형 레이아웃을 적용해 사용 편의성을 높였으며,<br />
+              빈티지 하우스(Vintage Haus)는 시간의 흔적이 담긴 따뜻한 아름다움을 전하는 프리미엄 빈티지 가구 브랜드입니다.
+              베이지 컬러(#F1EADA)와 딥 브라운 컬러(#584738)를 중심으로 구성하여 차분하고 코지한 무드를 표현하고자 하였습니다.
+              폰트는 Zen Old Mincho와 Noto Sans를 사용해 고풍스러운 감성을 유지하면서도 가독성을 고려해 구성하였습니다.
+              직관적인 화면 구성과 반응형 레이아웃을 적용해 사용 편의성을 높였으며,
               감성적인 이미지와 톤앤매너를 통해 빈티지 하우스의 브랜드 아이덴티티를 전달하고자 하였습니다.
             </p>
           </div>
@@ -69,6 +69,11 @@ export default function VintageHouseWebsite({ onBack }) {
           <img src={coverPhoto4} alt="" className="vhaus__cover-photo vhaus__cover-photo--4" />
           <img src={coverLogoBox}  alt="VINTAGE HAUS" className="vhaus__cover-logo-box" />
           <img src={coverPalette}  alt="Color Palette" className="vhaus__cover-palette" />
+          <p className="vhaus__cover-caption vhaus__cover-caption--1">VINTAGE &amp; COZY<br />DESIGN CONCEPT</p>
+          <p className="vhaus__cover-caption vhaus__cover-caption--2">WEB DESIGN<br />CODING PROJECT</p>
+          <p className="vhaus__cover-caption vhaus__cover-caption--3">BRAND<br />LUNCHING</p>
+          <p className="vhaus__cover-caption vhaus__cover-caption--4">(color palette)</p>
+          <p className="vhaus__cover-caption vhaus__cover-caption--5">(logo system)</p>
         </div>
       </section>
 

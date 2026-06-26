@@ -142,7 +142,7 @@
 .vhaus__cover-title {
   font-family: 'Arimo', sans-serif;
   font-size: clamp(64px, 9vw, 93px);
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -5px;
   line-height: 0.95;
   color: #111;
@@ -168,7 +168,7 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 13px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.6;
   margin: 0;
   word-break: keep-all;
   max-width: 520px;
@@ -178,7 +178,6 @@
 .vhaus__cover-right {
   flex: 1;
   position: relative;
-  overflow: hidden;
 }
 
 .vhaus__cover-photo {
@@ -188,41 +187,41 @@
 
 /* 가장 큰 사진 (kitchen, VINTAGE & COZY) */
 .vhaus__cover-photo--1 {
-  width: 48%;
-  left: -2%;
-  top: 3%;
-  z-index: 1;
+  width: 38%;
+  left: -30%;
+  top: 12%;
+  z-index: 2;
 }
 
 /* 중간 사진 (방 인테리어) */
 .vhaus__cover-photo--2 {
-  width: 37%;
-  left: 38%;
-  top: 1%;
-  z-index: 2;
+  width: 34%;
+  right: 70%;
+  top: 28%;
+  z-index: 1;
 }
 
 /* 작은 사진 (사이드 테이블) */
 .vhaus__cover-photo--3 {
-  width: 26%;
-  left: 65%;
-  top: 5%;
+  width: 20%;
+  left: 32%;
+  top: 15%;
   z-index: 3;
 }
 
 /* 가장 작은 사진 (brand) */
 .vhaus__cover-photo--4 {
   width: 22%;
-  left: 74%;
-  top: 28%;
+  left: 57%;
+  top: 32%;
   z-index: 4;
 }
 
 /* VINTAGE HAUS 로고 박스 */
 .vhaus__cover-logo-box {
   position: absolute;
-  bottom: 10%;
-  left: 55%;
+  bottom: 5%;
+  left: 15%;
   width: 40%;
   height: auto;
   z-index: 5;
@@ -231,11 +230,54 @@
 /* 컬러 팔레트 */
 .vhaus__cover-palette {
   position: absolute;
-  bottom: 10%;
-  right: -2%;
+  bottom: 30%;
+  right: 12%;
   width: 44%;
   height: auto;
   z-index: 5;
+}
+
+/* 사진 캡션 텍스트 */
+.vhaus__cover-caption {
+  position: absolute;
+  font-family: 'Arimo', sans-serif;
+  font-size: clamp(12px, 1.4vw, 15px);
+  font-weight: 400;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.06em;
+  line-height: 1.2;
+  margin: 0;
+  z-index: 6;
+}
+
+.vhaus__cover-caption--1 {
+  left: -30%;
+  top: 37%;
+}
+
+.vhaus__cover-caption--2 {
+  left: 32%;
+  top: 40%;
+}
+
+.vhaus__cover-caption--3 {
+  left: 80%;
+  top: 43%;
+}
+
+.vhaus__cover-caption--4 {
+  left: 71.4%;
+  top: 71%;
+  letter-spacing: 1.5px;
+  text-transform: lowercase; 
+}
+
+.vhaus__cover-caption--5 {
+  left: 56%;
+  top: 92%;
+  letter-spacing: 1.5px;
+  text-transform: lowercase; 
 }
 
 /* 표지 배지 (40%) */
