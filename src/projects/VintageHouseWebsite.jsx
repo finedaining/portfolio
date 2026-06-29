@@ -11,18 +11,22 @@ const coverPalette  = "/images/vintagehouse/cover-palette.png";
 const VhausBg  = "/images/vintagehouse/bg.svg";
 
 /* ── 와이어프레임 / 역할 ── */
-const wireframeMain     = "/images/vintagehouse/wireframe-main.png";
-const wireframeCategory = "/images/vintagehouse/wireframe-category.png";
-const wireframeEvent    = "/images/vintagehouse/wireframe-event.png";
+const wireframeMain  = "/images/vintagehouse/wireframe-main.svg";
+const wireframeEvent = "/images/vintagehouse/wireframe-event.svg";
 
 /* ── 웹 목업 ── */
-const webMockupMain  = "/images/vintagehouse/web-mockup-main.png";
-const webMockupEvent = "/images/vintagehouse/web-mockup-event.png";
+const cursorTop    = "/images/vintagehouse/cursor-top.png";
+const cursorBottom = "/images/vintagehouse/cursor-bottom.png";
+const webMain        = "/images/vintagehouse/web-main.svg";
+const webEvent       = "/images/vintagehouse/web-event.svg";
+const webMainMockup  = "/images/vintagehouse/web-main-mockup.svg";
+const webEventMockup = "/images/vintagehouse/web-event-mockup.svg";
 const decoRose       = "/images/vintagehouse/deco-rose.png";
 const decoPastry     = "/images/vintagehouse/deco-pastry.png";
 const decoPlant      = "/images/vintagehouse/deco-plant.png";
 const decoLeaf       = "/images/vintagehouse/deco-leaf.png";
 const decoTeacup     = "/images/vintagehouse/deco-teacup.png";
+const decoChair      = "/images/vintagehouse/deco-chair.png";
 const figmaIcon      = "/images/vintagehouse/Figma-app.png";
 
 export default function VintageHouseWebsite({ onBack }) {
@@ -82,9 +86,8 @@ export default function VintageHouseWebsite({ onBack }) {
         <span className="vhaus__wireframe-logo">vintage haus</span>
 
         <div className="vhaus__wireframe-stage">
-          <img src={wireframeMain}     alt="" className="vhaus__wf-img vhaus__wf-img--main" />
-          <img src={wireframeCategory} alt="" className="vhaus__wf-img vhaus__wf-img--category" />
-          <img src={wireframeEvent}    alt="" className="vhaus__wf-img vhaus__wf-img--event" />
+          <img src={wireframeMain}  alt="" className="vhaus__wf-img vhaus__wf-img--main" />
+          <img src={wireframeEvent} alt="" className="vhaus__wf-img vhaus__wf-img--event" />
         </div>
 
         <div className="vhaus__wireframe-right">
@@ -123,19 +126,42 @@ export default function VintageHouseWebsite({ onBack }) {
         <img src={decoPlant}   alt="" className="vhaus__deco vhaus__deco--plant" />
         <img src={decoLeaf}    alt="" className="vhaus__deco vhaus__deco--leaf" />
         <img src={decoTeacup}  alt="" className="vhaus__deco vhaus__deco--teacup" />
+        <img src={decoChair}   alt="" className="vhaus__deco vhaus__deco--chair" />
 
-        <div className="vhaus__mockup-item vhaus__mockup-item--main">
-          <div className="vhaus__mockup-tag">
-            <p className="vhaus__mockup-tag-text">빈티지 하우스 pc web<br />[메인 페이지]</p>
+        {/* 메인 텍스트 레이블 — 브라우저와 독립 */}
+        <div className="vhaus__mockup-tag vhaus__mockup-tag--main">
+          <div className="vhaus__mockup-tag-inner">
+            <img src={cursorTop} alt="" className="vhaus__cursor-img vhaus__cursor-img--tl" />
+            <div className="vhaus__mockup-tag-lines">
+              <span className="vhaus__mockup-tag-line">빈티지 하우스 pc web</span>
+              <span className="vhaus__mockup-tag-line">[메인 페이지]</span>
+            </div>
+            <img src={cursorBottom} alt="" className="vhaus__cursor-img vhaus__cursor-img--br" />
           </div>
-          <img src={webMockupMain} alt="빈티지하우스 메인 페이지" className="vhaus__mockup-browser" />
         </div>
 
-        <div className="vhaus__mockup-item vhaus__mockup-item--event">
-          <div className="vhaus__mockup-tag">
-            <p className="vhaus__mockup-tag-text">빈티지 하우스 pc web<br />[상세 페이지]</p>
+        {/* 메인 브라우저 목업 */}
+        <div className="vhaus__mockup-item vhaus__mockup-item--main">
+          <img src={webMainMockup} alt="빈티지하우스 메인 브라우저" className="vhaus__mockup-browser" />
+          <img src={webMain} alt="빈티지하우스 메인 페이지" className="vhaus__mockup-scroll" />
+        </div>
+
+        {/* 상세 텍스트 레이블 — 브라우저와 독립 */}
+        <div className="vhaus__mockup-tag vhaus__mockup-tag--event">
+          <div className="vhaus__mockup-tag-inner">
+            <img src={cursorTop} alt="" className="vhaus__cursor-img vhaus__cursor-img--tl" />
+            <div className="vhaus__mockup-tag-lines">
+              <span className="vhaus__mockup-tag-line">빈티지 하우스 pc web</span>
+              <span className="vhaus__mockup-tag-line">[상세 페이지]</span>
+            </div>
+            <img src={cursorBottom} alt="" className="vhaus__cursor-img vhaus__cursor-img--br" />
           </div>
-          <img src={webMockupEvent} alt="빈티지하우스 상세 페이지" className="vhaus__mockup-browser" />
+        </div>
+
+        {/* 상세 브라우저 목업 */}
+        <div className="vhaus__mockup-item vhaus__mockup-item--event">
+          <img src={webEventMockup} alt="빈티지하우스 상세 브라우저" className="vhaus__mockup-browser" />
+          <img src={webEvent} alt="빈티지하우스 상세 페이지" className="vhaus__mockup-scroll" />
         </div>
 
         <div className="vhaus__badge vhaus__badge--mockup">

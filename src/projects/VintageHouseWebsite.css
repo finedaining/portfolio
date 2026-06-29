@@ -332,27 +332,19 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* 메인 Hero 블록 (phone wireframe top) */
+/* 메인 페이지 와이어프레임 (왼쪽) */
 .vhaus__wf-img--main {
-  width: 42%;
-  left: 6%;
-  top: 8%;
+  width: 30%;
+  left: 22%;
+  top: 4%;
   z-index: 2;
 }
 
-/* 카테고리 블록 (phone wireframe middle) */
-.vhaus__wf-img--category {
-  width: 42%;
-  left: 6%;
-  top: calc(8% + 175px);
-  z-index: 2;
-}
-
-/* 이벤트 페이지 (right wireframe) */
+/* 이벤트 페이지 와이어프레임 (오른쪽, 살짝 겹침) */
 .vhaus__wf-img--event {
-  width: 50%;
-  left: 40%;
-  top: 5%;
+  width: 30%;
+  left: 55%;
+  top: 4%;
   z-index: 3;
 }
 
@@ -427,7 +419,7 @@
 .vhaus__mockup-label {
   position: absolute;
   top: 60px;
-  left: 140px;
+  left: 31px;
   font-family: 'Pretendard', sans-serif;
   font-size: 13px;
   color: #333;
@@ -472,12 +464,18 @@
   top: 30%;
 }
 
+.vhaus__deco--chair {
+  width: 4%;
+  right: 26%;
+  top: 8%;
+}
+
 /* 브라우저 목업 아이템 */
 .vhaus__mockup-item {
   position: absolute;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0;
   z-index: 5;
 }
 
@@ -494,29 +492,87 @@
 }
 
 .vhaus__mockup-browser {
-  width: 100%;
+  width: 60%;
   height: auto;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: 4px 4px 0 0;
+  display: block;
+  position: relative;
+  bottom:40px;
+}
+
+.vhaus__mockup-scroll {
+  width: 50%;
+  height: auto;
+  display: block;
+  border-radius: 0 0 4px 4px;
+  position: relative;
+  left:25px;
+  bottom:60px;
 }
 
 .vhaus__mockup-tag {
-  display: flex;
+  position: absolute;
+  display: inline-flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 0;
+  z-index: 6;
 }
 
-.vhaus__mockup-tag-text {
+.vhaus__mockup-tag--main {
+  left: 46%;
+  top: 10%;
+}
+
+.vhaus__mockup-tag--event {
+  left: 75%;
+  top: 60%;
+}
+
+.vhaus__mockup-tag-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position:relative;
+  left:10px;
+}
+
+/* 각 줄 개별 크림 배경 — 피그마처럼 줄 길이가 텍스트에 맞게 다름 */
+.vhaus__mockup-tag-line {
+  display: inline-block;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #111;
-  margin: 0;
-  line-height: 1.2;
-  letter-spacing: -0.5px;
-  background: rgba(241, 234, 218, 0.85);
-  padding: 4px 8px;
-  border-radius: 2px;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  background: #f1eada;
+  padding: 4px 12px;
+
+}
+
+/* 텍스트 + 커서를 감싸는 내부 래퍼 */
+.vhaus__mockup-tag-inner {
+  position: relative;
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* 피그마 커서 이미지 — 텍스트 블록 대각선 코너에 고정 */
+.vhaus__cursor-img {
+  position: absolute;
+  width: 6px;
+  height: auto;
+  pointer-events: none;
+}
+
+.vhaus__cursor-img--tl {
+  left: 0;
+  top: 0;
+}
+
+.vhaus__cursor-img--br {
+  right: 0;
+  bottom: 0;
 }
 
 /* 웹 목업 배지 (Figma 100%) */
