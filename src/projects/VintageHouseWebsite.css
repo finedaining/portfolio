@@ -442,8 +442,8 @@
 
 .vhaus__deco--pastry {
   width: 9%;
-  left: 8%;
-  bottom: 12%;
+  left: 10%;
+  bottom: 20%;
 }
 
 .vhaus__deco--plant {
@@ -454,60 +454,77 @@
 
 .vhaus__deco--leaf {
   width: 4%;
-  right: 36%;
-  top: 5%;
+  right: 46%;
+  top: 28%;
 }
 
 .vhaus__deco--teacup {
   width: 7%;
-  right: 2%;
-  top: 30%;
+  right: 20%;
+  top: 40%;
 }
 
 .vhaus__deco--chair {
   width: 4%;
-  right: 26%;
+  right:15%;
   top: 8%;
 }
 
-/* 브라우저 목업 아이템 */
+/* 브라우저 목업 아이템 — 스크롤 위에 올라탐 */
 .vhaus__mockup-item {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  display: block;
   z-index: 5;
 }
 
 .vhaus__mockup-item--main {
-  left: 15%;
+  left: 21%;
   top: 8%;
-  width: 38%;
+  width: 40%;
 }
 
 .vhaus__mockup-item--event {
-  left: 44%;
+  left: 51%;
   top: 36%;
-  width: 38%;
+  width: 40%;
 }
 
+/* 스크롤 래퍼 — 브라우저와 같은 위치, 뒤에 위치 */
+.vhaus__mockup-scroll-wrap {
+  position: absolute;
+  z-index: 3;
+}
+
+.vhaus__mockup-scroll-wrap--main {
+  left: 21%;
+  top: 8%;
+  width: 40%;
+}
+
+.vhaus__mockup-scroll-wrap--event {
+  left: 51%;
+  top: 36%;
+  width: 40%;
+}
+
+/* 긴 페이지 이미지 (두개같이)*/
+.vhaus__mockup-scroll {
+  display: block;
+  width: 53%;
+  height: auto;
+  position:relative;
+  left:17px;
+}
+
+/* 브라우저 목업 — 스크롤 이미지 위에 absolute로 올라탐 */
 .vhaus__mockup-browser {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 60%;
   height: auto;
-  border-radius: 4px 4px 0 0;
-  display: block;
-  position: relative;
-  bottom:40px;
-}
-
-.vhaus__mockup-scroll {
-  width: 50%;
-  height: auto;
-  display: block;
-  border-radius: 0 0 4px 4px;
-  position: relative;
-  left:25px;
-  bottom:60px;
+  border-radius: 4px;
+  z-index: 2;
 }
 
 .vhaus__mockup-tag {
@@ -566,13 +583,13 @@
 }
 
 .vhaus__cursor-img--tl {
-  left: 0;
+  left: 10px;
   top: 0;
 }
 
 .vhaus__cursor-img--br {
-  right: 0;
-  bottom: 0;
+  right: -10px;
+  bottom: -19px;
 }
 
 /* 웹 목업 배지 (Figma 100%) */

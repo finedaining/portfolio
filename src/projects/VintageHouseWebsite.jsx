@@ -143,6 +143,10 @@ export default function VintageHouseWebsite({ onBack }) {
         {/* 메인 브라우저 목업 */}
         <div className="vhaus__mockup-item vhaus__mockup-item--main">
           <img src={webMainMockup} alt="빈티지하우스 메인 브라우저" className="vhaus__mockup-browser" />
+        </div>
+
+        {/* 메인 스크롤 (긴 페이지) */}
+        <div className="vhaus__mockup-scroll-wrap vhaus__mockup-scroll-wrap--main">
           <img src={webMain} alt="빈티지하우스 메인 페이지" className="vhaus__mockup-scroll" />
         </div>
 
@@ -161,6 +165,10 @@ export default function VintageHouseWebsite({ onBack }) {
         {/* 상세 브라우저 목업 */}
         <div className="vhaus__mockup-item vhaus__mockup-item--event">
           <img src={webEventMockup} alt="빈티지하우스 상세 브라우저" className="vhaus__mockup-browser" />
+        </div>
+
+        {/* 상세 스크롤 (긴 페이지) */}
+        <div className="vhaus__mockup-scroll-wrap vhaus__mockup-scroll-wrap--event">
           <img src={webEvent} alt="빈티지하우스 상세 페이지" className="vhaus__mockup-scroll" />
         </div>
 
