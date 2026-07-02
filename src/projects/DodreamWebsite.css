@@ -37,9 +37,6 @@
   word-break: keep-all;
 }
 
-/* ══════════════════════════════════════════
-   공통 배지
-══════════════════════════════════════════ */
 .ddream__badge {
   display: flex;
   align-items: center;
@@ -58,6 +55,16 @@
   white-space: nowrap;
 }
 
+/* 공통 로고 (섹션 2, 3) */
+.ddream__wf-logo {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+  height: 32px;
+  width: auto;
+  z-index: 10;
+}
+
 
 /* ══════════════════════════════════════════
    1. 표지
@@ -72,7 +79,6 @@
   align-items: stretch;
 }
 
-/* 반짝 장식 */
 .ddream__sparkle {
   position: absolute;
   top: 40px;
@@ -83,79 +89,16 @@
   pointer-events: none;
 }
 
-/* 로고 (top-left) */
-.ddream__logo {
+.ddream__logo-svg {
   position: absolute;
-  top: 20px;
-  left: 28px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  top: 24px;
+  left: 32px;
+  height: 40px;
+  width: auto;
   z-index: 10;
 }
 
-.ddream__logo-gear {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  flex-shrink: 0;
-}
-
-.ddream__gear {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-}
-
-.ddream__gear--back {
-  opacity: 0.3;
-}
-
-.ddream__gear--front {
-  opacity: 0.6;
-  transform: scale(0.75);
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-}
-
-.ddream__logo-text-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.ddream__logo-text {
-  height: 20px;
-  width: auto;
-}
-
-.ddream__logo-line {
-  height: 2px;
-  width: auto;
-  margin: 2px 0;
-}
-
-.ddream__logo-doodream {
-  font-family: 'Arimo', sans-serif;
-  font-size: 9px;
-  color: #111;
-  letter-spacing: 1px;
-}
-
-.ddream__moon {
-  position: absolute;
-  top: -6px;
-  left: 50px;
-  width: 36px;
-  height: auto;
-  transform: rotate(-165.69deg);
-  pointer-events: none;
-  z-index: -1;
-}
-
-/* 왼쪽 텍스트 영역 */
+/* 왼쪽 텍스트 */
 .ddream__cover-left {
   flex: 0 0 52%;
   padding: 64px 40px 56px 56px;
@@ -169,11 +112,11 @@
 
 .ddream__cover-title {
   font-family: 'Arimo', sans-serif;
-  font-size: clamp(64px, 9vw, 130px);
+  font-size: clamp(64px, 9vw, 79px);
   font-weight: 400;
-  letter-spacing: -8px;
-  line-height: 0.92;
-  color: #000;
+  letter-spacing: -5px;
+  line-height: 0.95;
+  color: #111;
   margin: 0;
 }
 
@@ -185,11 +128,11 @@
 
 .ddream__cover-subtitle {
   font-family: 'Pretendard', sans-serif;
-  font-size: clamp(18px, 2.5vw, 41px);
-  font-weight: 500;
-  color: #000;
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
   margin: 0;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.2px;
 }
 
 .ddream__cover-desc {
@@ -199,390 +142,55 @@
   line-height: 1.7;
   margin: 0;
   word-break: keep-all;
+  max-width: 520px;
 }
 
-
-/* ── 무드보드 (오른쪽) ── */
+/* 오른쪽 무드보드 */
 .ddream__moodboard {
   flex: 1;
   position: relative;
   min-height: 680px;
+  overflow: hidden;
 }
 
-.ddream__moodboard-bg {
+.ddream__moodboard-img {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.25;
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* 컬러 팔레트 */
-.ddream__palette {
-  position: absolute;
-  top: 6%;
-  left: 4%;
-  display: flex;
-  gap: 8px;
-  z-index: 2;
-}
-
-.ddream__palette-col {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.ddream__palette-col--main {
-  width: 52%;
-}
-
-.ddream__palette-col--sub {
-  flex: 1;
-  gap: 2px;
-}
-
-.ddream__palette-swatch {
-  border-radius: 4px;
-}
-
-.ddream__palette-col--main .ddream__palette-swatch {
-  height: 80px;
-}
-
-.ddream__palette-col--sub .ddream__palette-swatch {
-  height: 26px;
-  margin-bottom: 2px;
-}
-
-.ddream__palette-swatch--1 { background: #465565; }
-.ddream__palette-swatch--2 { background: #afb7bf; }
-.ddream__palette-swatch--3 { background: #7e8a94; }
-.ddream__palette-swatch--4 { background: #e9edf2; }
-
-.ddream__palette-name {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 7px;
-  color: #333;
-  margin: 0;
-  line-height: 1.2;
-}
-
-/* 큰 로고 */
-.ddream__moodboard-logo {
-  position: absolute;
-  top: 5%;
-  left: 42%;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  z-index: 3;
-}
-
-.ddream__moodboard-gear {
-  position: absolute;
-  height: auto;
-  border-radius: 50%;
-}
-
-.ddream__moodboard-gear--back {
-  width: 90px;
-  opacity: 0.3;
-  top: 0;
-  left: 0;
-}
-
-.ddream__moodboard-gear--front {
-  width: 70px;
-  opacity: 0.6;
-  top: 10px;
-  left: 10px;
-}
-
-.ddream__moodboard-logo-text {
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.ddream__moodboard-text-img {
-  height: 40px;
-  width: auto;
-}
-
-.ddream__moodboard-line-img {
-  height: 3px;
-  width: auto;
-  margin: 3px 0;
-}
-
-.ddream__moodboard-doodream {
-  font-family: 'Arimo', sans-serif;
-  font-size: 14px;
-  color: #111;
-  letter-spacing: 2px;
-}
-
-/* 타입페이스 */
-.ddream__typeface {
-  position: absolute;
-  bottom: 12%;
-  left: 4%;
-  z-index: 2;
-}
-
-.ddream__typeface-aa {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 48px;
-  color: #2c3e50;
-  margin: 0;
-  line-height: 1;
-}
-
-.ddream__typeface-sub {
-  font-family: 'Pretendard', sans-serif;
-  font-size: 9px;
-  color: #555;
-  margin: 4px 0 2px;
-}
-
-.ddream__typeface-chars {
-  font-family: 'Noto Sans', sans-serif;
-  font-size: 7px;
-  color: #555;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* 사진들 */
-.ddream__moodboard-screw {
-  position: absolute;
-  right: 4%;
-  bottom: 6%;
-  width: 44%;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-  z-index: 2;
-}
-
-.ddream__moodboard-spinning {
-  position: absolute;
-  left: 4%;
-  top: 28%;
-  width: 52%;
-  height: auto;
-  border-radius: 6px;
-  object-fit: cover;
-  z-index: 2;
-}
-
-/* 데코 사각형 */
-.ddream__deco-rect {
-  position: absolute;
-  border-radius: 4px;
-  z-index: 1;
-}
-
-.ddream__deco-rect--1 {
-  width: 22px;
-  height: 22px;
-  background: #465565;
-  bottom: 22%;
-  left: 2%;
-}
-
-.ddream__deco-rect--2 {
-  width: 56px;
-  height: 22px;
-  background: #7e8a94;
-  bottom: 18%;
-  left: 2%;
-}
-
-.ddream__deco-rect--3 {
-  width: 38px;
-  height: 65px;
-  background: #e9edf2;
-  bottom: 6%;
-  left: 2%;
+  object-position: left center;
 }
 
 
 /* ══════════════════════════════════════════
    2. 맡은 역할 / 와이어프레임
 ══════════════════════════════════════════ */
-.ddream__section-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 20px;
-}
-
 .ddream__wireframe {
+  background: linear-gradient(135deg, #f5f7f9 0%, #e8ecef 100%);
   border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-}
-
-.ddream__wireframe-logo-bar {
-  position: absolute;
-  top: 24px;
-  left: 32px;
-  z-index: 10;
-}
-
-.ddream__wf-logo-mini {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.ddream__wf-gear {
-  width: 28px;
-  height: 28px;
-  opacity: 0.8;
-}
-
-.ddream__wf-logotext {
-  height: 16px;
-  width: auto;
-  filter: brightness(0) invert(1);
-  opacity: 0.8;
-}
-
-/* 와이어프레임 스테이지 */
-.ddream__wireframe-stage {
-  flex: 0 0 52%;
+  min-height: 680px;
   position: relative;
-  height: 680px;
   overflow: hidden;
-}
-
-.ddream__wf-screen {
-  position: absolute;
-  background: #fff;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 0;
+  padding: 80px 48px 56px 48px;
 }
 
-.ddream__wf-screen--1 {
-  width: 30%;
-  left: 28%;
-  top: 8%;
-  bottom: 8%;
-}
-
-.ddream__wf-screen--2 {
-  width: 30%;
-  left: 60%;
-  top: 14%;
-  bottom: 4%;
-}
-
-/* 와이어프레임 내부 요소 */
-.ddream__wf-screen-header {
-  height: 6%;
-  background: #2c3e50;
-  flex-shrink: 0;
-}
-
-.ddream__wf-screen-nav {
-  height: 4%;
-  background: #e0e4e8;
-  flex-shrink: 0;
-  margin: 4px 8px 0;
-  border-radius: 2px;
-}
-
-.ddream__wf-screen-hero {
-  height: 22%;
-  background: #c0c8d0;
-  flex-shrink: 0;
-  margin: 4px 0;
-}
-
-.ddream__wf-screen-grid {
-  display: flex;
-  gap: 4px;
-  padding: 4px 8px;
-  flex-shrink: 0;
-}
-
-.ddream__wf-screen-card {
-  flex: 1;
-  height: 40px;
-  background: #dde2e7;
-  border-radius: 2px;
-}
-
-.ddream__wf-screen-section {
-  flex: 1;
-  background: #ebeef1;
-  margin: 4px 8px;
-  border-radius: 2px;
-}
-
-.ddream__wf-screen-footer {
-  height: 5%;
-  background: #2c3e50;
-  flex-shrink: 0;
-  margin-top: auto;
-}
-
-.ddream__wf-screen-detail-hero {
-  height: 26%;
-  background: #c0c8d0;
-  flex-shrink: 0;
-}
-
-.ddream__wf-screen-detail-info {
-  height: 20%;
-  background: #ebeef1;
-  flex-shrink: 0;
-  margin: 4px 8px;
-  border-radius: 2px;
-}
-
-.ddream__wf-screen-detail-list {
-  flex: 1;
-  background: #e4e8ec;
-  margin: 4px 8px;
-  border-radius: 2px;
-}
-
-/* 오른쪽 텍스트 */
-.ddream__wireframe-right {
-  flex: 1;
-  padding: 60px 56px 60px 24px;
+.ddream__wireframe-left {
+  flex: 0 0 36%;
   display: flex;
   flex-direction: column;
-  gap: 48px;
-  position: relative;
-  z-index: 5;
-}
-
-.ddream__wireframe-right .ddream__section-title {
-  color: #fff;
-}
-
-.ddream__wireframe-right .ddream__section-desc {
-  color: rgba(255, 255, 255, 0.75);
+  gap: 40px;
+  z-index: 2;
 }
 
 .ddream__wireframe-block {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
 }
 
 .ddream__role-info {
@@ -594,8 +202,9 @@
 .ddream__role-tag {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #2c3e50;
   margin: 0;
+  font-weight: 500;
 }
 
 .ddream__role-items {
@@ -607,9 +216,26 @@
 .ddream__role-item {
   font-family: 'Pretendard', sans-serif;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #444;
   margin: 0;
   line-height: 1.8;
+}
+
+/* 6개 와이어프레임 그리드 */
+.ddream__wireframe-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-left: 32px;
+}
+
+.ddream__wf-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 
@@ -617,47 +243,56 @@
    3. 코드 구현 페이지
 ══════════════════════════════════════════ */
 .ddream__mockup {
+  background: #e8ecef;
   border-radius: 20px;
+  min-height: 680px;
+  position: relative;
   overflow: hidden;
-}
-
-.ddream__mockup-logo-bar {
-  position: absolute;
-  top: 24px;
-  left: 32px;
-  z-index: 10;
+  padding: 80px 48px 56px 48px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 24px;
 }
 
 .ddream__mockup-label {
+  position: absolute;
+  top: 60px;
+  left: 48px;
   font-family: 'Pretendard', sans-serif;
   font-size: 13px;
-  color: #444;
+  color: #555;
   margin: 0;
 }
 
-/* 텍스트 레이블 태그 */
-.ddream__mockup-tag {
-  position: absolute;
-  z-index: 6;
-}
-
-.ddream__mockup-tag--main {
-  left: 22%;
-  top: 8%;
-}
-
-.ddream__mockup-tag--sub {
-  left: 55%;
-  top: 40%;
-}
-
-.ddream__mockup-tag-inner {
+.ddream__mockup-content {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.ddream__mockup-main-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ddream__mockup-sub-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ddream__mockup-sub-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ddream__mockup-tag-box {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 3px;
 }
 
 .ddream__mockup-tag-line {
@@ -666,186 +301,20 @@
   font-size: 15px;
   font-weight: 500;
   color: #111;
-  line-height: 1.3;
+  background: #d4dce3;
+  padding: 3px 10px;
+  line-height: 1.4;
   letter-spacing: -0.3px;
-  background: #d5dde3;
-  padding: 4px 10px;
 }
 
-/* 브라우저 목업 */
-.ddream__mockup-item {
-  position: absolute;
-  z-index: 4;
-}
-
-.ddream__mockup-item--main {
-  left: 18%;
-  top: 14%;
-  width: 42%;
-}
-
-.ddream__mockup-item--sub {
-  left: 50%;
-  top: 44%;
-  width: 38%;
-}
-
-.ddream__browser-frame {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 8px 40px rgba(44, 62, 80, 0.18);
+.ddream__mockup-web {
   width: 100%;
-}
-
-.ddream__browser-bar {
-  background: #e4e8ec;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 0 12px;
-  flex-shrink: 0;
-}
-
-.ddream__browser-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #bfc8d0;
+  height: auto;
   display: block;
+  border-radius: 8px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
 }
 
-.ddream__browser-screen {
-  background: #fff;
-  overflow: hidden;
-}
-
-/* 사이트 내부 요소 */
-.ddream__site-nav {
-  height: 36px;
-  background: #2c3e50;
-}
-
-.ddream__site-hero {
-  position: relative;
-  height: 140px;
-  overflow: hidden;
-  background: #3d5166;
-}
-
-.ddream__site-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.6;
-}
-
-.ddream__site-hero-text {
-  position: absolute;
-  top: 50%;
-  left: 24px;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.ddream__site-hero-line {
-  background: rgba(255,255,255,0.85);
-  border-radius: 2px;
-  height: 8px;
-}
-
-.ddream__site-hero-line--lg { width: 120px; }
-.ddream__site-hero-line--sm { width: 72px; }
-
-.ddream__site-hero-btn {
-  margin-top: 4px;
-  width: 56px;
-  height: 18px;
-  background: #afb7bf;
-  border-radius: 2px;
-}
-
-.ddream__site-grid {
-  display: flex;
-  gap: 0;
-  padding: 16px;
-  gap: 10px;
-}
-
-.ddream__site-product {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.ddream__site-product-img {
-  width: 100%;
-  height: 70px;
-  object-fit: cover;
-  border-radius: 3px;
-}
-
-.ddream__site-product-ph {
-  width: 100%;
-  height: 70px;
-  background: #d0d8df;
-  border-radius: 3px;
-}
-
-.ddream__site-product-info {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.ddream__site-text-line {
-  height: 6px;
-  background: #d5dce2;
-  border-radius: 2px;
-  width: 80%;
-}
-
-.ddream__site-text-line--sm { width: 50%; }
-
-/* 상세 페이지 */
-.ddream__site-detail {
-  display: flex;
-  gap: 14px;
-  padding: 14px;
-}
-
-.ddream__site-detail-img {
-  width: 45%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 3px;
-  flex-shrink: 0;
-}
-
-.ddream__site-detail-info {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  padding-top: 4px;
-}
-
-.ddream__site-detail-btn {
-  width: 60px;
-  height: 16px;
-  background: #2c3e50;
-  border-radius: 2px;
-  margin-top: 6px;
-}
-
-/* 배지 */
 .ddream__badge--mockup {
-  position: absolute;
-  left: 40px;
-  bottom: 40px;
-  z-index: 10;
+  margin-top: auto;
 }

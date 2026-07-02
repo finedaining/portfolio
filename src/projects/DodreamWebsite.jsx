@@ -1,24 +1,21 @@
 import React from 'react';
 import './DodreamWebsite.css';
 
-/* ── 표지 ── */
-const gearIcon      = "/images/dodream/gear-icon.png";
-const logoTextSm    = "/images/dodream/logo-text-sm.svg";
-const vectorLineSm  = "/images/dodream/vector-line-sm.svg";
-const moonShape     = "/images/dodream/moon-shape.png";
-const sparkle       = "/images/dodream/sparkle.svg";
-const toolBar       = "/images/dodream/tool-bar.svg";
+const logoSvg        = "/images/dodream/logo.svg";
+const moodboard      = "/images/dodream/moodboard.svg";
+const toolBar        = "/images/dodream/tool-bar.svg";
+const sparkle        = "/images/dodream/sparkle.svg";
 
-/* ── 무드보드 ── */
-const logoTextLg    = "/images/dodream/logo-text-lg.svg";
-const vectorLineLg  = "/images/dodream/vector-line-lg.svg";
-const screwPhoto    = "/images/dodream/screw-photo.png";
-const spinningPhoto = "/images/dodream/spinning-photo.png";
-const moodboardBg   = "/images/dodream/moodboard-bg.png";
+const wfWeb          = "/images/dodream/wireframe-web.svg";
+const wfLogin        = "/images/dodream/wireframe-login.svg";
+const wfShop         = "/images/dodream/wireframe-shop.svg";
+const wfPurchase     = "/images/dodream/wireframe-purchase.svg";
+const wfMy           = "/images/dodream/wireframe-my.svg";
+const wfDashboard    = "/images/dodream/wireframe-dashboard.svg";
 
-/* ── 섹션 2, 3 Figma 이미지 ── */
-const page2Wireframe = "/images/dodream/page2-wireframe.png";
-const page3Mockup    = "/images/dodream/page3-mockup.png";
+const webMain        = "/images/dodream/web-main.svg";
+const webShop        = "/images/dodream/web-shop.svg";
+const webShopdetail  = "/images/dodream/web-shopdetail.svg";
 
 export default function DodreamWebsite({ onBack }) {
   return (
@@ -27,24 +24,9 @@ export default function DodreamWebsite({ onBack }) {
 
       {/* ── 1. 표지 ── */}
       <section className="ddream__cover">
-        {/* 반짝 장식 */}
         <img src={sparkle} alt="" className="ddream__sparkle" />
+        <img src={logoSvg} alt="두드림" className="ddream__logo-svg" />
 
-        {/* 로고 (top-left) */}
-        <div className="ddream__logo">
-          <div className="ddream__logo-gear">
-            <img src={gearIcon} alt="" className="ddream__gear ddream__gear--back" />
-            <img src={gearIcon} alt="" className="ddream__gear ddream__gear--front" />
-          </div>
-          <div className="ddream__logo-text-wrap">
-            <img src={logoTextSm} alt="두드림" className="ddream__logo-text" />
-            <img src={vectorLineSm} alt="" className="ddream__logo-line" />
-            <span className="ddream__logo-doodream">DOODREAM</span>
-          </div>
-          <img src={moonShape} alt="" className="ddream__moon" />
-        </div>
-
-        {/* 왼쪽 텍스트 */}
         <div className="ddream__cover-left">
           <h1 className="ddream__cover-title">
             Code /<br />&amp; Development
@@ -65,63 +47,89 @@ export default function DodreamWebsite({ onBack }) {
           </div>
         </div>
 
-        {/* 오른쪽 무드보드 */}
         <div className="ddream__moodboard">
-          <img src={moodboardBg} alt="" className="ddream__moodboard-bg" />
-
-          {/* 컬러 팔레트 블록 */}
-          <div className="ddream__palette">
-            <div className="ddream__palette-col ddream__palette-col--main">
-              <div className="ddream__palette-swatch ddream__palette-swatch--1" />
-              <p className="ddream__palette-name">MAIN COLOR #465565</p>
-            </div>
-            <div className="ddream__palette-col ddream__palette-col--sub">
-              <div className="ddream__palette-swatch ddream__palette-swatch--2" />
-              <p className="ddream__palette-name">sub color #afb7bf</p>
-              <div className="ddream__palette-swatch ddream__palette-swatch--3" />
-              <p className="ddream__palette-name">sub color #7e8a94</p>
-              <div className="ddream__palette-swatch ddream__palette-swatch--4" />
-              <p className="ddream__palette-name">sub color #e9edf2</p>
-            </div>
-          </div>
-
-          {/* 큰 로고 */}
-          <div className="ddream__moodboard-logo">
-            <img src={gearIcon} alt="" className="ddream__moodboard-gear ddream__moodboard-gear--back" />
-            <img src={gearIcon} alt="" className="ddream__moodboard-gear ddream__moodboard-gear--front" />
-            <div className="ddream__moodboard-logo-text">
-              <img src={logoTextLg} alt="두드림" className="ddream__moodboard-text-img" />
-              <img src={vectorLineLg} alt="" className="ddream__moodboard-line-img" />
-              <span className="ddream__moodboard-doodream">DOODREAM</span>
-            </div>
-          </div>
-
-          {/* 타입페이스 */}
-          <div className="ddream__typeface">
-            <p className="ddream__typeface-aa">Aa</p>
-            <p className="ddream__typeface-sub">Noto Sans</p>
-            <p className="ddream__typeface-chars">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn<br />Oo Pp Qq Rr Ss Tt Uu Vv Ww Xx Yy Zz</p>
-          </div>
-
-          {/* 사진들 */}
-          <img src={screwPhoto} alt="" className="ddream__moodboard-screw" />
-          <img src={spinningPhoto} alt="" className="ddream__moodboard-spinning" />
-
-          {/* 작은 컬러 블록들 */}
-          <div className="ddream__deco-rect ddream__deco-rect--1" />
-          <div className="ddream__deco-rect ddream__deco-rect--2" />
-          <div className="ddream__deco-rect ddream__deco-rect--3" />
+          <img src={moodboard} alt="무드보드" className="ddream__moodboard-img" />
         </div>
       </section>
 
       {/* ── 2. 맡은 역할 / 와이어프레임 ── */}
       <section className="ddream__wireframe">
-        <img src={page2Wireframe} alt="맡은 역할 및 와이어프레임" className="ddream__section-img" />
+        <img src={logoSvg} alt="두드림" className="ddream__wf-logo" />
+
+        <div className="ddream__wireframe-left">
+          <div className="ddream__wireframe-block">
+            <h2 className="ddream__section-title">맡은 역할</h2>
+            <div className="ddream__role-info">
+              <p className="ddream__role-tag">[프론트엔드 및 디자인 전반 담당]</p>
+              <div className="ddream__role-items">
+                <p className="ddream__role-item">브랜드 아이덴티티 수립 및 UI 설계</p>
+                <p className="ddream__role-item">메인 및 제품 상세 페이지 디자인</p>
+                <p className="ddream__role-item">반응형 레이아웃 구현</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="ddream__wireframe-block">
+            <h2 className="ddream__section-title">와이어 프레임</h2>
+            <p className="ddream__section-desc">
+              두드림의 와이어프레임은 기계부품 전문 브랜드로서 신뢰감과 기술력을 직관적으로 전달하는 것을 목표로 설계했습니다.<br />
+              UI/UX 관점에서 제품 탐색 흐름을 중심으로 핵심 정보가 자연스럽게 이어지도록 구성하였으며,<br />
+              개발 측면에서는 컴포넌트 기반 구조로 나누어 유지보수와 확장이 용이하도록 고려했습니다.
+            </p>
+          </div>
+
+          <div className="ddream__badge">
+            <img src={toolBar} alt="" className="ddream__badge-bar-img" />
+            <span className="ddream__badge-label">피그마, 개인작업 100%</span>
+          </div>
+        </div>
+
+        <div className="ddream__wireframe-grid">
+          <img src={wfWeb}       alt="메인 와이어프레임"     className="ddream__wf-img" />
+          <img src={wfLogin}     alt="로그인 와이어프레임"   className="ddream__wf-img" />
+          <img src={wfShop}      alt="쇼핑 와이어프레임"     className="ddream__wf-img" />
+          <img src={wfPurchase}  alt="구매 와이어프레임"     className="ddream__wf-img" />
+          <img src={wfMy}        alt="마이페이지 와이어프레임" className="ddream__wf-img" />
+          <img src={wfDashboard} alt="대시보드 와이어프레임" className="ddream__wf-img" />
+        </div>
       </section>
 
       {/* ── 3. 코드 구현 페이지 ── */}
       <section className="ddream__mockup">
-        <img src={page3Mockup} alt="코드 구현 페이지" className="ddream__section-img" />
+        <img src={logoSvg} alt="두드림" className="ddream__wf-logo" />
+        <p className="ddream__mockup-label">코드 구현 페이지</p>
+
+        <div className="ddream__mockup-content">
+          <div className="ddream__mockup-main-wrap">
+            <div className="ddream__mockup-tag-box">
+              <span className="ddream__mockup-tag-line">두드림 pc web</span>
+              <span className="ddream__mockup-tag-line">[메인 페이지]</span>
+            </div>
+            <img src={webMain} alt="두드림 메인 페이지" className="ddream__mockup-web" />
+          </div>
+
+          <div className="ddream__mockup-sub-wrap">
+            <div className="ddream__mockup-sub-item">
+              <div className="ddream__mockup-tag-box">
+                <span className="ddream__mockup-tag-line">두드림 pc web</span>
+                <span className="ddream__mockup-tag-line">[장바구니 페이지]</span>
+              </div>
+              <img src={webShop} alt="두드림 장바구니" className="ddream__mockup-web" />
+            </div>
+            <div className="ddream__mockup-sub-item">
+              <div className="ddream__mockup-tag-box">
+                <span className="ddream__mockup-tag-line">두드림 pc web</span>
+                <span className="ddream__mockup-tag-line">[구매 상세 페이지]</span>
+              </div>
+              <img src={webShopdetail} alt="두드림 구매 상세" className="ddream__mockup-web" />
+            </div>
+          </div>
+        </div>
+
+        <div className="ddream__badge ddream__badge--mockup">
+          <img src={toolBar} alt="" className="ddream__badge-bar-img" />
+          <span className="ddream__badge-label">피그마, 팀 작업 40%</span>
+        </div>
       </section>
     </div>
   );
