@@ -41,8 +41,7 @@ export default function VintageHouseWebsite({ onBack }) {
 
         <div className="vhaus__cover-left">
           <h1 className="vhaus__cover-title">
-            Code
-            <br /> &amp; Development
+            Code <br/> &amp; Development
           </h1>
           <div className="vhaus__cover-info">
             <p className="vhaus__cover-subtitle">빈티지 하우스 (vintage haus)&nbsp; 브랜드 런칭</p>
