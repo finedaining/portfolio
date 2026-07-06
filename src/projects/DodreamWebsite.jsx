@@ -3,7 +3,6 @@ import './DodreamWebsite.css';
 
 const logoSvg        = "/images/dodream/logo.svg";
 const moodboard      = "/images/dodream/moodboard.svg";
-const toolBar        = "/images/dodream/tool-bar.svg";
 const sparkle        = "/images/dodream/sparkle.svg";
 
 const wfWeb          = "/images/dodream/wireframe-web.svg";
@@ -29,21 +28,26 @@ export default function DodreamWebsite({ onBack }) {
 
         <div className="ddream__cover-left">
           <h1 className="ddream__cover-title">
-            Code /<br />&amp; Development
+            Code <br />&amp; Development
           </h1>
           <div className="ddream__cover-info">
             <p className="ddream__cover-subtitle">두드림 (Doo-Dream)&nbsp; 브랜드 런칭</p>
             <p className="ddream__cover-desc">
               두드림은 기계부품 제조 분야의 기술력을 바탕으로 미래를 지향하는 브랜드입니다.<br />
-              로고는 '단단하게 두드린 금속'과 '미래를 두드림'의 의미를 담아, 견고함과 발전적인 이미지를 표현하였습니다.<br />
-              컬러는 산업적 특성을 반영해 딥 블루 그레이(#2C3E50)와 라이트 실버 그레이(#C0C5CB)를 사용하여<br />
+              로고는 '단단하게 두드린 금속'과 '미래를 두드림'의 의미를 담아, 견고함과 발전적인 이미지를 표현하였습니다.
+              컬러는 산업적 특성을 반영해 딥 블루 그레이(#2C3E50)와 라이트 실버 그레이(#C0C5CB)를 사용하여 
               신뢰감 있는 기술력과 금속 전문 브랜드의 이미지를 강조하였습니다.<br />
               정보가 자연스럽게 읽히도록 화면 구성을 정리하여, 사용성과 개발 효율을 함께 고려해 설계하였습니다.
             </p>
           </div>
           <div className="ddream__badge">
-            <img src={toolBar} alt="" className="ddream__badge-bar-img" />
-            <span className="ddream__badge-label">팀 작업, 전체 기여도 40%</span>
+            <div className="ddream__badge-bar-wrap">
+              <div className="ddream__badge-bar">
+                <div className="ddream__badge-fill ddream__badge-fill--40" />
+                <div className="ddream__badge-dot ddream__badge-dot--40" />
+              </div>
+              <span className="ddream__badge-label">팀 작업, 전체 기여도 40%</span>
+            </div>
           </div>
         </div>
 
@@ -79,8 +83,13 @@ export default function DodreamWebsite({ onBack }) {
           </div>
 
           <div className="ddream__badge">
-            <img src={toolBar} alt="" className="ddream__badge-bar-img" />
-            <span className="ddream__badge-label">피그마, 개인작업 100%</span>
+            <div className="ddream__badge-bar-wrap">
+              <div className="ddream__badge-bar">
+                <div className="ddream__badge-fill ddream__badge-fill--100" />
+                <div className="ddream__badge-dot ddream__badge-dot--100" />
+              </div>
+              <span className="ddream__badge-label">피그마, 개인작업 100%</span>
+            </div>
           </div>
         </div>
 
@@ -99,36 +108,50 @@ export default function DodreamWebsite({ onBack }) {
         <img src={logoSvg} alt="두드림" className="ddream__wf-logo" />
         <p className="ddream__mockup-label">코드 구현 페이지</p>
 
-        <div className="ddream__mockup-content">
-          <div className="ddream__mockup-main-wrap">
-            <div className="ddream__mockup-tag-box">
-              <span className="ddream__mockup-tag-line">두드림 pc web</span>
-              <span className="ddream__mockup-tag-line">[메인 페이지]</span>
-            </div>
-            <img src={webMain} alt="두드림 메인 페이지" className="ddream__mockup-web" />
+        {/* 메인 브라우저 (좌측 크게) */}
+        <div className="ddream__mockup-tag ddream__mockup-tag--main">
+          <span className="ddream__mockup-tag-dot" />
+          <div className="ddream__mockup-tag-text">
+            <span>두드림 pc web</span>
+            <span>[메인 페이지]</span>
           </div>
+        </div>
+        <div className="ddream__mockup-item ddream__mockup-item--main">
+          <img src={webMain} alt="두드림 메인 페이지" className="ddream__mockup-web" />
+        </div>
 
-          <div className="ddream__mockup-sub-wrap">
-            <div className="ddream__mockup-sub-item">
-              <div className="ddream__mockup-tag-box">
-                <span className="ddream__mockup-tag-line">두드림 pc web</span>
-                <span className="ddream__mockup-tag-line">[장바구니 페이지]</span>
-              </div>
-              <img src={webShop} alt="두드림 장바구니" className="ddream__mockup-web" />
-            </div>
-            <div className="ddream__mockup-sub-item">
-              <div className="ddream__mockup-tag-box">
-                <span className="ddream__mockup-tag-line">두드림 pc web</span>
-                <span className="ddream__mockup-tag-line">[구매 상세 페이지]</span>
-              </div>
-              <img src={webShopdetail} alt="두드림 구매 상세" className="ddream__mockup-web" />
-            </div>
+        {/* 장바구니 브라우저 (우측 상단) */}
+        <div className="ddream__mockup-tag ddream__mockup-tag--shop">
+          <span className="ddream__mockup-tag-dot" />
+          <div className="ddream__mockup-tag-text">
+            <span>두드림 pc web</span>
+            <span>[장바구니 페이지]</span>
           </div>
+        </div>
+        <div className="ddream__mockup-item ddream__mockup-item--shop">
+          <img src={webShop} alt="두드림 장바구니" className="ddream__mockup-web" />
+        </div>
+
+        {/* 구매상세 브라우저 (우측 하단) */}
+        <div className="ddream__mockup-tag ddream__mockup-tag--detail">
+          <span className="ddream__mockup-tag-dot" />
+          <div className="ddream__mockup-tag-text">
+            <span>두드림 pc web</span>
+            <span>[구매 상세 페이지]</span>
+          </div>
+        </div>
+        <div className="ddream__mockup-item ddream__mockup-item--detail">
+          <img src={webShopdetail} alt="두드림 구매 상세" className="ddream__mockup-web" />
         </div>
 
         <div className="ddream__badge ddream__badge--mockup">
-          <img src={toolBar} alt="" className="ddream__badge-bar-img" />
-          <span className="ddream__badge-label">피그마, 팀 작업 40%</span>
+          <div className="ddream__badge-bar-wrap">
+            <div className="ddream__badge-bar">
+              <div className="ddream__badge-fill ddream__badge-fill--40" />
+              <div className="ddream__badge-dot ddream__badge-dot--40" />
+            </div>
+            <span className="ddream__badge-label">피그마, 팀 작업 40%</span>
+          </div>
         </div>
       </section>
     </div>
