@@ -12,9 +12,9 @@ const wfPurchase     = "/images/dodream/wireframe-purchase.svg";
 const wfMy           = "/images/dodream/wireframe-my.svg";
 const wfDashboard    = "/images/dodream/wireframe-dashboard.svg";
 
-const webMain        = "/images/dodream/web-main.svg";
-const webShop        = "/images/dodream/web-shop.svg";
-const webShopdetail  = "/images/dodream/web-shopdetail.svg";
+const browserMain   = "/images/dodream/ddr_web1.svg";
+const browserShop   = "/images/dodream/ddr_web2.svg";
+const browserDetail = "/images/dodream/ddr_web3.svg";
 
 export default function DodreamWebsite({ onBack }) {
   return (
@@ -117,7 +117,7 @@ export default function DodreamWebsite({ onBack }) {
           </div>
         </div>
         <div className="ddream__mockup-item ddream__mockup-item--main">
-          <img src={webMain} alt="두드림 메인 페이지" className="ddream__mockup-web" />
+          <img src={browserMain} alt="두드림 메인 페이지" className="ddream__mockup-web" />
         </div>
 
         {/* 장바구니 브라우저 (우측 상단) */}
@@ -129,7 +129,7 @@ export default function DodreamWebsite({ onBack }) {
           </div>
         </div>
         <div className="ddream__mockup-item ddream__mockup-item--shop">
-          <img src={webShop} alt="두드림 장바구니" className="ddream__mockup-web" />
+          <img src={browserShop} alt="두드림 장바구니" className="ddream__mockup-web" />
         </div>
 
         {/* 구매상세 브라우저 (우측 하단) */}
@@ -141,7 +141,7 @@ export default function DodreamWebsite({ onBack }) {
           </div>
         </div>
         <div className="ddream__mockup-item ddream__mockup-item--detail">
-          <img src={webShopdetail} alt="두드림 구매 상세" className="ddream__mockup-web" />
+          <img src={browserDetail} alt="두드림 구매 상세" className="ddream__mockup-web" />
         </div>
 
         <div className="ddream__badge ddream__badge--mockup">

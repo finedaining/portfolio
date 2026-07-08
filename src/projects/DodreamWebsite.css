@@ -275,18 +275,52 @@
 
 
 /* ══════════════════════════════════════════
-   3. 코드 구현 페이지 (웹 목업) - 두드림 맞춤 수정
+   3. 코드 구현 페이지 (웹 목업) - 박스 제거 최종본
 ══════════════════════════════════════════ */
 .ddream__mockup {
-  background: #e2e2e2; /* 결과물 1의 은은하고 깔끔한 그레이 배경 */
+  background: #dfe1e3; 
   border-radius: 20px;
-  min-height: 680px;
+  min-height: 720px;
   position: relative;
   overflow: hidden;
   padding: 40px;
 }
 
-/* 좌상단 로고 및 텍스트 위치 고정 */
+.ddream__mockup-item {
+  position: absolute;
+}
+
+.ddream__mockup-web {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  filter: drop-shadow(0 12px 24px rgba(0,0,0,.18));
+}
+
+/* ── 위치 배열 (결과물 1 기준 계단식) ── */
+.ddream__mockup-item--main {
+  left: 22%;
+  top: 12%;
+  width: 44%;
+  z-index: 3;
+}
+
+.ddream__mockup-item--shop {
+  left: 43%;
+  top: 20%;
+  width: 44%;
+  z-index: 1;
+}
+
+.ddream__mockup-item--detail {
+  left: 35%;
+  top: 45%;
+  width: 44%;
+  z-index: 2;
+}
+
+/* ── 라벨 및 태그 스타일 (기존 동일) ── */
 .ddream__mockup .ddream__wf-logo {
   position: absolute;
   top: 24px;
@@ -299,102 +333,49 @@
   bottom: 40px;
   left: 40px;
   font-family: 'Pretendard', sans-serif;
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 24px;
+  font-weight: 600;
   color: #111;
   margin: 0;
   z-index: 10;
 }
 
-/* ── 목업 아이템 전체 컨테이너 및 공통 스타일 ── */
-.ddream__mockup-item {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  z-index: 5;
-  filter: drop-shadow(0px 20px 40px rgba(0, 0, 0, 0.15)); /* 브라우저 그림자 효과 */
-}
-
-.ddream__mockup-web {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 4px;
-}
-
-/* ── 각 페이지별 위치 세부 조정 (결과물 1 기준 계단식 배치) ── */
-
-/* 1. 메인 페이지 (가장 앞쪽, 중앙 좌측) */
-.ddream__mockup-item--main {
-  left: 23%;
-  top: 15%;
-  width: 46%;
-  z-index: 3; /* 가장 위에 오도록 설정 */
-}
-
-/* 2. 장바구니 페이지 (가장 뒤쪽, 우측 상단) */
-.ddream__mockup-item--shop {
-  left: 40%;
-  top: 22%;
-  width: 46%;
-  z-index: 1; /* 가장 아래에 깔림 */
-}
-
-/* 3. 구매 상세 페이지 (중간, 중앙 하단) */
-.ddream__mockup-item--detail {
-  left: 32%;
-  top: 55%;
-  width: 46%;
-  z-index: 2; /* 메인과 장바구니 사이 레이어 */
-}
-
-/* ── 상단/하단 태그 가이드 라벨 ── */
 .ddream__mockup-tag {
   position: absolute;
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
-  color: #333;
-  font-weight: 500;
   z-index: 10;
 }
 
 .ddream__mockup-tag-dot {
   width: 6px;
   height: 6px;
-  background-color: #7a7a7a;
   border-radius: 50%;
-  display: inline-block;
+  background: #2c3e50;
+  flex-shrink: 0;
 }
 
 .ddream__mockup-tag-text {
   display: flex;
-  gap: 4px;
+  gap: 6px;
+}
+
+.ddream__mockup-tag-text span {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2c3e50;
   white-space: nowrap;
 }
 
-/* 각 태그 위치 지정 */
-.ddream__mockup-tag--main {
-  left: 23%;
-  top: 10%;
-}
+.ddream__mockup-tag--main { left: 24%; top: 10%; }
+.ddream__mockup-tag--shop { left: 72%; top: 17%; }
+.ddream__mockup-tag--detail { left: 79%; bottom: 40px; }
 
-.ddream__mockup-tag--shop {
-  left: 73%;
-  top: 18%;
-}
-
-.ddream__mockup-tag--detail {
-  left: 80%;
-  bottom: 40px;
-}
-
-/* 하단 배지 위치 조정 */
 .ddream__mockup .ddream__badge--mockup {
   position: absolute;
   left: 40px;
-  bottom: 85px; /* 코드 구현 페이지 글자 위에 배치 */
+  bottom: 85px;
   z-index: 10;
 }

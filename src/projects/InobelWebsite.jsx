@@ -1,69 +1,55 @@
-import './ProjectPage.css'
+import React from 'react';
+import './InobelWebsite.css';
 
-const PAR = [
-  {
-    label: 'Problem',
-    text: 'B2B 스타트업 이노벨은 서비스의 신뢰성과 전문성을 전달할 수 있는 온라인 채널이 없었습니다. 기업 대상 서비스임에도 브랜드 아이덴티티가 부재하여 시장 내 포지셔닝이 어려웠습니다.',
-  },
-  {
-    label: 'Action',
-    text: '신뢰감을 주는 딥블루 컬러 시스템으로 기업 브랜드를 구축했습니다. PC 웹과 모바일 웹 설계부터 굿즈 디자인까지 브랜드 경험 전반을 단독으로 기획·제작하였습니다.',
-  },
-  {
-    label: 'Result',
-    text: '전문성과 신뢰감을 갖춘 일관된 B2B 브랜드 아이덴티티를 완성했습니다. 웹 채널부터 오프라인 굿즈까지 확장된 브랜드 접점으로 기업 인지도 향상에 기여하였습니다.',
-  },
-]
+const logo      = "/images/inovel/logo.svg";
+const bgEclipse = "/images/inovel/bg-eclipse.svg";
+const glassBig  = "/images/inovel/glass-big.svg";
+const glassMini = "/images/inovel/glass-mini.svg";
+const board1    = "/images/inovel/board1.svg";
+const board2    = "/images/inovel/board2.svg";
+const sunscreen = "/images/inovel/sunscreen.svg";
 
 export default function InobelWebsite({ onBack }) {
   return (
-    <div className="pp">
-      <button className="pp__back" onClick={onBack}>← 포트폴리오로</button>
+    <div className="inov">
+      <button className="inov__back" onClick={onBack}>← 포트폴리오로</button>
 
-      {/* ── 표지 ── */}
-      <section
-        className="pp__cover"
-        style={{ '--cover-from': '#0E1F33', '--cover-to': '#1E4070' }}
-      >
-        <div className="pp__cover-bg" />
+      <section className="inov__cover">
 
-        <div className="pp__cover-title-area">
-          <h1 className="pp__cover-h1">Brand<br />ing</h1>
-          <p className="pp__cover-sub">이노벨 B2B 브랜드 구축</p>
+        <div className="inov__cover-left">
+          <img src={bgEclipse} alt="" className="inov__bg-eclipse" />
+          <img src={board1}    alt="" className="inov__board1" />
+          <img src={board2}    alt="" className="inov__board2" />
+          <img src={sunscreen} alt="" className="inov__sunscreen" />
+          <img src={glassBig}  alt="" className="inov__glass-big" />
+          <img src={glassMini} alt="" className="inov__glass-mini" />
+          <img src={logo}      alt="innovelle" className="inov__logo" />
         </div>
 
-        <div className="pp__cover-mocks">
-          <div className="pp__mock pp__mock--browser" />
-          <div className="pp__mock pp__mock--phone" />
-        </div>
-
-        <div className="pp__cover-par">
-          {PAR.map(({ label, text }) => (
-            <div key={label} className="pp__par-block">
-              <h3 className="pp__par-label">{label}</h3>
-              <p className="pp__par-text">{text}</p>
+        <div className="inov__cover-right">
+          <h1 className="inov__cover-title">Branding</h1>
+          <p className="inov__cover-sub">이노벨 (Innovelle) 브랜드 런칭</p>
+          <p className="inov__cover-desc">
+            이노벨(InnoVelle)은 클린 뷰티와 퓨어 뷰티의 가치를 지키며,<br />
+            피부와 지구를 위한 건강한 뷰티 솔루션을 제공합니다.<br />
+            깨끗한 성분과 투명한 제조 과정을 통해 인체에 유해한 성분을 배제하고,<br />
+            친환경 패키지와 윤리적 원료 사용으로 환경을 고려한 제품을 선보입니다.<br />
+            브랜드는 고객에게 진정성 있는 뷰티 경험을 제공하며, 지속 가능한 라이프스타일을 추구합니다.<br />
+            다양한 제품 라인과 맞춤형 경험을 통해 피부에 최적화된 솔루션을 제공하며,<br />
+            아름다움과 환경을 동시에 생각하는 브랜드를 만들고자 합니다.
+          </p>
+          <div className="inov__badge">
+            <div className="inov__badge-bar-wrap">
+              <div className="inov__badge-bar">
+                <div className="inov__badge-fill" />
+                <div className="inov__badge-dot" />
+              </div>
+              <span className="inov__badge-label">팀 작업, 전체 기여도 60%</span>
             </div>
-          ))}
+          </div>
         </div>
-      </section>
 
-      {/* ── 설명 ── */}
-      <section
-        className="pp__desc"
-        style={{
-          '--desc-panel1': '#dce3ed',
-          '--desc-panel2': '#c4d0e0',
-        }}
-      >
-        <div className="pp__desc-left">
-          <p className="pp__credit">피그마 · 일러스트레이터, 개인작업 100%</p>
-          <p className="pp__label">이노벨<br />B2B 브랜드 디자인</p>
-        </div>
-        <div className="pp__desc-right">
-          <div className="pp__mock pp__mock--wide" />
-          <div className="pp__mock pp__mock--phone-sm" />
-        </div>
       </section>
     </div>
-  )
+  );
 }
