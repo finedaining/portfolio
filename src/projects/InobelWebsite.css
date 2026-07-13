@@ -52,8 +52,8 @@
 .inov__board1 {
   position: absolute;
   left: 8%;
-  top: 20%;
-  width: 42%;
+  top: 10%;
+  width: 64%;
   z-index: 3;
 }
 
@@ -74,16 +74,16 @@
 }
 
 .inov__glass-big {
-  position: absolute;
-  left: -3%;
-  top: 3%;
+  position: relative;
+  left: 6%;
+  top: 10%;
   width: 32%;
   z-index: 5;
 }
 
 .inov__glass-mini {
   position: absolute;
-  left: 1%;
+  left: 33%;
   top: 38%;
   width: 17%;
   z-index: 6;
@@ -180,9 +180,92 @@
   border: 2px solid #007aff;
 }
 
+.inov__badge-fill--30 { width: 30%; }
+.inov__badge-dot--30  { left: calc(30% - 6px); }
+
 .inov__badge-label {
   font-family: 'Pretendard', sans-serif;
   font-size: 12px;
   color: #474747;
   white-space: nowrap;
+}
+
+
+/* ══════════════════════════════════════════
+   2. 웹 디자인
+══════════════════════════════════════════ */
+.inov__s2 {
+  background: #f0ede9;
+  border-radius: 20px;
+  min-height: 680px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.inov__s2-left {
+  flex: 0 0 27%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.inov__s2-logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 90px;
+  z-index: 2;
+}
+
+.inov__s2-phones {
+  width: 100%;
+  height: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+.inov__s2-text {
+  flex: 1;
+  padding: 16px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.inov__s2-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.inov__s2-web {
+  flex: 0 0 45%;
+  overflow: hidden;
+}
+
+.inov__s2-web img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+}
+
+.inov__s2-right {
+  flex: 1;
+  overflow: hidden;
+}
+
+.inov__s2-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  display: block;
 }
