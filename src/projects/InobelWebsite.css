@@ -131,7 +131,7 @@
   font-family: 'Pretendard', sans-serif;
   font-size: 13px;
   color: #333;
-  line-height: 1.9;
+  line-height: 22px;
   margin: 0;
   word-break: keep-all;
 }
@@ -142,6 +142,9 @@
   align-items: center;
   gap: 10px;
   margin-top: 4px;
+  position: relative;
+
+  
 }
 
 .inov__badge-bar-wrap {
@@ -180,8 +183,13 @@
   border: 2px solid #007aff;
 }
 
-.inov__badge-fill--30 { width: 30%; }
-.inov__badge-dot--30  { left: calc(30% - 6px); }
+.inov__badge-fill--30 {
+  width: 30%;
+}
+
+.inov__badge-dot--30 {
+  left: calc(30% - 6px);
+}
 
 .inov__badge-label {
   font-family: 'Pretendard', sans-serif;
@@ -220,10 +228,13 @@
 }
 
 .inov__s2-phones {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
   flex-shrink: 0;
+  position: relative;
+  left: 35px;
+  top: 110px;
 }
 
 .inov__s2-text {
@@ -233,6 +244,23 @@
   flex-direction: column;
   gap: 10px;
   justify-content: flex-end;
+}
+
+.inov__s2-badge {
+  position: absolute;
+  bottom: 24px;
+  left: 40px;
+  gap:6px;
+}
+
+.inov__s2-badge .inov__s2-badge-icon {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  position:relative;
+  bottom:10px;
+  left:-2px;
 }
 
 .inov__s2-title {
@@ -246,26 +274,300 @@
 
 .inov__s2-web {
   flex: 0 0 45%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .inov__s2-web img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   object-fit: cover;
   object-position: top;
   display: block;
+  position: relative;
+  left: 40px;
 }
 
 .inov__s2-right {
   flex: 1;
   overflow: hidden;
+  position: relative;
 }
 
 .inov__s2-right img {
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: auto;
   object-fit: cover;
   object-position: top;
   display: block;
+  position: relative;
+  left: 40px;
+  bottom: 120px;
+}
+
+/* ══════════════════════════════════════════
+   3. 굿즈 제작
+══════════════════════════════════════════ */
+.inov__s3 {
+  background: #e2deda;
+  border-radius: 20px;
+  min-height: 680px;
+  position: relative;
+  overflow: hidden;
+}
+
+.inov__s3-logo {
+  position: absolute;
+  left: 1.5%;
+  top: 3%;
+  width: 8%;
+  z-index: 10;
+}
+
+/* ── X BANNER ── */
+.inov__s3-xb1m {
+  position: absolute;
+  left: 2%;
+  top: 7%;
+  width: 9%;
+  z-index: 2;
+}
+
+.inov__s3-xb2m {
+  position: absolute;
+  left: 7%;
+  top: 5%;
+  width: 9%;
+  z-index: 3;
+}
+
+.inov__s3-xb1 {
+  position: absolute;
+  left: 13%;
+  top: 11%;
+  width: 6.5%;
+  z-index: 1;
+}
+
+.inov__s3-xb2 {
+  position: absolute;
+  left: 10.5%;
+  top: 14%;
+  width: 5.5%;
+  z-index: 0;
+}
+
+/* ── POST CARD ── */
+.inov__s3-pc {
+  position: absolute;
+  width: 11.5%;
+  z-index: 4;
+}
+
+.inov__s3-pc--dark {
+  left: 18.5%;
+  top: 43%;
+}
+
+.inov__s3-pc--tree {
+  left: 29.5%;
+  top: 41%;
+  transform: rotate(3deg);
+}
+
+.inov__s3-pc--drive {
+  left: 17.5%;
+  top: 54%;
+  transform: rotate(-2deg);
+}
+
+.inov__s3-pc--japan {
+  left: 28%;
+  top: 52%;
+  transform: rotate(2deg);
+}
+
+.inov__s3-pc--pink {
+  left: 18.5%;
+  top: 64%;
+  transform: rotate(-1deg);
+}
+
+.inov__s3-pc--tang {
+  left: 29%;
+  top: 63%;
+  transform: rotate(4deg);
+}
+
+/* ── BUSINESS CARD ── */
+.inov__s3-card-back {
+  position: absolute;
+  left: 27%;
+  top: 10%;
+  width: 18%;
+  z-index: 2;
+  transform: rotate(-8deg);
+}
+
+.inov__s3-card-front {
+  position: absolute;
+  left: 33%;
+  top: 3%;
+  width: 38%;
+  z-index: 3;
+}
+
+/* ── DIARY ── */
+.inov__s3-diary-things {
+  position: absolute;
+  left: 43%;
+  top: 46%;
+  width: 23%;
+  z-index: 5;
+}
+
+.inov__s3-diary {
+  position: absolute;
+  left: 47%;
+  top: 53%;
+  width: 24%;
+  z-index: 4;
+}
+
+/* ── STICKER ── */
+.inov__s3-sticker-panel {
+  position: absolute;
+  left: 76.5%;
+  top: 9.5%;
+  width: 24%;
+  height: 38%;
+  background: #3d3533;
+  border-radius: 12px;
+  z-index: 2;
+}
+
+.inov__s3-sticker {
+  position: absolute;
+  left: 77%;
+  top: 8%;
+  width: 23%;
+  z-index: 3;
+}
+
+.inov__s3-fish {
+  position: absolute;
+  left: 86%;
+  top: 2%;
+  width: 8%;
+  z-index: 5;
+}
+
+.inov__s3-orange-sticker {
+  position: absolute;
+  left: 92%;
+  top: 40%;
+  width: 6%;
+  z-index: 5;
+}
+
+/* ── 라벨 공통 ── */
+.inov__s3-label {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  z-index: 10;
+}
+
+.inov__s3-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f68827;
+  flex-shrink: 0;
+  margin-bottom: 2px;
+}
+
+.inov__s3-label-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.inov__s3-label-desc {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+/* ── 라벨 위치 ── */
+.inov__s3-label--xb {
+  left: 0.5%;
+  top: 65%;
+}
+
+.inov__s3-label--pc {
+  left: 17%;
+  top: 77%;
+}
+
+.inov__s3-label--bc {
+  left: 35%;
+  top: 36%;
+}
+
+.inov__s3-label--diary {
+  left: 43%;
+  top: 83%;
+}
+
+.inov__s3-label--sticker {
+  left: 76.5%;
+  top: 57%;
+}
+
+/* ── 하단 타이틀 ── */
+.inov__s3-title {
+  position: absolute;
+  left: 2%;
+  bottom: 4%;
+  font-family: 'Pretendard', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  letter-spacing: -1.5px;
+  z-index: 10;
+}
+
+/* ── 배지 ── */
+.inov__s3-badge {
+  position: absolute;
+  right: 2%;
+  bottom: 3.5%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.inov__s3-badge-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* ── 배지 100% 모디파이어 ── */
+.inov__badge-fill--100 {
+  width: 100%;
+}
+
+.inov__badge-dot--100 {
+  left: auto;
+  right: -6px;
 }
