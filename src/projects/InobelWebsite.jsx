@@ -26,6 +26,8 @@ const fish        = "/images/inovel/fish.svg";
 const orange      = "/images/inovel/orange.svg";
 const figmaIcon   = "/images/inovel/figma.svg";
 const gnIcon      = "/images/inovel/goodnote-icon.svg";
+const s3Model     = "/images/inovel/model-main.svg";
+const s3Image     = "/images/inovel/s3-image.png";
 
 const bgEclipse = "/images/inovel/bg-eclipse.svg";
 const glassBig  = "/images/inovel/glass-big.svg";
@@ -119,37 +121,50 @@ export default function InobelWebsite({ onBack }) {
       <section className="inov__s3">
         <img src={logo} alt="innovelle" className="inov__s3-logo" />
 
-        {/* X BANNER */}
-        <img src={xbanner1M} alt="" className="inov__s3-xb1m" />
-        <img src={xbanner2M} alt="" className="inov__s3-xb2m" />
-        <img src={xbanner1}  alt="" className="inov__s3-xb1" />
+        {/* X BANNER — physical banners behind, mockups in front */}
         <img src={xbanner2}  alt="" className="inov__s3-xb2" />
+        <img src={xbanner1}  alt="" className="inov__s3-xb1" />
+        <img src={xbanner2M} alt="" className="inov__s3-xb2m" />
+        <img src={xbanner1M} alt="" className="inov__s3-xb1m" />
         <div className="inov__s3-label inov__s3-label--xb">
           <span className="inov__s3-dot" />
-          <p className="inov__s3-label-title">X BANNER</p>
-          <p className="inov__s3-label-desc">'Innovelle Archive' 라는<br />메인 타이틀을 활용한 X 배너 디자인!</p>
+          <div className="inov__s3-label-text">
+            <p className="inov__s3-label-title">X BANNER</p>
+            <p className="inov__s3-label-desc">'Innovelle Archive' 라는<br />메인 타이틀을 활용한 X 배너 디자인</p>
+          </div>
         </div>
 
-        {/* POST CARD */}
-        <img src={photoDark}  alt="" className="inov__s3-pc inov__s3-pc--dark" />
-        <img src={photoTree}  alt="" className="inov__s3-pc inov__s3-pc--tree" />
-        <img src={photoDrive} alt="" className="inov__s3-pc inov__s3-pc--drive" />
-        <img src={photoJapan} alt="" className="inov__s3-pc inov__s3-pc--japan" />
-        <img src={photoPink}  alt="" className="inov__s3-pc inov__s3-pc--pink" />
-        <img src={photoTang}  alt="" className="inov__s3-pc inov__s3-pc--tang" />
-        <div className="inov__s3-label inov__s3-label--pc">
-          <span className="inov__s3-dot" />
-          <p className="inov__s3-label-title">POST CARD</p>
-          <p className="inov__s3-label-desc">직접 촬영한 사진과 손그림, 손글씨를 활용한<br />감성적인 엽서 디자인</p>
-        </div>
+        {/* image 129 (배경 레이어) */}
+        <img src={s3Image} alt="" className="inov__s3-img129" />
 
         {/* BUSINESS CARD */}
         <img src={cardBack}  alt="" className="inov__s3-card-back" />
         <img src={cardFront} alt="" className="inov__s3-card-front" />
+
+        {/* image 126 — model photo */}
+        <img src={s3Model} alt="" className="inov__s3-model" />
+
+        {/* POST CARD */}
+        <img src={photoJapan} alt="" className="inov__s3-pc inov__s3-pc--japan" />
+        <img src={photoTree}  alt="" className="inov__s3-pc inov__s3-pc--tree" />
+        <img src={photoDark}  alt="" className="inov__s3-pc inov__s3-pc--dark" />
+        <img src={photoTang}  alt="" className="inov__s3-pc inov__s3-pc--tang" />
+        <img src={photoPink}  alt="" className="inov__s3-pc inov__s3-pc--pink" />
+        <img src={photoDrive} alt="" className="inov__s3-pc inov__s3-pc--drive" />
+        <div className="inov__s3-label inov__s3-label--pc">
+          <span className="inov__s3-dot" />
+          <div className="inov__s3-label-text">
+            <p className="inov__s3-label-title">POST CARD</p>
+            <p className="inov__s3-label-desc">직접 촬영한 사진과 손그림, 손글씨를 활용한<br />감성적인 엽서 디자인</p>
+          </div>
+        </div>
+
         <div className="inov__s3-label inov__s3-label--bc">
           <span className="inov__s3-dot" />
-          <p className="inov__s3-label-title">BUSINESS CARD</p>
-          <p className="inov__s3-label-desc">심플한 도형 모티프와<br />브랜드 이념 메시지를 담은 명함 디자인</p>
+          <div className="inov__s3-label-text">
+            <p className="inov__s3-label-title">BUSINESS CARD</p>
+            <p className="inov__s3-label-desc">심플한 도형 모티프와<br />브랜드 이념 메시지를 담은 명함 디자인</p>
+          </div>
         </div>
 
         {/* DIARY */}
@@ -157,19 +172,20 @@ export default function InobelWebsite({ onBack }) {
         <img src={diary}       alt="" className="inov__s3-diary" />
         <div className="inov__s3-label inov__s3-label--diary">
           <span className="inov__s3-dot" />
-          <p className="inov__s3-label-title">DIARY</p>
-          <p className="inov__s3-label-desc">엽서 디자인에서 사용한 색감을 기반으로 구성한<br />파스텔톤 다이어리 디자인!</p>
+          <div className="inov__s3-label-text">
+            <p className="inov__s3-label-title">DIARY</p>
+            <p className="inov__s3-label-desc">엽서 디자인에서 사용한 색감을 기반으로 구성한<br />파스텔톤 다이어리 디자인</p>
+          </div>
         </div>
 
-        {/* STICKER */}
-        <div className="inov__s3-sticker-panel" />
+        {/* STICKER — sticker.svg = full group (fish + panel + orange) */}
         <img src={sticker} alt="" className="inov__s3-sticker" />
-        <img src={fish}    alt="" className="inov__s3-fish" />
-        <img src={orange}  alt="" className="inov__s3-orange-sticker" />
         <div className="inov__s3-label inov__s3-label--sticker">
           <span className="inov__s3-dot" />
-          <p className="inov__s3-label-title">STICKER</p>
-          <p className="inov__s3-label-desc">메인 컬러(#F68827)에서 영감을 받아 제작한<br />손그림 스티커 디자인</p>
+          <div className="inov__s3-label-text">
+            <p className="inov__s3-label-title">STICKER</p>
+            <p className="inov__s3-label-desc">메인 컬러(#F68827)에서 영감을 받아 제작한<br />손그림 스티커 디자인</p>
+          </div>
         </div>
 
         {/* 하단 */}

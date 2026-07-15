@@ -42,7 +42,7 @@
 /* 피그마 1978×1186 기준 → 왼쪽 패널 1090×1186 기준 % */
 
 .inov__bg-eclipse {
-  position: absolute;
+  position: relative;
   left: -3%;
   top: 24%;
   width: 54%;
@@ -52,17 +52,17 @@
 .inov__board1 {
   position: absolute;
   left: 8%;
-  top: 10%;
-  width: 64%;
-  z-index: 3;
+  top: 20%;
+  width: 50%;
+  z-index: 4;
 }
 
 .inov__board2 {
   position: absolute;
-  left: 38%;
+  left: 50%;
   top: 7%;
-  width: 64%;
-  z-index: 4;
+  width: 50%;
+  z-index: 3;
 }
 
 .inov__sunscreen {
@@ -244,6 +244,8 @@
   flex-direction: column;
   gap: 10px;
   justify-content: flex-end;
+  position: relative;
+  bottom:50px;
 }
 
 .inov__s2-badge {
@@ -310,161 +312,146 @@
 .inov__s3 {
   background: #e2deda;
   border-radius: 20px;
-  min-height: 680px;
   position: relative;
   overflow: hidden;
+  aspect-ratio: 1978 / 1186;
 }
 
 .inov__s3-logo {
   position: absolute;
-  left: 1.5%;
-  top: 3%;
-  width: 8%;
-  z-index: 10;
+ top: 20px;
+  left: 20px;
+  width: 90px;
+  z-index: 40;
 }
 
 /* ── X BANNER ── */
-.inov__s3-xb1m {
+/* xb2 (시안2) is the right banner, rendered behind xb1 */
+.inov__s3-xb2 {
   position: absolute;
-  left: 2%;
-  top: 7%;
-  width: 9%;
-  z-index: 2;
-}
-
-.inov__s3-xb2m {
-  position: absolute;
-  left: 7%;
-  top: 5%;
-  width: 9%;
-  z-index: 3;
+  left: 11.1%;   /* 220/1978 */
+  top: 9.8%;     /* 116/1186 */
+  width: 5.5%;   /* 108/1978 */
+  z-index: 7;
 }
 
 .inov__s3-xb1 {
   position: absolute;
-  left: 13%;
-  top: 11%;
-  width: 6.5%;
-  z-index: 1;
+  left: 4.6%;    /* 91/1978 */
+  top: 14.3%;    /* 170/1186 */
+  width: 5.5%;   /* 108/1978 */
+  z-index: 7;
 }
 
-.inov__s3-xb2 {
+/* xb2m rendered behind xb1m */
+.inov__s3-xb2m {
   position: absolute;
-  left: 10.5%;
-  top: 14%;
-  width: 5.5%;
-  z-index: 0;
+  left: 15%;   /* 303/1978 */
+  top: 28%;    /* 252/1186 */
+  width: 10.1%;  /* 199/1978 */
+  z-index: 7;
+}
+
+.inov__s3-xb1m {
+  position: absolute;
+  left: 16%;   /* 280/1978 */
+  top: 24%;    /* 313/1186 */
+  width: 10.1%;  /* 199/1978 */
+  z-index: 7;
 }
 
 /* ── POST CARD ── */
 .inov__s3-pc {
   position: absolute;
-  width: 11.5%;
   z-index: 4;
 }
 
-.inov__s3-pc--dark {
-  left: 18.5%;
-  top: 43%;
+.inov__s3-pc--japan {
+  left: 23.0%;   /* 455/1978 */
+  top: 45.7%;    /* 542/1186 */
+  width: 8.2%;   /* 162/1978 */
 }
 
 .inov__s3-pc--tree {
-  left: 29.5%;
-  top: 41%;
-  transform: rotate(3deg);
+  left: 19.2%;   /* 379/1978 */
+  top: 57.3%;    /* 679/1186 */
+  width: 7.5%;   /* 148/1978 */
 }
 
-.inov__s3-pc--drive {
-  left: 17.5%;
-  top: 54%;
-  transform: rotate(-2deg);
-}
-
-.inov__s3-pc--japan {
-  left: 28%;
-  top: 52%;
-  transform: rotate(2deg);
-}
-
-.inov__s3-pc--pink {
-  left: 18.5%;
-  top: 64%;
-  transform: rotate(-1deg);
+.inov__s3-pc--dark {
+  left: 28.1%;   /* 555/1978 */
+  top: 61.4%;    /* 728/1186 */
+  width: 6.7%;   /* 132/1978 */
 }
 
 .inov__s3-pc--tang {
-  left: 29%;
-  top: 63%;
-  transform: rotate(4deg);
+  left: 32.5%;   /* 642/1978 */
+  top: 44.3%;    /* 525/1186 */
+  width: 8.2%;   /* 162/1978 */
+}
+
+.inov__s3-pc--pink {
+  left: 30.4%;   /* 601/1978 */
+  top: 52.2%;    /* 619/1186 */
+  width: 4.7%;   /* 92/1978 */
+}
+
+.inov__s3-pc--drive {
+  left: 34.7%;   /* 686/1978 */
+  top: 56.5%;    /* 670/1186 */
+  width: 5.2%;   /* 102/1978 */
 }
 
 /* ── BUSINESS CARD ── */
 .inov__s3-card-back {
   position: absolute;
-  left: 27%;
-  top: 10%;
-  width: 18%;
+  left: 44.5%;   /* 881/1978 */
+  top: 14%;    /* 128/1186 */
+  width: 11.9%;  /* 236/1978 */
   z-index: 2;
-  transform: rotate(-8deg);
+  transform: rotate(8deg);
 }
 
 .inov__s3-card-front {
   position: absolute;
-  left: 33%;
-  top: 3%;
-  width: 38%;
+  left: 36.1%;   /* 714/1978 */
+  top: 20.6%;    /* 244/1186 */
+  width: 11.9%;  /* 236/1978 */
   z-index: 3;
 }
 
 /* ── DIARY ── */
 .inov__s3-diary-things {
   position: absolute;
-  left: 43%;
-  top: 46%;
-  width: 23%;
-  z-index: 5;
+  left: 47%;   /* 1068/1978 */
+  top: 52%;    /* 612/1186 */
+  width: 16.1%;  /* 318/1978 */
+  z-index: 4;
 }
 
 .inov__s3-diary {
   position: absolute;
-  left: 47%;
-  top: 53%;
-  width: 24%;
-  z-index: 4;
-}
-
-/* ── STICKER ── */
-.inov__s3-sticker-panel {
-  position: absolute;
-  left: 76.5%;
-  top: 9.5%;
-  width: 24%;
-  height: 38%;
-  background: #3d3533;
-  border-radius: 12px;
-  z-index: 2;
-}
-
-.inov__s3-sticker {
-  position: absolute;
-  left: 77%;
-  top: 8%;
-  width: 23%;
-  z-index: 3;
-}
-
-.inov__s3-fish {
-  position: absolute;
-  left: 86%;
-  top: 2%;
-  width: 8%;
+  left: 48%;   /* 978/1978 */
+  top: 60%;    /* 778/1186 */
+  width: 24.4%;  /* 482/1978 */
   z-index: 5;
 }
 
-.inov__s3-orange-sticker {
+/* ── STICKER (sticker.svg = full group: fish + panel + orange) ── */
+.inov__s3-sticker {
   position: absolute;
-  left: 92%;
-  top: 40%;
+  left: 72.3%;   /* 1431/1978 */
+  top: 12.3%;    /* 146/1186 */
+  width: 22.3%;  /* 441/1978 */
+  z-index: 3;
+}
+
+/* placeholder to avoid unused-variable warning — no longer rendered */
+.inov__s3-sticker-panel { display: none; }
+.inov__s3-fish          { display: none; }
+.inov__s3-orange-sticker {
+  display: none;
+  left: 0; top: 0;
   width: 6%;
   z-index: 5;
 }
@@ -473,9 +460,16 @@
 .inov__s3-label {
   position: absolute;
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 10;
+}
+
+.inov__s3-label-text {
+  display: flex;
   flex-direction: column;
   gap: 3px;
-  z-index: 10;
 }
 
 .inov__s3-dot {
@@ -484,7 +478,7 @@
   border-radius: 50%;
   background: #f68827;
   flex-shrink: 0;
-  margin-bottom: 2px;
+  margin-top: 3px;
 }
 
 .inov__s3-label-title {
@@ -505,51 +499,70 @@
   word-break: keep-all;
 }
 
+/* ── 이미지 (image 129, image 126) ── */
+.inov__s3-img129 {
+  position: absolute;
+  left: 50%;   /* 1120/1978 */
+  top: 13%;    /* 138/1186 */
+  width: 9.3%;   /* 183/1978 */
+  z-index: 1;
+  object-fit: cover;
+}
+
+.inov__s3-model {
+  position: absolute;
+  left: 57%;   /* 1173/1978 */
+  top: 3%;    /* 253/1186 */
+  width: 14.5%;  /* 353/1978 */
+  z-index: 6;
+  object-fit: cover;
+}
+
 /* ── 라벨 위치 ── */
 .inov__s3-label--xb {
-  left: 0.5%;
-  top: 65%;
+  left: 4.5%;    /* 90/1978 */
+  top: 43.6%;    /* 517/1186 */
 }
 
 .inov__s3-label--pc {
-  left: 17%;
-  top: 77%;
+  left: 19.2%;   /* 380/1978 */
+  top: 78.0%;    /* 925/1186 */
 }
 
 .inov__s3-label--bc {
-  left: 35%;
-  top: 36%;
+  left: 36.1%;   /* 714/1978 */
+  top: 33.2%;    /* 394/1186 */
 }
 
 .inov__s3-label--diary {
-  left: 43%;
-  top: 83%;
+  left: 47.5%;   /* 939/1978 */
+  top: 86%;    /* 1080/1186 */
 }
 
 .inov__s3-label--sticker {
-  left: 76.5%;
-  top: 57%;
+  left: 77.2%;   /* 1527/1978 */
+  top: 56.1%;    /* 666/1186 */
 }
 
 /* ── 하단 타이틀 ── */
 .inov__s3-title {
   position: absolute;
-  left: 2%;
-  bottom: 4%;
+  left: 4.6%;    /* 91/1978 */
+  top: 92.1%;    /* 1092/1186 */
   font-family: 'Pretendard', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 700;
+  font-size: clamp(20px, 2.5vw, 12px);
+  font-weight: 500;
   color: #111;
   margin: 0;
-  letter-spacing: -1.5px;
+  letter-spacing: -0.3px;
   z-index: 10;
 }
 
 /* ── 배지 ── */
 .inov__s3-badge {
   position: absolute;
-  right: 2%;
-  bottom: 3.5%;
+  left: 76%;   /* 1479/1978 */
+  top: 91.7%;    /* 1088/1186 */
   display: flex;
   align-items: center;
   gap: 8px;
