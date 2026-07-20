@@ -1,5 +1,6 @@
 import React from 'react';
 import './JiguJavaWebsite.css';
+import TopButton from '../components/TopButton';
 
 const logo         = "/images/jigujava/logo.svg";
 const coverCircles= "/images/jigujava/cover.svg";
@@ -173,6 +174,7 @@ export default function JiguJavaWebsite({ onBack }) {
           </div>
         </div>
       </section>
+      <TopButton />
     </div>
   );
 }

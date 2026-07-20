@@ -1,5 +1,6 @@
 import React from 'react';
 import './VintageHouseWebsite.css';
+import TopButton from '../components/TopButton';
 
 /* ── 표지 ── */
 const coverPhoto1   = "/images/vintagehouse/cover-photo1.png";
@@ -182,6 +183,7 @@ export default function VintageHouseWebsite({ onBack }) {
           </div>
         </div>
       </section>
+      <TopButton />
     </div>
   );
 }

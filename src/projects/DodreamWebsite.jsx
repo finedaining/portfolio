@@ -1,5 +1,6 @@
 import React from 'react';
 import './DodreamWebsite.css';
+import TopButton from '../components/TopButton';
 
 const logoSvg        = "/images/dodream/logo.svg";
 const moodboard      = "/images/dodream/moodboard.svg";
@@ -154,6 +155,7 @@ export default function DodreamWebsite({ onBack }) {
           </div>
         </div>
       </section>
+      <TopButton />
     </div>
   );
 }

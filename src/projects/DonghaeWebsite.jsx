@@ -1,5 +1,6 @@
 import React from 'react';
 import './DonghaeWebsite.css';
+import TopButton from '../components/TopButton';
 
 const macWeb = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안.jpg";
 const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png";
@@ -17,8 +18,7 @@ const subPcPage = "/images/donghae/sub-pc.png";
 const subMobilePage = "/images/donghae/sub-mobile.png";
 const subIphoneFrame = "/images/donghae/sub-iphone.png";
 const subCamera = "/images/donghae/sub-camera.png";
-const psIconBg = "/images/donghae/ps-icon-bg.png";
-const psIconVec = "/images/donghae/ps-icon-vec.png";
+const figmaIcon = "/images/donghae/figma-icon.png";
 
 export default function DonghaeWebsite({ onBack }) {
   const phoneContainerRef = React.useRef(null);
@@ -165,15 +165,13 @@ export default function DonghaeWebsite({ onBack }) {
 
           {/* 툴 / 기여도 */}
           <div className="dongw__tool">
-            <div className="dongw__tool-icon">
-              <img src={psIconBg} alt="" className="dongw__ps-bg" />
-              <img src={psIconVec} alt="" className="dongw__ps-vec" />
-            </div>
+            <img src={figmaIcon} alt="Figma" className="dongw__figma-icon" />
             <div className="dongw__tool-bar-wrap">
               <div className="dongw__tool-bar-track">
                 <div className="dongw__tool-bar-fill" />
+                <div className="dongw__tool-bar-dot" />
               </div>
-              <span className="dongw__tool-label">포토샵, 개인작업 100%</span>
+              <span className="dongw__tool-label">피그마, 개인작업 100%</span>
             </div>
           </div>
 
@@ -219,6 +217,7 @@ export default function DonghaeWebsite({ onBack }) {
 
         </div>
       </section>
+      <TopButton />
     </div>
   );
 }

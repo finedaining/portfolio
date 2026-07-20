@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 import ToggleButtonGroup from './components/ToggleButtonGroup'
 import DonghaeWebsite from './projects/DonghaeWebsite'
 import CathKidstonWebsite from './projects/CathKidstonWebsite'
@@ -68,7 +68,7 @@ const PROJECTS = [
     desc: '청년 창업 지원 플랫폼. 브랜드 아이덴티티 수립부터 React 기반 프론트엔드 구현까지 디자인·개발 전 과정을 담당했습니다.',
     tags: ['Frontend', 'Branding'],
     color: 'linear-gradient(145deg, #7A60A8 0%, #5A4088 100%)',
-    year: '2024',
+    year: '2025',
     images: [],
     overview: [
       { label: 'Role', value: 'Brand Design · Frontend Dev' },
@@ -81,7 +81,7 @@ const PROJECTS = [
     desc: '빈티지 라이프스타일 브랜드의 이커머스 구축. 브랜드 감성을 살린 UI 디자인과 HTML/CSS 퍼블리싱을 담당했습니다.',
     tags: ['Frontend', 'Branding'],
     color: 'linear-gradient(145deg, #9A7060 0%, #7A5040 100%)',
-    year: '2024',
+    year: '2025',
     images: [],
     overview: [
       { label: 'Role', value: 'UI Design · Frontend Dev' },
@@ -335,9 +335,33 @@ const PROJECT_PAGE_MAP = {
   6: (back) => <VintageHouseWebsite onBack={back} />,
 }
 
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+
 export default function App() {
   const [page, setPage] = useState(null)
-  const back = () => setPage(null)
+  const savedScrollY = useRef(0)
+
+  const openPage = (id) => {
+    if (!PROJECT_PAGE_MAP[id]) return
+    savedScrollY.current = window.scrollY
+    setPage(id)
+  }
+
+  const back = () => {
+    setPage(null)
+  }
+
+  useLayoutEffect(() => {
+    if (page !== null) {
+      // 프로젝트 페이지 진입 → 맨 위로
+      window.scrollTo(0, 0)
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    } else {
+      // 뒤로 나갈 때 → 보던 위치 복원
+      window.scrollTo(0, savedScrollY.current)
+    }
+  }, [page])
 
   if (page !== null && PROJECT_PAGE_MAP[page]) {
     return PROJECT_PAGE_MAP[page](back)
@@ -349,7 +373,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
-        <Works onSelect={(id) => { if (PROJECT_PAGE_MAP[id]) setPage(id) }} />
+        <Works onSelect={(id) => openPage(id)} />
         <Contact />
       </main>
     </>

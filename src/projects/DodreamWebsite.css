@@ -117,10 +117,10 @@
 .ddream__sparkle {
   position: absolute;
   top: 40px;
-  right: 52%;
-  width: 13%;
+  right: 1%;
+  width: 11%;
   height: auto;
-  z-index: 10;
+  z-index: 0;
   pointer-events: none;
 }
 

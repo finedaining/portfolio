@@ -1,5 +1,6 @@
 import React from 'react';
 import './InobelWebsite.css';
+import TopButton from '../components/TopButton';
 
 const logo        = "/images/inovel/logo.svg";
 const s2Phones    = "/images/inovel/s2-phones.png";
@@ -202,6 +203,7 @@ export default function InobelWebsite({ onBack }) {
           </div>
         </div>
       </section>
+      <TopButton />
     </div>
   );
 }

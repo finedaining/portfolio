@@ -1,5 +1,6 @@
 import React from 'react';
 import './CathKidstonWebsite.css';
+import TopButton from '../components/TopButton';
 
 const phone1         = "/images/cathkidston/phone-red.svg";
 const phone2         = "/images/cathkidston/phone-green.svg";
@@ -117,6 +118,7 @@ export default function CathKidstonWebsite({ onBack }) {
       </section>
 
   
+      <TopButton />
     </div>
   );
 }
