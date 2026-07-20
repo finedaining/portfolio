@@ -2,7 +2,7 @@ import React from 'react';
 import './DonghaeWebsite.css';
 import TopButton from '../components/TopButton';
 
-const macWeb = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안.jpg";
+const macWeb = "/images/donghae/pc_main.svg";
 const bgLeft = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 4.png";
 const bgRight = "/images/donghae/browser/2020280070-김다인-웹-pc-메인시안 5.png";
 const laptopFrame = "/images/donghae/browser/mac.png";
@@ -10,7 +10,7 @@ const phoneFrame = "/images/donghae/iphone.png";
 
 // 표지 섹션 아이폰 목업
 const figmaPhoneFrame = "/images/donghae/iphone-frame.png";
-const figmaPhoneScreen = "/images/donghae/phone-screen.png";
+const figmaPhoneScreen = "/images/donghae/mob_main.svg";
 const figmaCamera = "/images/donghae/camera.png";
 
 // 설명 섹션 에셋
@@ -91,7 +91,7 @@ export default function DonghaeWebsite({ onBack }) {
 
   return (
     <div className="dongw">
-      <button className="dongw__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="dongw__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 표지 프레임 ── */}
       <section className="dongw__cover">

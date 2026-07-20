@@ -11,13 +11,19 @@
 .vhaus__back {
   background: none;
   border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #787472;
+  letter-spacing: .04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
   cursor: pointer;
-  font-size: 14px;
-  color: #555;
   padding: 0;
   margin-bottom: 8px;
   width: fit-content;
+  transition: opacity 0.2s;
 }
+.vhaus__back:hover { opacity: 0.5; }
 
 /* ── 표지 배경 이미지 (bg.svg 저장 시 반영) ── */
 .vhaus__bg {

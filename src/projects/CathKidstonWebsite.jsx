@@ -34,7 +34,7 @@ const PAR = [
 export default function CathKidstonWebsite({ onBack }) {
   return (
     <div className="cath">
-      <button className="cath__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="cath__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 표지 프레임 ── */}
       <section className="cath__cover">

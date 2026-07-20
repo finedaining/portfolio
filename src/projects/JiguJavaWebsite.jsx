@@ -32,7 +32,7 @@ const appIos      = "/images/jigujava/zigu-app-ios.svg";
 export default function JiguJavaWebsite({ onBack }) {
   return (
     <div className="jigu">
-      <button className="jigu__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="jigu__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 1. 표지 / 브랜딩 ── */}
       <section className="jigu__cover">

@@ -40,7 +40,7 @@ const sunscreen = "/images/inovel/sunscreen.svg";
 export default function InobelWebsite({ onBack }) {
   return (
     <div className="inov">
-      <button className="inov__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="inov__back" onClick={onBack}>← Back to portfolio</button>
 
       <section className="inov__cover">
 

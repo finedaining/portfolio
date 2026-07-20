@@ -20,7 +20,7 @@ const browserDetail = "/images/dodream/ddr_web3.svg";
 export default function DodreamWebsite({ onBack }) {
   return (
     <div className="ddream">
-      <button className="ddream__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="ddream__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 1. 표지 ── */}
       <section className="ddream__cover">

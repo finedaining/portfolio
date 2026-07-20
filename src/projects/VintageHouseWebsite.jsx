@@ -33,7 +33,7 @@ const figmaIcon      = "/images/vintagehouse/Figma-app.png";
 export default function VintageHouseWebsite({ onBack }) {
   return (
     <div className="vhaus">
-      <button className="vhaus__back" onClick={onBack}>← 포트폴리오로</button>
+      <button className="vhaus__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 1. 표지 / 브랜딩 ── */}
       <section className="vhaus__cover">
