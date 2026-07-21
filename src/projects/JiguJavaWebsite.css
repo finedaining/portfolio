@@ -300,6 +300,18 @@
   z-index: 5; /* 레이어 중 가장 최상단 배치 */
 }
 
+.jigu__pc-web {
+  position: absolute;
+  right:80px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30%;
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  filter:blur(1px);
+}
+
 .jigu__pc-label {
   position: absolute;
   bottom: 32px;

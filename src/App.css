@@ -290,6 +290,27 @@
 }
 .contact__top:hover { opacity: .5; }
 
+/* ── Project nav arrows ─────────────────────────────────── */
+.proj-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 0;
+  color: rgba(15, 14, 13, 0.25);
+  cursor: pointer;
+  z-index: 999;
+  padding: 12px;
+  line-height: 1;
+  transition: color 0.2s;
+  user-select: none;
+}
+.proj-nav:hover { color: rgba(15, 14, 13, 0.6); }
+.proj-nav--prev { left: 0px; }
+.proj-nav--next { right: 0px; }
+
 /* ── Responsive ─────────────────────────────────────────── */
 @media (max-width: 1024px) {
   .about__grid { grid-template-columns: 1fr; gap: 48px; }

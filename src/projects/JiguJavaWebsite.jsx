@@ -9,6 +9,7 @@ const figmaIcon   = "/images/jigujava/Figma-app.png";
 
 /* PC 섹션 */
 const pcBase      = "/images/jigujava/pc-mockup.svg";
+const pcWeb       = "/images/jigujava/pcweb.svg";
 const pcWin1      = "/images/jigujava/zigu-web-pc1.svg";
 const pcWin2      = "/images/jigujava/zigu-web-pc2.svg";
 const pcWin3      = "/images/jigujava/zigu-web-pc3.svg";
@@ -78,6 +79,8 @@ export default function JiguJavaWebsite({ onBack }) {
           <img src={pcWin3} alt="" className="jigu__pc-win jigu__pc-win--3" />
           <img src={pcWin2} alt="" className="jigu__pc-win jigu__pc-win--2" />
         </div>
+
+        <img src={pcWeb} alt="" className="jigu__pc-web" />
 
         <p className="jigu__pc-label">지구자바 pc web</p>
 

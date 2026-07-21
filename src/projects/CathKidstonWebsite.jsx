@@ -8,6 +8,7 @@ const bgEllipse      = "/images/cathkidston/bg-ellipse.png";
 const iphoneFrame    = "/images/cathkidston/iphone-frame.png";
 const phoneScreen    = "/images/cathkidston/phone-screen.svg";
 const bgEllipseSvg      = "/images/cathkidston/bg-ellipse.svg";
+const detailPage        = "/images/cathkidston/detailpage.svg";
 const detailVelvetBg    = "/images/cathkidston/desc-velvet-bg.svg";
 const detailPhoneScreen = "/images/cathkidston/desc-phone-screen.svg";
 const detailLetter      = "/images/cathkidston/desc-letter.svg";
@@ -44,6 +45,9 @@ export default function CathKidstonWebsite({ onBack }) {
           <img src={bgEllipseSvg} alt="" className="cath__bg-ellipse" />
         </div>
 
+        {/* 폰 사이 디테일 페이지 */}
+        <img src={detailPage} alt="" className="cath__detail-page-bg" />
+
         {/* 왼쪽 - 폰 목업 두 개 */}
         <div className="cath__cover-mockups">
           <img src={phone1} alt="캐스키드슨 첫번째 폰" className="cath__phone-red" />
@@ -57,7 +61,8 @@ export default function CathKidstonWebsite({ onBack }) {
       <div
         key={label}
         className={`cath__par ${
-          label === 'Problem' ? 'cath__par--problem' : ''
+          label === 'Problem' ? 'cath__par--problem' :
+          label === 'Action'  ? 'cath__par--action'  : ''
         }`}
       >
         <h3 className="cath__par-title">{label}</h3>

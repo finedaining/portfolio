@@ -337,9 +337,12 @@ const PROJECT_PAGE_MAP = {
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
+const PAGE_IDS = Object.keys(PROJECT_PAGE_MAP).map(Number)
+
 export default function App() {
   const [page, setPage] = useState(null)
   const savedScrollY = useRef(0)
+  const touchStartX = useRef(0)
 
   const openPage = (id) => {
     if (!PROJECT_PAGE_MAP[id]) return
@@ -353,18 +356,58 @@ export default function App() {
 
   useLayoutEffect(() => {
     if (page !== null) {
-      // 프로젝트 페이지 진입 → 맨 위로
       window.scrollTo(0, 0)
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
     } else {
-      // 뒤로 나갈 때 → 보던 위치 복원
       window.scrollTo(0, savedScrollY.current)
     }
   }, [page])
 
+  // 페이지 끝 스크롤 시 다음 프로젝트로 이동 (순환)
+  useEffect(() => {
+    if (page === null) return
+    const idx = PAGE_IDS.indexOf(page)
+    const nextId = PAGE_IDS[(idx + 1) % PAGE_IDS.length]
+
+    let overScrollDelta = 0
+    const THRESHOLD = 800
+
+    const onWheel = (e) => {
+      const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2
+      if (atBottom && e.deltaY > 0) {
+        overScrollDelta += e.deltaY
+        if (overScrollDelta >= THRESHOLD) {
+          openPage(nextId)
+        }
+      } else {
+        overScrollDelta = 0
+      }
+    }
+
+    window.addEventListener('wheel', onWheel, { passive: true })
+    return () => window.removeEventListener('wheel', onWheel)
+  }, [page])
+
   if (page !== null && PROJECT_PAGE_MAP[page]) {
-    return PROJECT_PAGE_MAP[page](back)
+    const idx = PAGE_IDS.indexOf(page)
+    const prevId = PAGE_IDS[(idx - 1 + PAGE_IDS.length) % PAGE_IDS.length]
+    const nextId = PAGE_IDS[(idx + 1) % PAGE_IDS.length]
+    return (
+      <>
+        {PROJECT_PAGE_MAP[page](back)}
+        <button className="proj-nav proj-nav--prev" onClick={() => openPage(prevId)}>
+          <svg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="20,4 4,24 20,44" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+        <button className="proj-nav proj-nav--next" onClick={() => openPage(nextId)}>
+          <svg width="24" height="48" viewBox="0 0 24 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <polyline points="4,4 20,24 4,44" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </button>
+      </>
+    )
   }
 
   return (

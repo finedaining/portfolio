@@ -43,6 +43,23 @@
   z-index: 0;
 }
 
+.cath__detail-page-bg {
+  position: absolute;
+  left: 490px;
+  top: 0;
+  width: 20%;
+  height: auto;
+  filter: blur(1px);
+  z-index: 1;
+  pointer-events: none;
+  animation: cath-detail-scroll 14s ease-in-out infinite alternate;
+}
+
+@keyframes cath-detail-scroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-40%); }
+}
+
 .cath__bg-ellipse {
   position: absolute;
 
@@ -124,6 +141,16 @@
 
 .cath__par--problem .cath__par-body {
   color: #000;
+}
+
+.cath__par--action .cath__par-title {
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.35);
+}
+
+.cath__par--action .cath__par-body {
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
 
 
