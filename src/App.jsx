@@ -42,7 +42,7 @@ const PROJECTS = [
     desc: '로컬 카페 브랜드의 디지털 확장. PC웹, 모바일 웹, 앱 3개 플랫폼에 걸쳐 일관된 브랜드 경험을 구축했습니다.',
     tags: ['PC Web', '모바일 Web', '모바일 App'],
     color: 'linear-gradient(145deg, #5A8A62 0%, #3A6A42 100%)',
-    year: '2024',
+    year: '2024.11-2024.12',
     images: [],
     overview: [
       { label: 'Role', value: 'Brand Design · UI/UX' },
@@ -55,7 +55,7 @@ const PROJECTS = [
     desc: 'B2B 스타트업의 브랜드 구축 프로젝트. PC웹, 모바일 웹 설계부터 굿즈 디자인까지 전 과정을 단독 진행했습니다.',
     tags: ['PC Web', '모바일 Web', '굿즈 디자인'],
     color: 'linear-gradient(145deg, #5E7B9A 0%, #3D5C7A 100%)',
-    year: '2024',
+    year: '2024.08-2024.11',
     images: [],
     overview: [
       { label: 'Role', value: 'Brand Design · UI/UX · Goods' },
@@ -104,8 +104,8 @@ const CAPABILITIES = [
 ]
 
 const TOOLS = [
-  'Figma', 'Photoshop', 'Illustrator',
-  'React', 'HTML/CSS', 'JavaScript', 'TypeScript', 'Zeplin', 'Notion',
+  ['Figma', 'Photoshop', 'Illustrator', 'Premiere Pro'],
+  ['React', 'HTML/CSS', 'JavaScript', 'Notion'],
 ]
 
 function useReveal(ref, delay = 0) {
@@ -228,8 +228,12 @@ function About() {
             <div>
               <p className="tools__heading">Tools &amp; Stack</p>
               <div className="tools__tags">
-                {TOOLS.map((t) => (
-                  <span key={t} className="tool__tag">{t}</span>
+                {TOOLS.map((row, i) => (
+                  <div key={i} className="tools__row">
+                    {row.map((t) => (
+                      <span key={t} className="tool__tag">{t}</span>
+                    ))}
+                  </div>
                 ))}
               </div>
             </div>

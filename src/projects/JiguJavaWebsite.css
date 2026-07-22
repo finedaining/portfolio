@@ -302,14 +302,19 @@
 
 .jigu__pc-web {
   position: absolute;
-  right:80px;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 210px;
+  top: 0;
   width: 30%;
   height: auto;
   z-index: 0;
   pointer-events: none;
-  filter:blur(1px);
+  filter: blur(1px);
+  animation: jigu-pc-web-scroll 14s ease-in-out infinite alternate;
+}
+
+@keyframes jigu-pc-web-scroll {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-60%); }
 }
 
 .jigu__pc-label {

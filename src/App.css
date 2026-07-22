@@ -155,7 +155,8 @@
   color: #ADADAB; text-transform: uppercase;
   margin-bottom: 14px; margin-top: 40px;
 }
-.tools__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tools__tags { display: flex; flex-direction: column; gap: 8px; }
+.tools__row { display: flex; flex-wrap: wrap; gap: 8px; }
 .tool__tag {
   font-family: 'Inter', sans-serif;
   font-size: 12px; letter-spacing: .02em;
