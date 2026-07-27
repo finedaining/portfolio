@@ -10,9 +10,9 @@ import './App.css'
 
 const PROJECTS = [
   {
-    id: 1, cat: 'redesign', catLabel: '리디자인',
+    id: 1, cat: 'redesign', catLabel: 'Re-design',
     title: '동해관광',
-    desc: '복잡했던 동해관광 웹사이트 리뉴얼. 많은 정보량을 정리하여 한눈에 찾아볼 수 있도록 바꾸고, 동해 바다를 연상시키는 블루 컬러 위주의 디자인으로 깔끔하고 청량한 분위기의 웹으로 재탄생시켰습니다.',
+    desc: '복잡했던 동해관광 웹사이트 리뉴얼. \n 많은 정보량을 정리하여 한눈에 찾아볼 수 있도록 바꾸고, 동해 바다를 연상시키는 블루 컬러 위주의 디자인으로 깔끔하고 청량한 분위기의 웹으로 재탄생시켰습니다.',
     tags: ['메인 Web', '서브 Web'],
     color: 'linear-gradient(145deg, #4A8FBB 0%, #2B6A96 100%)',
     year: '2024',
@@ -24,9 +24,9 @@ const PROJECTS = [
     ],
   },
   {
-    id: 2, cat: 'redesign', catLabel: '리디자인',
+    id: 2, cat: 'redesign', catLabel: 'Re-design',
     title: '캐스키드슨',
-    desc: '라이프스타일 브랜드의 상세페이지 리뉴얼. 오프라인 패키지 디자인과 온라인 상세페이지의 톤앤매너를 맞춰햐 구매 플로우를 개선했습니다.',
+    desc: '라이프스타일 브랜드의 상세페이지 리뉴얼. \n 오프라인 패키지 디자인과 온라인 상세페이지의 톤앤매너를 맞춰햐 구매 플로우를 개선했습니다.',
     tags: ['상세페이지'],
     color: 'linear-gradient(145deg, #A87B5E 0%, #7A5840 100%)',
     year: '2024',
@@ -37,9 +37,9 @@ const PROJECTS = [
     ],
   },
   {
-    id: 3, cat: 'branding', catLabel: '브랜딩',
+    id: 3, cat: 'branding', catLabel: 'Branding',
     title: '지구자바',
-    desc: '로컬 카페 브랜드의 디지털 확장. PC웹, 모바일 웹, 앱 3개 플랫폼에 걸쳐 일관된 브랜드 경험을 구축했습니다.',
+    desc: '일상 속 친환경 라이프를 돕는 제로 웨이스트 브랜드 지구자바 브랜딩 프로젝트. \n PC웹, 모바일 웹, 모바일 앱 전반의 일관된 경험을 구축하고, 챌린지 참여로 굿즈 리워드 포인트를 모으는 시스템을 도입하였습니다. 자연 친화적인 느낌을 주면서도 친근한 이미지를 주는 지구자바만의 캐릭터를 활용하여 지구자바만의 개성을 녹여냈습니다.',
     tags: ['PC Web', '모바일 Web', '모바일 App'],
     color: 'linear-gradient(145deg, #5A8A62 0%, #3A6A42 100%)',
     year: '2024.11-2024.12',
@@ -50,9 +50,9 @@ const PROJECTS = [
     ],
   },
   {
-    id: 4, cat: 'branding', catLabel: '브랜딩',
+    id: 4, cat: 'branding', catLabel: 'Branding',
     title: '이노벨',
-    desc: 'B2B 스타트업의 브랜드 구축 프로젝트. PC웹, 모바일 웹 설계부터 굿즈 디자인까지 전 과정을 단독 진행했습니다.',
+    desc: '클린 & 퓨어 뷰티 브랜드 이노벨(InnoVelle)의 졸업 전시 팀 프로젝트. \n PC 웹·모바일 웹 UX/UI 설계부터 친환경 패키지 및 굿즈 디자인까지 브랜딩 전 과정을 팀으로 진행했습니다. 깨끗한 성분과 지속 가능한 가치를 담아, 투명하고 진정성 있는 뷰티 경험을 전달하는 브랜드로 완성했습니다.',
     tags: ['PC Web', '모바일 Web', '굿즈 디자인'],
     color: 'linear-gradient(145deg, #5E7B9A 0%, #3D5C7A 100%)',
     year: '2024.08-2024.11',
@@ -63,9 +63,9 @@ const PROJECTS = [
     ],
   },
   {
-    id: 5, cat: 'frontend', catLabel: '프론트엔드 브랜딩',
+    id: 5, cat: 'frontend', catLabel: 'Branding · Frontend Dev',
     title: '두드림',
-    desc: '청년 창업 지원 플랫폼. 브랜드 아이덴티티 수립부터 React 기반 프론트엔드 구현까지 디자인·개발 전 과정을 담당했습니다.',
+    desc: '기계부품 제조 기술력을 바탕으로 미래를 향해 나아가는 브랜드 두드림(Doo-Dream) 런칭 프로젝트. \n 단단하게 두드린 금속과 미래를 두드린다는 의미를 담아 견고하면서도 발전적인 브랜드 아이덴티티를 구축했습니다. 딥 블루 그레이(#2C3E50)와 라이트 실버 그레이(#C0C5CB)를 활용해 기술적 신뢰감을 더하고, 정보 중심의 화면 구성으로 사용성과 개발 효율성을 모두 갖춘 웹 사이트로 완성했습니다.',
     tags: ['Frontend', 'Branding'],
     color: 'linear-gradient(145deg, #7A60A8 0%, #5A4088 100%)',
     year: '2025',
@@ -76,9 +76,9 @@ const PROJECTS = [
     ],
   },
   {
-    id: 6, cat: 'frontend', catLabel: '프론트엔드 브랜딩',
+    id: 6, cat: 'frontend', catLabel: 'Branding · Frontend Dev',
     title: '빈티지하우스',
-    desc: '빈티지 라이프스타일 브랜드의 이커머스 구축. 브랜드 감성을 살린 UI 디자인과 HTML/CSS 퍼블리싱을 담당했습니다.',
+    desc: '프리미엄 빈티지 가구 브랜드 빈티지 하우스(Vintage Haus)의 이커머스 런칭 프로젝트. \n 베이지(#F1EADA)와 딥 브라운(#584738) 컬러, Zen Old Mincho 및 Noto Sans 폰트를 조합해 고풍스러우면서도 차분하고 코지한 무드를 다듬었습니다. 감성적인 이미지 중심의 UI 디자인과 반응형 HTML/CSS 퍼블리싱을 직접 담당하여, 브랜드만의 독창적인 톤앤매너와 직관적인 사용 편의성을 모두 갖춘 이커머스 경험으로 탄생시켰습니다.',
     tags: ['Frontend', 'Branding'],
     color: 'linear-gradient(145deg, #9A7060 0%, #7A5040 100%)',
     year: '2025',
@@ -91,10 +91,10 @@ const PROJECTS = [
 ]
 
 const FILTER_OPTIONS = [
-  { value: 'all',      label: '전체',              count: 6 },
-  { value: 'redesign', label: '리디자인',           count: 2 },
-  { value: 'branding', label: '브랜딩',             count: 2 },
-  { value: 'frontend', label: '프론트엔드 브랜딩',  count: 2 },
+  { value: 'all',      label: 'All',              count: 6 },
+  { value: 'redesign', label: 'Re-design',           count: 2 },
+  { value: 'branding', label: 'Branding',             count: 2 },
+  { value: 'frontend', label: 'Frontend dev',  count: 2 },
 ]
 
 const CAPABILITIES = [

@@ -148,7 +148,7 @@ export default function DonghaeWebsite({ onBack }) {
             <h3 className="dongw__par-title">Action</h3>
             <p className="dongw__par-body">
               동해 관광의 시원한 이미지를 표현하기 위해<br />
-              바다를 연상시키는 컬러(#0072BB)를 메인 컬러로 사용했습니다.<br />
+              바다를 연상시키는 컬러(#0072BB)를 메인 컬러로 사용했습니다.
               전체적으로 깔끔한 인상을 주기 위해<br />
               여백과 사진 배치, 타이포그래피의 균형에 신경썼습니다.
             </p>
