@@ -15,9 +15,8 @@ const PROJECTS = [
     title: '동해관광',
     desc: '복잡했던 동해관광 웹사이트 리뉴얼. \n 많은 정보량을 정리하여 한눈에 찾아볼 수 있도록 바꾸고, 동해 바다를 연상시키는 블루 컬러 위주의 디자인으로 깔끔하고 청량한 분위기의 웹으로 재탄생시켰습니다.',
     tags: ['메인 Web', '서브 Web'],
-    color: 'linear-gradient(145deg, #4A8FBB 0%, #2B6A96 100%)',
     thumb: '/images/about/ovdh.svg',
-    year: '2024',
+    year: '2024.05-2024.06',
     images: ['/images/donghae.png'],
     overview: [
       { label: 'Client', value: '동해관광' },
@@ -30,9 +29,8 @@ const PROJECTS = [
     title: '캐스키드슨',
     desc: '라이프스타일 브랜드의 온라인 상세페이지 리뉴얼 프로젝트. 오프라인 패키지가 가진 독창적인 감성을 온라인 화면에도 동일하게 녹여내어 톤앤매너를 맞췄습니다. 브랜드 특유의 아늑한 분위기를 살려 몰입감을 높이고 한층 매끄러운 구매 플로우를 구축했습니다.',
     tags: ['상세페이지'],
-    color: 'linear-gradient(145deg, #A87B5E 0%, #7A5840 100%)',
     thumb: '/images/about/ovct.svg',
-    year: '2024',
+    year: '2024.03-2024.04',
     images: [],
     overview: [
       { label: 'Role', value: 'Web Design · Publishing' },
@@ -44,7 +42,6 @@ const PROJECTS = [
     title: '지구자바',
     desc: '친환경 제로웨이스트 브랜드 지구자바의 디지털 플랫폼 구축 프로젝트. 플로깅과 챌린지에 참여해 혜택을 얻는 순환형 리워드 시스템과 함께 웹 및 앱 서비스를 설계했습니다. 싱그럽고 자연 친화적인 컬러 톤과 캐릭터 요소를 활용해 누구나 쉽게 다가갈 수 있는 친근한 브랜드 경험을 완성했습니다.',
     tags: ['PC Web', '모바일 Web', '모바일 App'],
-    color: 'linear-gradient(145deg, #5A8A62 0%, #3A6A42 100%)',
     thumb: '/images/about/ovzg.svg',
     year: '2024.11-2024.12',
     images: [],
@@ -58,7 +55,6 @@ const PROJECTS = [
     title: '이노벨',
     desc: '클린 뷰티 브랜드 이노벨의 졸업 전시 팀 프로젝트. 웹 UI/UX 설계부터 친환경 패키지 및 굿즈까지 브랜딩 전 과정을 완수했습니다. 맑고 깨끗한 무드의 디자인으로 지속 가능한 가치를 투명하게 담아내어 진정성 있는 브랜드 경험을 전합니다.',
     tags: ['PC Web', '모바일 Web', '굿즈 디자인'],
-    color: 'linear-gradient(145deg, #5E7B9A 0%, #3D5C7A 100%)',
     thumb: '/images/about/ovin.svg',
     year: '2024.08-2024.11',
     images: [],
@@ -72,9 +68,8 @@ const PROJECTS = [
     title: '두드림',
     desc: '기계부품 제조 기술력을 바탕으로 한 두드림 브랜드 런칭 프로젝트. 단단한 금속과 미래를 두드린다는 의미를 담아 견고한 아이덴티티를 구축했습니다. 차분하고 무게감 있는 컬러 톤으로 기술적 신뢰감을 더하고, 정돈된 레이아웃으로 사용성과 개발 효율성을 함께 확보했습니다.',
     tags: ['Frontend', 'Branding'],
-    color: 'linear-gradient(145deg, #7A60A8 0%, #5A4088 100%)',
     thumb: '/images/about/ovdr.svg',
-    year: '2025',
+    year: '2025.09-2025.10',
     images: [],
     overview: [
       { label: 'Role', value: 'Brand Design · Frontend Dev' },
@@ -86,9 +81,8 @@ const PROJECTS = [
     title: '빈티지하우스',
     desc: '프리미엄 빈티지 가구 브랜드 빈티지 하우스의 이커머스 구축 프로젝트. 브랜드 감성을 살린 UI 디자인과 반응형 퍼블리싱을 진행했습니다. 따뜻하고 클래식한 톤 위주의 디자인과 세련된 폰트 조화로 빈티지 하우스만의 코지한 분위기를 전달합니다.',
     tags: ['Frontend', 'Branding'],
-    color: 'linear-gradient(145deg, #9A7060 0%, #7A5040 100%)',
     thumb: '/images/about/ovvh.svg',
-    year: '2025',
+    year: '2025.05-2025.06',
     images: [],
     overview: [
       { label: 'Role', value: 'UI Design · Frontend Dev' },
@@ -342,18 +336,20 @@ function Works({ onSelect }) {
             >
               <div className="wcard__thumb" style={{ background: p.color }}>
                 <img src={p.thumb} alt="" className="wcard__thumb-img" />
-                <span className="wcard__num">{String(p.id).padStart(2, '0')}</span>
-                <span className="wcard__year">{p.year}</span>
               </div>
               <div className="wcard__body">
                 <span className="wcard__cat">{p.catLabel}</span>
-                <h3 className="wcard__title">{p.title}</h3>
+                <div className="wcard__title-row">
+                  <h3 className="wcard__title">{p.title}</h3>
+                  
+                </div>
                 <p className="wcard__desc">{p.desc}</p>
                 <div className="wcard__tags">
                   {p.tags.map((tag) => (
                     <span key={tag} className="wcard__tag">{tag}</span>
                   ))}
                 </div>
+                <span className="wcard__year">{p.year}</span>
               </div>
             </article>
           ))}
