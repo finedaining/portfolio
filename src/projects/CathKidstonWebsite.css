@@ -43,23 +43,6 @@
   z-index: 0;
 }
 
-.cath__detail-page-bg {
-  position: absolute;
-  left: 490px;
-  top: 0;
-  width: 20%;
-  height: auto;
-  filter: blur(1px);
-  z-index: 1;
-  pointer-events: none;
-  animation: cath-detail-scroll 14s ease-in-out infinite alternate;
-}
-
-@keyframes cath-detail-scroll {
-  0%   { transform: translateY(0); }
-  100% { transform: translateY(-40%); }
-}
-
 .cath__bg-ellipse {
   position: absolute;
 
@@ -76,6 +59,17 @@
   opacity: 1;
 
   object-fit: contain;
+}
+
+/* 폰 사이 디테일 페이지 (초록 폰 뒤, 휠로 스크롤) */
+.cath__detail-page-bg {
+  position: absolute;
+  left: 698px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 180px;
+  height: auto;
+  z-index: 1;
 }
 
 /* 폰 목업 컨테이너 */

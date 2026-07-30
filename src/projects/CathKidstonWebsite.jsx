@@ -33,20 +33,51 @@ const PAR = [
 ];
 
 export default function CathKidstonWebsite({ onBack }) {
+  const coverRef = React.useRef(null);
+  const detailPageRef = React.useRef(null);
+  const detailScrollYRef = React.useRef(0);
+
+  React.useEffect(() => {
+    const area = coverRef.current;
+    const content = detailPageRef.current;
+    if (!area || !content) return;
+
+    const handleWheel = (e) => {
+      e.preventDefault();
+
+      const maxScroll = content.offsetHeight - area.clientHeight;
+      if (maxScroll <= 0) return;
+
+      detailScrollYRef.current += e.deltaY;
+      if (detailScrollYRef.current < 0) detailScrollYRef.current = 0;
+      if (detailScrollYRef.current > maxScroll) detailScrollYRef.current = maxScroll;
+
+      content.style.transform = `translateY(-${detailScrollYRef.current}px)`;
+    };
+
+    content.addEventListener('wheel', handleWheel, { passive: false });
+    return () => content.removeEventListener('wheel', handleWheel);
+  }, []);
+
   return (
     <div className="cath">
       <button className="cath__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 표지 프레임 ── */}
-      <section className="cath__cover">
+      <section className="cath__cover" ref={coverRef}>
 
         {/* 배경 */}
         <div className="cath__cover-bg">
           <img src={bgEllipseSvg} alt="" className="cath__bg-ellipse" />
         </div>
 
-        {/* 폰 사이 디테일 페이지 */}
-        <img src={detailPage} alt="" className="cath__detail-page-bg" />
+        {/* 폰 사이 디테일 페이지 (초록 폰 뒤, 스크롤 가능) */}
+        <img
+          src={detailPage}
+          alt=""
+          className="cath__detail-page-bg"
+          ref={detailPageRef}
+        />
 
         {/* 왼쪽 - 폰 목업 두 개 */}
         <div className="cath__cover-mockups">
