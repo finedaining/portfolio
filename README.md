@@ -1,20 +1,37 @@
-<<<<<<< HEAD
-# React + Vite
+# Kim Dain — UX/UI Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+웹 디자인부터 퍼블리싱, 프론트엔드 개발까지 디자인과 개발의 경계를 넘나드는 작업을 담은 포트폴리오 사이트입니다.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React 19 + Vite
+- react-router-dom
+- react-icons
+- CSS (Vanilla)
 
-## React Compiler
+## Works
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| 프로젝트 | 분류 | 작업 |
+| --- | --- | --- |
+| 동해관광 | Re-design | Web Design · Publishing |
+| 캐스키드슨 | Re-design | Web Design · Publishing |
+| 지구자바 | Branding | Brand Design · UI/UX |
+| 이노벨 | Branding | Brand Design · UI/UX · Goods |
+| 두드림 | Branding · Frontend Dev | Brand Design · Frontend Dev |
+| 빈티지하우스 | Branding · Frontend Dev | UI Design · Frontend Dev |
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# portfolio
->>>>>>> dc00bda827146fb55ae6010be56003359fcd69ca
+```bash
+npm install
+npm run dev
+```
+
+```bash
+npm run build   # production build
+npm run preview # preview the production build
+```
+
+## Contact
+
+kmm0012@gmail.com
