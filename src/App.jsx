@@ -3,6 +3,8 @@ import { TbBrandReact, TbBrandCss3, TbBrandJavascript } from 'react-icons/tb'
 import ToggleButtonGroup from './components/ToggleButtonGroup'
 import DonghaeWebsite from './projects/DonghaeWebsite'
 import CathKidstonWebsite from './projects/CathKidstonWebsite'
+import SaveTheChildrenWebsite from './projects/SaveTheChildrenWebsite'
+import KanuWebsite from './projects/KanuWebsite'
 import JiguJavaWebsite from './projects/JiguJavaWebsite'
 import InobelWebsite from './projects/InobelWebsite'
 import DodreamWebsite from './projects/DodreamWebsite'
@@ -13,7 +15,7 @@ const PROJECTS = [
   {
     id: 1, cat: 'redesign', catLabel: 'Re-design',
     title: '동해관광',
-    desc: '복잡했던 동해관광 웹사이트 리뉴얼. \n 많은 정보량을 정리하여 한눈에 찾아볼 수 있도록 바꾸고, 동해 바다를 연상시키는 블루 컬러 위주의 디자인으로 깔끔하고 청량한 분위기의 웹으로 재탄생시켰습니다.',
+    desc: '복잡했던 동해관광 웹사이트 리디자인 프로젝트. \n 많은 정보량을 정리하여 한눈에 찾아볼 수 있도록 바꾸고, 동해 바다를 연상시키는 블루 컬러 위주의 디자인으로 깔끔하고 청량한 분위기의 웹으로 재탄생시켰습니다.',
     tags: ['메인 Web', '서브 Web'],
     thumb: '/images/about/ovdh.svg',
     year: '2024.05-2024.06',
@@ -27,7 +29,7 @@ const PROJECTS = [
   {
     id: 2, cat: 'redesign', catLabel: 'Re-design',
     title: '캐스키드슨',
-    desc: '라이프스타일 브랜드의 온라인 상세페이지 리뉴얼 프로젝트. 오프라인 패키지가 가진 독창적인 감성을 온라인 화면에도 동일하게 녹여내어 톤앤매너를 맞췄습니다. 브랜드 특유의 아늑한 분위기를 살려 몰입감을 높이고 한층 매끄러운 구매 플로우를 구축했습니다.',
+    desc: '라이프스타일 브랜드의 온라인 상세페이지 리디자인 프로젝트. 오프라인 패키지가 가진 독창적인 감성을 온라인 화면에도 동일하게 녹여내어 톤앤매너를 맞췄습니다. 브랜드 특유의 아늑한 분위기를 살려 몰입감을 높이고 한층 매끄러운 구매 플로우를 구축했습니다.',
     tags: ['상세페이지'],
     thumb: '/images/about/ovct.svg',
     year: '2024.03-2024.04',
@@ -35,6 +37,32 @@ const PROJECTS = [
     overview: [
       { label: 'Role', value: 'Web Design · Publishing' },
       { label: 'Tool', value: 'Figma · Photoshop' },
+    ],
+  },
+  {
+    id: 7, cat: 'redesign', catLabel: 'Re-design',
+    title: '세이브 더 칠드런',
+    desc: '세이브 더 칠드런의 메인 페이지 리디자인 프로젝트. 단조로웠던 배너 문구와 부족했던 비주얼 요소를 보완했습니다. 아이들과 기관의 생생한 모습을 담은 이미지를 적극 배치해 신뢰감과 따뜻함을 동시에 전달하는 웹 사이트로 완성했습니다.',
+    tags: ['메인 Web', '모바일 Web'],
+    thumb: '/images/about/ovsc.svg',
+    year: '2024.11-2024.12',
+    images: [],
+    overview: [
+      { label: 'Role', value: 'Web Design' },
+      { label: 'Tool', value: 'Figma · Photoshop' },
+    ],
+  },
+  {
+    id: 8, cat: 'redesign', catLabel: 'Re-design',
+    title: '카누',
+    desc: '커피 브랜드 카누의 메인 페이지 리디자인 프로젝트. 시그니처인 블랙&레드 컬러가 충분히 드러나지 않던 점을 개선하기 위해 헤더 요소와 카테고리 아이콘을 단순화하고 레이아웃을 정리했습니다. 레시피와 브랜드 감성 섹션을 추가해 콘텐츠를 확장했습니다. 카누만의 모던함을 살린 PC, 모바일 웹으로 리디자인했습니다.',
+    tags: ['메인 Web', '모바일 Web'],
+    thumb: '/images/about/ovkn.svg',
+    year: '2026.10-2026.10',
+    images: [],
+    overview: [
+      { label: 'Role', value: 'Web Design' },
+      { label: 'Tool', value: 'Figma' },
     ],
   },
   {
@@ -92,8 +120,8 @@ const PROJECTS = [
 ]
 
 const FILTER_OPTIONS = [
-  { value: 'all', label: 'All', count: 6 },
-  { value: 'redesign', label: 'Re-design', count: 2 },
+  { value: 'all', label: 'All', count: 8 },
+  { value: 'redesign', label: 'Re-design', count: 4 },
   { value: 'branding', label: 'Branding', count: 2 },
   { value: 'frontend', label: 'Frontend dev', count: 2 },
 ]
@@ -209,7 +237,7 @@ function About() {
               <h2 className="about__title">About<br />me</h2>
               <div className="about__photo">
                 <span className="about__photo-frame">
-                  <img src="/images/about/profile.svg" alt="김다인 프로필 사진" />
+                  <img src="/images/about/kimdain.jpg" alt="김다인 프로필 사진" />
                 </span>
                 <span className="about__photo-badge">
                   <span></span>
@@ -397,11 +425,13 @@ const PROJECT_PAGE_MAP = {
   4: (back) => <InobelWebsite onBack={back} />,
   5: (back) => <DodreamWebsite onBack={back} />,
   6: (back) => <VintageHouseWebsite onBack={back} />,
+  7: (back) => <SaveTheChildrenWebsite onBack={back} />,
+  8: (back) => <KanuWebsite onBack={back} />,
 }
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
 
-const PAGE_IDS = Object.keys(PROJECT_PAGE_MAP).map(Number)
+const PAGE_IDS = PROJECTS.map((p) => p.id).filter((id) => PROJECT_PAGE_MAP[id])
 
 export default function App() {
   const [page, setPage] = useState(null)

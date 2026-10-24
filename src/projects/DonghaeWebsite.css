@@ -272,7 +272,7 @@
 
 /* ── 왼쪽 텍스트 영역 ── */
 .dongw__desc-left {
-  flex: 0 0 300px;
+  flex: 0 0 400px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -289,7 +289,7 @@
 }
 
 .dongw__par-body {
-  font-size: 12px;
+  font-size: 14px;
   color: #444;
   line-height: 1.8;
   margin: 0;
@@ -638,7 +638,7 @@
   flex-shrink: 0;
   z-index: 4;
   bottom: 160px;
-  left:180px;
+  left:80px;
   overflow: visible;
 }
 
@@ -706,7 +706,7 @@
   width: 580px;
   position: relative;
   bottom:300px;
-  left:150px;
+  left:50px;
   overflow: visible;
 }
 

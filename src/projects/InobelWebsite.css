@@ -1,4 +1,3 @@
-/* ── 전체 래퍼 ── */
 .inov {
   background: #fff;
   padding: 40px;
@@ -25,9 +24,7 @@
 }
 .inov__back:hover { opacity: 0.5; }
 
-/* ══════════════════════════════════════════
-   표지
-══════════════════════════════════════════ */
+/* 1. 표지 */
 .inov__cover {
   background: #eaeaea;
   border-radius: 20px;
@@ -37,7 +34,6 @@
   position: relative;
 }
 
-/* ── 왼쪽 패널 ── */
 .inov__cover-left {
   flex: 0 0 57%;
   position: relative;
@@ -45,65 +41,14 @@
   min-height: 680px;
 }
 
-/* 피그마 1978×1186 기준 → 왼쪽 패널 1090×1186 기준 % */
+.inov__bg-eclipse { position: absolute; left: 6%; top: 10%; width: 54%; z-index: 1; }
+.inov__board1 { position: absolute; left: 12%; top: 20%; width: 40%; z-index: 4; }
+.inov__board2 { position: absolute; left: 50%; top: 7%; width: 40%; z-index: 3; }
+.inov__sunscreen { position: absolute; left: 4%; top: 12%; width: 15%; z-index: 1; }
+.inov__glass-big { position: relative; left: 2%; top: 10%; width: 32%; z-index: 5; }
+.inov__glass-mini { position: absolute; left: 43%; top: 53%; width: 17%; z-index: 6; }
+.inov__logo { position: absolute; top: 3%; left: 2%; width: 14%; z-index: 10; }
 
-.inov__bg-eclipse {
-  position: absolute;
-  left: 6%;
-  top: 10%;
-  width: 54%;
-  z-index: 1;
-}
-
-.inov__board1 {
-  position: absolute;
-  left: 12%;
-  top: 20%;
-  width: 40%;
-  z-index: 4;
-}
-
-.inov__board2 {
-  position: absolute;
-  left: 50%;
-  top: 7%;
-  width: 40%;
-  z-index: 3;
-}
-
-.inov__sunscreen {
-  position: absolute;
-  left: 4%;
-  top: 12%;
-  width: 15%;
-  z-index: 1;
-}
-
-.inov__glass-big {
-  position: relative;
-  left: 2%;
-  top: 10%;
-  width: 32%;
-  z-index: 5;
-}
-
-.inov__glass-mini {
-  position: absolute;
-  left: 43%;
-  top: 53%;
-  width: 17%;
-  z-index: 6;
-}
-
-.inov__logo {
-  position: absolute;
-  top: 3%;
-  left: 2%;
-  width: 14%;
-  z-index: 10;
-}
-
-/* ── 오른쪽 패널 ── */
 .inov__cover-right {
   flex: 1;
   display: flex;
@@ -113,7 +58,6 @@
   gap: 24px;
 }
 
-/* 동해관광 CSS 규칙 준수 */
 .inov__cover-title {
   font-family: 'Arimo', sans-serif;
   font-size: clamp(64px, 9vw, 79px);
@@ -135,29 +79,22 @@
 
 .inov__cover-desc {
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
-  line-height: 22px;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
 }
 
-/* ── 배지 ── */
 .inov__badge {
   display: flex;
   align-items: center;
   gap: 10px;
   margin-top: 4px;
   position: relative;
-
-  
 }
 
-.inov__badge-bar-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+.inov__badge-bar-wrap { display: flex; flex-direction: column; gap: 4px; }
 
 .inov__badge-bar {
   position: relative;
@@ -189,13 +126,10 @@
   border: 2px solid #007aff;
 }
 
-.inov__badge-fill--30 {
-  width: 30%;
-}
-
-.inov__badge-dot--30 {
-  left: calc(30% - 6px);
-}
+.inov__badge-fill--30 { width: 30%; }
+.inov__badge-dot--30 { left: calc(30% - 6px); }
+.inov__badge-fill--100 { width: 100%; }
+.inov__badge-dot--100 { left: auto; right: -6px; }
 
 .inov__badge-label {
   font-family: 'Pretendard', sans-serif;
@@ -204,74 +138,112 @@
   white-space: nowrap;
 }
 
-
-/* ══════════════════════════════════════════
-   2. 웹 디자인
-══════════════════════════════════════════ */
+/* 2. 웹 디자인 */
 .inov__s2 {
-  background: #f0ede9;
+  background: #f0f0f0;
   border-radius: 20px;
-  min-height: 680px;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-}
-
-.inov__s2-left {
-  flex: 0 0 27%;
-  display: flex;
-  flex-direction: column;
   position: relative;
   overflow: hidden;
+  container-type: inline-size;
+  aspect-ratio: 2082 / 1249;
 }
 
-.inov__s2-logo {
+/* Figma '이노벨 설명' 슬라이드(2082 x 1249) 좌표를 그대로 쓰고, --p 로 섹션 너비에 맞춰 비례 배치 */
+.inov__s2-stage {
+  --p: calc(100cqw / 2082);
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 90px;
-  z-index: 2;
+  inset: 0;
 }
 
-.inov__s2-phones {
-  width: 80%;
-  height: auto;
-  display: block;
-  flex-shrink: 0;
-  position: relative;
-  left: 35px;
-  top: 110px;
-}
+.inov__s2-logo { position: absolute; left: calc(19 * var(--p)); top: calc(5 * var(--p)); width: calc(163 * var(--p)); height: auto; z-index: 10; }
+
+.inov__s2-phone { position: absolute; width: calc(219 * var(--p)); height: auto; display: block; }
+.inov__s2-phone--1 { left: calc(153 * var(--p)); top: calc(149 * var(--p)); z-index: 1; }
+.inov__s2-phone--2 { left: calc(413 * var(--p)); top: calc(302 * var(--p)); z-index: 2; }
 
 .inov__s2-text {
-  flex: 1;
-  padding: 16px 24px 32px;
+  position: absolute;
+  left: calc(83 * var(--p));
+  top: calc(780 * var(--p));
+  width: calc(650 * var(--p));
   display: flex;
   flex-direction: column;
   gap: 10px;
-  justify-content: flex-end;
-  position: relative;
-  bottom:50px;
+}
+
+.inov__s2-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 10px;
+  letter-spacing: -0.3px;
+}
+
+/* 가운데 PC 화면: 맥북 프레임 없이 페이지만 (내부 스크롤) */
+.inov__s2-page {
+  position: absolute;
+  left: calc(759 * var(--p));
+  top: 0;
+  width: calc(843 * var(--p));
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #fff;
+  box-shadow: 0 0 calc(60 * var(--p)) rgba(0, 0, 0, 0.12);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  z-index: 3;
+}
+.inov__s2-page::-webkit-scrollbar { display: none; }
+.s2-web-img { width: 100%; height: auto; display: block; }
+
+/* 오른쪽 베스트셀러 */
+.inov__s2-bestseller-img {
+  position: absolute;
+  left: calc(1680 * var(--p));
+  top: 0;
+  width: calc(402 * var(--p));
+  height: auto;
+  display: block;
+  z-index: 3;
 }
 
 .inov__s2-badge {
   position: absolute;
-  bottom: 24px;
-  left: 40px;
-  gap:6px;
+  left: calc(1680 * var(--p));
+  top: calc(980 * var(--p));
+  margin: 0;
+  gap: 6px;
+  z-index: 3;
+}
+.inov__s2-badge .inov__s2-badge-icon { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; }
+
+/* 3. 상세 페이지 */
+.inov__s4 {
+  background: #eaeae8;
+  border-radius: 20px;
+  height: 680px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
 }
 
-.inov__s2-badge .inov__s2-badge-icon {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  flex-shrink: 0;
-  position:relative;
-  bottom:10px;
-  left:-2px;
+.inov__s4-logo { position: absolute; top: 3%; left: 1.1%; width: 8%; z-index: 10; }
+
+.inov__s4-left {
+  flex: 0 0 35%;
+  padding: 80px 32px 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 32px;
+  z-index: 5;
 }
 
-.inov__s2-title {
+.inov__s4-text-wrap { display: flex; flex-direction: column; gap: 16px; }
+
+.inov__s4-title {
   font-family: 'Pretendard', sans-serif;
   font-size: 20px;
   font-weight: 700;
@@ -280,41 +252,77 @@
   letter-spacing: -0.3px;
 }
 
-.inov__s2-web {
-  flex: 0 0 45%;
-  overflow: visible;
-}
+.inov__s4-badge { display: flex; align-items: center; gap: 10px; }
+.inov__s4-badge-icon { width: 28px; height: 28px; object-fit: contain; }
 
-.inov__s2-web img {
-  width: 90%;
-  height: auto;
-  object-fit: cover;
-  object-position: top;
-  display: block;
-  position: relative;
-  left: 40px;
-}
-
-.inov__s2-right {
+.inov__s4-right {
   flex: 1;
-  overflow: hidden;
   position: relative;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 20px;
 }
 
-.inov__s2-right img {
-  width: 90%;
+.inov__s4-phone-box { 
+  position: relative; width: 150px; flex-shrink: 0; z-index: 6;
+  right:350px; bottom:160px;}
+.inov__s4-phone-frame { width: 100%; display: block; position: relative; z-index: 3; pointer-events: none; }
+
+.inov__s4-island {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 3.4%;
+  width: 28.8%;
+  height: 4.1%;
+  z-index: 4;
+  pointer-events: none;
+}
+.inov__s4-island-bar { position: absolute; inset: 0; background: #000; border-radius: 99px; }
+
+/* 3. 상세 페이지 - 아이폰 자동 스크롤 설정 */
+.inov__s4-phone-screen {
+  position: absolute;
+  top: 1.3%;
+  left: 3.4%;
+  width: 93.1%;
+  bottom: 1.5%;
+  overflow: hidden;
+  border-radius: 32px;
+  z-index: 1;
+}
+
+.inov__s4-phone-content {
+  width: 100%;
   height: auto;
-  object-fit: cover;
-  object-position: top;
   display: block;
   position: relative;
-  left: 40px;
-  bottom: 120px;
+  /* 10초 동안 무한 왕복 */
+  animation: autoScrollPhone 12s ease-in-out infinite alternate;
 }
 
-/* ══════════════════════════════════════════
-   3. 굿즈 제작
-══════════════════════════════════════════ */
+/* 마우스 호버 시 일시 정지 */
+.inov__s4-phone-screen:hover .inov__s4-phone-content {
+  animation-play-state: paused;
+}
+
+/* 이미지 바닥까지만 정확히 이동하는 키프레임 */
+@keyframes autoScrollPhone {
+  0%, 10% {
+    transform: translateY(0);
+  }
+  90%, 100% {
+    /* -100% (이미지 전체 높이) 이동 후 + 500px (아이폰 내부 보이는 높이) 만큼 올려서 바닥 맞춤 */
+    transform: translateY(calc(-100% + 300px));
+  }
+}
+.inov__s4-bg-images { 
+  display: flex; gap: 16px; height: 120%; right:90px;
+  align-items: flex-start; position: relative; }
+.inov__s4-bg-img { height: 100%; width: auto; object-fit: cover; object-position: top; border-radius: 4px; }
+
+/* 4. 굿즈 제작 */
 .inov__s3 {
   background: #e2deda;
   border-radius: 20px;
@@ -323,146 +331,28 @@
   aspect-ratio: 1978 / 1186;
 }
 
-.inov__s3-logo {
-  position: absolute;
- top: 20px;
-  left: 20px;
-  width: 90px;
-  z-index: 40;
-}
+.inov__s3-logo { position: absolute; top: 3%; left: 1.1%; width: 8%; z-index: 10; }
+.inov__s3-xb2 { position: absolute; left: 11.1%; top: 9.8%; width: 5.5%; z-index: 7; }
+.inov__s3-xb1 { position: absolute; left: 4.6%; top: 14.3%; width: 5.5%; z-index: 7; }
+.inov__s3-xb2m { position: absolute; left: 15%; top: 28%; width: 10.1%; z-index: 7; }
+.inov__s3-xb1m { position: absolute; left: 16%; top: 24%; width: 10.1%; z-index: 7; }
 
-/* ── X BANNER ── */
-/* xb2 (시안2) is the right banner, rendered behind xb1 */
-.inov__s3-xb2 {
-  position: absolute;
-  left: 11.1%;   /* 220/1978 */
-  top: 9.8%;     /* 116/1186 */
-  width: 5.5%;   /* 108/1978 */
-  z-index: 7;
-}
+.inov__s3-pc { position: absolute; z-index: 4; }
+.inov__s3-pc--japan { left: 23.0%; top: 45.7%; width: 8.2%; }
+.inov__s3-pc--tree  { left: 19.2%; top: 57.3%; width: 7.5%; }
+.inov__s3-pc--dark  { left: 28.1%; top: 61.4%; width: 6.7%; }
+.inov__s3-pc--tang  { left: 32.5%; top: 44.3%; width: 8.2%; }
+.inov__s3-pc--pink  { left: 30.4%; top: 52.2%; width: 4.7%; }
+.inov__s3-pc--drive { left: 34.7%; top: 56.5%; width: 5.2%; }
 
-.inov__s3-xb1 {
-  position: absolute;
-  left: 4.6%;    /* 91/1978 */
-  top: 14.3%;    /* 170/1186 */
-  width: 5.5%;   /* 108/1978 */
-  z-index: 7;
-}
+.inov__s3-card-back { position: absolute; left: 44.5%; top: 14%; width: 11.9%; z-index: 2; transform: rotate(8deg); }
+.inov__s3-card-front { position: absolute; left: 36.1%; top: 20.6%; width: 11.9%; z-index: 3; }
+.inov__s3-diary-things { position: absolute; left: 47%; top: 52%; width: 16.1%; z-index: 4; }
+.inov__s3-diary { position: absolute; left: 48%; top: 60%; width: 24.4%; z-index: 5; }
+.inov__s3-sticker { position: absolute; left: 72.3%; top: 12.3%; width: 22.3%; z-index: 3; }
 
-/* xb2m rendered behind xb1m */
-.inov__s3-xb2m {
-  position: absolute;
-  left: 15%;   /* 303/1978 */
-  top: 28%;    /* 252/1186 */
-  width: 10.1%;  /* 199/1978 */
-  z-index: 7;
-}
+.inov__s3-sticker-panel, .inov__s3-fish, .inov__s3-orange-sticker { display: none; }
 
-.inov__s3-xb1m {
-  position: absolute;
-  left: 16%;   /* 280/1978 */
-  top: 24%;    /* 313/1186 */
-  width: 10.1%;  /* 199/1978 */
-  z-index: 7;
-}
-
-/* ── POST CARD ── */
-.inov__s3-pc {
-  position: absolute;
-  z-index: 4;
-}
-
-.inov__s3-pc--japan {
-  left: 23.0%;   /* 455/1978 */
-  top: 45.7%;    /* 542/1186 */
-  width: 8.2%;   /* 162/1978 */
-}
-
-.inov__s3-pc--tree {
-  left: 19.2%;   /* 379/1978 */
-  top: 57.3%;    /* 679/1186 */
-  width: 7.5%;   /* 148/1978 */
-}
-
-.inov__s3-pc--dark {
-  left: 28.1%;   /* 555/1978 */
-  top: 61.4%;    /* 728/1186 */
-  width: 6.7%;   /* 132/1978 */
-}
-
-.inov__s3-pc--tang {
-  left: 32.5%;   /* 642/1978 */
-  top: 44.3%;    /* 525/1186 */
-  width: 8.2%;   /* 162/1978 */
-}
-
-.inov__s3-pc--pink {
-  left: 30.4%;   /* 601/1978 */
-  top: 52.2%;    /* 619/1186 */
-  width: 4.7%;   /* 92/1978 */
-}
-
-.inov__s3-pc--drive {
-  left: 34.7%;   /* 686/1978 */
-  top: 56.5%;    /* 670/1186 */
-  width: 5.2%;   /* 102/1978 */
-}
-
-/* ── BUSINESS CARD ── */
-.inov__s3-card-back {
-  position: absolute;
-  left: 44.5%;   /* 881/1978 */
-  top: 14%;    /* 128/1186 */
-  width: 11.9%;  /* 236/1978 */
-  z-index: 2;
-  transform: rotate(8deg);
-}
-
-.inov__s3-card-front {
-  position: absolute;
-  left: 36.1%;   /* 714/1978 */
-  top: 20.6%;    /* 244/1186 */
-  width: 11.9%;  /* 236/1978 */
-  z-index: 3;
-}
-
-/* ── DIARY ── */
-.inov__s3-diary-things {
-  position: absolute;
-  left: 47%;   /* 1068/1978 */
-  top: 52%;    /* 612/1186 */
-  width: 16.1%;  /* 318/1978 */
-  z-index: 4;
-}
-
-.inov__s3-diary {
-  position: absolute;
-  left: 48%;   /* 978/1978 */
-  top: 60%;    /* 778/1186 */
-  width: 24.4%;  /* 482/1978 */
-  z-index: 5;
-}
-
-/* ── STICKER (sticker.svg = full group: fish + panel + orange) ── */
-.inov__s3-sticker {
-  position: absolute;
-  left: 72.3%;   /* 1431/1978 */
-  top: 12.3%;    /* 146/1186 */
-  width: 22.3%;  /* 441/1978 */
-  z-index: 3;
-}
-
-/* placeholder to avoid unused-variable warning — no longer rendered */
-.inov__s3-sticker-panel { display: none; }
-.inov__s3-fish          { display: none; }
-.inov__s3-orange-sticker {
-  display: none;
-  left: 0; top: 0;
-  width: 6%;
-  z-index: 5;
-}
-
-/* ── 라벨 공통 ── */
 .inov__s3-label {
   position: absolute;
   display: flex;
@@ -472,20 +362,8 @@
   z-index: 10;
 }
 
-.inov__s3-label-text {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.inov__s3-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #f68827;
-  flex-shrink: 0;
-  margin-top: 3px;
-}
+.inov__s3-label-text { display: flex; flex-direction: column; gap: 3px; }
+.inov__s3-dot { width: 8px; height: 8px; border-radius: 50%; background: #f68827; flex-shrink: 0; margin-top: 3px; }
 
 .inov__s3-label-title {
   font-family: 'Pretendard', sans-serif;
@@ -505,88 +383,36 @@
   word-break: keep-all;
 }
 
-/* ── 이미지 (image 129, image 126) ── */
-.inov__s3-img129 {
-  position: absolute;
-  left: 50%;   /* 1120/1978 */
-  top: 13%;    /* 138/1186 */
-  width: 9.3%;   /* 183/1978 */
-  z-index: 1;
-  object-fit: cover;
-}
+.inov__s3-img129 { position: absolute; left: 50%; top: 13%; width: 9.3%; z-index: 1; object-fit: cover; }
+.inov__s3-model { position: absolute; left: 57%; top: 3%; width: 14.5%; z-index: 6; object-fit: cover; }
 
-.inov__s3-model {
-  position: absolute;
-  left: 57%;   /* 1173/1978 */
-  top: 3%;    /* 253/1186 */
-  width: 14.5%;  /* 353/1978 */
-  z-index: 6;
-  object-fit: cover;
-}
+.inov__s3-label--xb      { left: 4.5%; top: 43.6%; }
+.inov__s3-label--pc      { left: 19.2%; top: 78.0%; }
+.inov__s3-label--bc      { left: 36.1%; top: 33.2%; }
+.inov__s3-label--diary   { left: 47.5%; top: 86%; }
+.inov__s3-label--sticker { left: 77.2%; top: 56.1%; }
 
-/* ── 라벨 위치 ── */
-.inov__s3-label--xb {
-  left: 4.5%;    /* 90/1978 */
-  top: 43.6%;    /* 517/1186 */
-}
-
-.inov__s3-label--pc {
-  left: 19.2%;   /* 380/1978 */
-  top: 78.0%;    /* 925/1186 */
-}
-
-.inov__s3-label--bc {
-  left: 36.1%;   /* 714/1978 */
-  top: 33.2%;    /* 394/1186 */
-}
-
-.inov__s3-label--diary {
-  left: 47.5%;   /* 939/1978 */
-  top: 86%;    /* 1080/1186 */
-}
-
-.inov__s3-label--sticker {
-  left: 77.2%;   /* 1527/1978 */
-  top: 56.1%;    /* 666/1186 */
-}
-
-/* ── 하단 타이틀 ── */
 .inov__s3-title {
   position: absolute;
-  left: 4.6%;    /* 91/1978 */
-  top: 92.1%;    /* 1092/1186 */
+  left: 4.6%;
+  top: 92.1%;
+  z-index: 10;
   font-family: 'Pretendard', sans-serif;
-  font-size: clamp(20px, 2.5vw, 12px);
-  font-weight: 500;
+  font-size: 20px;
+  font-weight: 700;
   color: #111;
   margin: 0;
   letter-spacing: -0.3px;
-  z-index: 10;
 }
 
-/* ── 배지 ── */
 .inov__s3-badge {
   position: absolute;
-  left: 76%;   /* 1479/1978 */
-  top: 91.7%;    /* 1088/1186 */
+  left: 77%;
+  top: 91.7%;
   display: flex;
   align-items: center;
   gap: 8px;
   z-index: 10;
 }
 
-.inov__s3-badge-icon {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-/* ── 배지 100% 모디파이어 ── */
-.inov__badge-fill--100 {
-  width: 100%;
-}
-
-.inov__badge-dot--100 {
-  left: auto;
-  right: -6px;
-}
+.inov__s3-badge-icon { width: 28px; height: 28px; object-fit: contain; }

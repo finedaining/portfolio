@@ -20,15 +20,15 @@ const figmaApp       = "/images/cathkidston/Figma-app.png";
 const PAR = [
   {
     label: 'Problem',
-    text: '포근하고 따뜻한 연말 감성을 담은 패키지 디자인과 달리, 상세 페이지는 전반적으로 심플한 인상이 강해 두 요소 간의 분위기 차이가 느껴졌습니다. 크리스마스 시즌에 어울리는 연말 무드를 상세 페이지에서 전달할 필요가 있다고 판단하였습니다.',
+    text: '포근하고 따뜻한 연말 감성을 담은 패키지 디자인과 달리, 상세 페이지는 전반적으로 심플한 인상을 주어 톤앤매너가 맞지 않는다고 느껴졌습니다. 상세페이지 내에서도 크리스마스 시즌에 어울리는 연말 무드를 맞추는 것이 좋겠다는 생각이 들었습니다.',
   },
   {
     label: 'Action',
-    text: '크리스마스 무드를 강조하기 위해 와인 레드(#630003)와 포레스트 그린(#0C2A10) 컬러를 사용하였습니다. 필기체 타이포그래피를 활용해 크리스마스 트리 형태가 연상되도록 하였으며, 눈이 내리는 듯한 효과를 더해 시즌감을 나타내고자 하였습니다. 또한 편지지 형태의 오브젝트를 활용해 크리스마스를 기다리는 경험으로 초대하는 구성을 연출하였습니다.',
+    text: "크리스마스 무드를 표현하기 위해 레드 컬러 (#630003)와 그린 컬러(#0C2A10) 를 사용하였습니다. 필기체 타이포그래피를 활용해 크리스마스 트리 형태가 연상되도록 했고, 눈이 내리는 듯한 심볼을 더해 연말 무드를 표현했습니다. 또한 '편지지' 모티브의 UI 오브젝트를 배치하여 사용자가 마치 크리스마스 초대장을 열어보는 듯한 감성적인 무드를 연출했습니다.",
   },
   {
     label: 'Result',
-    text: '크리스마스 컬러와 타이포그래피, 시각적 효과를 활용해 상세 페이지의 연말 시즌 무드를 자연스럽게 강조할 수 있었습니다. 이를 통해 패키지 디자인의 분위기와도 잘 어우러지고, 따뜻한 연말 감성을 시각적으로 느낄 수 있는 디자인으로 완성되었습니다.',
+    text: '크리스마스 컬러와 타이포그래피, 시각적 요소들을 통해 상세 페이지의 연말 시즌 무드를 강조하였습니다. 브랜드가 지향하는 따뜻한 연말 시즌 무드와 비주얼 톤앤매너를 통일하여 패키지부터 상세페이지까지 이어지는 느낌을 주고자 했습니다.',
   },
 ];
 
@@ -64,28 +64,31 @@ export default function CathKidstonWebsite({ onBack }) {
       <button className="cath__back" onClick={onBack}>← Back to portfolio</button>
 
       {/* ── 표지 프레임 ── */}
-      <section className="cath__cover" ref={coverRef}>
+<section className="cath__cover" ref={coverRef}>
 
-        {/* 배경 */}
-        <div className="cath__cover-bg">
-          <img src={bgEllipseSvg} alt="" className="cath__bg-ellipse" />
-        </div>
+  {/* 배경 */}
+  <div className="cath__cover-bg">
+    <img src={bgEllipseSvg} alt="" className="cath__bg-ellipse" />
+  </div>
 
-        {/* 폰 사이 디테일 페이지 (초록 폰 뒤, 스크롤 가능) */}
-        <img
-          src={detailPage}
-          alt=""
-          className="cath__detail-page-bg"
-          ref={detailPageRef}
-        />
+  {/* 왼쪽 - 폰 목업 두 개 및 자동 스크롤 상세페이지 */}
+  <div className="cath__cover-mockups">
+    {/* 자동 스크롤되는 상세페이지 이미지 래퍼 */}
+    <div className="cath__detail-page-wrapper">
+      <img
+        src={detailPage}
+        alt="상세페이지"
+        className="cath__detail-page-bg"
+        ref={detailPageRef}
+      />
+    </div>
 
-        {/* 왼쪽 - 폰 목업 두 개 */}
-        <div className="cath__cover-mockups">
-          <img src={phone1} alt="캐스키드슨 첫번째 폰" className="cath__phone-red" />
-          <img src={phone2} alt="캐스키드슨 두번째 폰" className="cath__phone-green" />
-        </div>
+    {/* 폰 목업 이미지 */}
+    <img src={phone1} alt="캐스키드슨 첫번째 폰" className="cath__phone-red" />
+    <img src={phone2} alt="캐스키드슨 두번째 폰" className="cath__phone-green" />
+  </div>
 
-        {/* 오른쪽 - PAR + 타이틀 */}
+  {/* 오른쪽 - PAR + 타이틀 */}
         <div className="cath__cover-right">
   <div className="cath__par-list">
     {PAR.map(({ label, text }) => (

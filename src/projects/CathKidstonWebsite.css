@@ -61,17 +61,47 @@
   object-fit: contain;
 }
 
-/* 폰 사이 디테일 페이지 (초록 폰 뒤, 휠로 스크롤) */
+/* 폰 사이 디테일 페이지 스크롤 래퍼 (초록 폰/빨간 폰 뒤 영역) */
+.cath__detail-page-wrapper {
+  position: absolute;
+  left: 385px; /* 폰 위치에 맞춰 조절 */
+  top: 50px;
+  width: 440px; /* 두 폰을 아우르는 전체 너비 */
+  height: 400px; /* 폰 내부 보이는 높이 */
+  overflow: hidden;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* 실제 움직이는 상세페이지 이미지 */
 .cath__detail-page-bg {
   position: absolute;
   left: 698px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 180px;
+  top: 160px; /* 폰 높이에 위치 맞춤 */
+  width: 175px; /* 초록색 폰 화면 폭에 딱 맞춤 */
   height: auto;
   z-index: 1;
+  pointer-events: auto;
+  
+  /* 위아래 자동 스크롤 애니메이션 (12초) */
+  animation: autoScrollCath 12s ease-in-out infinite alternate;
 }
 
+/* 마우스 올렸을 때 일시 정지 */
+.cath__detail-page-bg:hover {
+  animation-play-state: paused;
+}
+
+/* 이미지 끝까지만 딱 맞춰 위아래 왕복 */
+@keyframes autoScrollCath {
+  0%, 10% {
+    transform: translateY(0);
+  }
+  90%, 100% {
+    /* 이미지 전체 높이에서 보이는 폰 화면 높이(약 360px)만큼 빼고 이동 */
+    transform: translateY(calc(-100% + 360px));
+  }
+}
 /* 폰 목업 컨테이너 */
 .cath__cover-mockups {
   position: absolute;
@@ -123,7 +153,7 @@
 }
 
 .cath__par-body {
-  font-size: 12px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.75);
   line-height: 1.8;
   margin: 0;
@@ -158,12 +188,13 @@
 
 .cath__cover-title {
   font-family: 'Arial', sans-serif;
-  font-size: clamp(56px, 8vw, 120px);
+  font-size: clamp(64px, 9vw, 130px);
   font-weight: 400;
   line-height: 0.95;
   letter-spacing: -4px;
   color: #fff;
-  margin: 0 0 12px;
+  margin: 0 0 16px;
+  position: relative;
 }
 
 .cath__cover-sub {
@@ -277,11 +308,12 @@
  /* ── 툴바 ── // 이제 텍스트부분 ㅡ */ 
 
 .cath__detail-desc {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(255, 255, 255, 0.8);
   margin: 0;
   word-break: keep-all;
   width: 400px;
+  line-height: 1.8;
 }
 
 .cath__detail-title {

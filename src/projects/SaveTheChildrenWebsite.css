@@ -1,0 +1,285 @@
+.stc {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.stc__back {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #787472;
+  letter-spacing: .04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.stc__back:hover { opacity: 0.5; }
+
+/* ── 표지 프레임 ──
+   Figma 표지(2082 x 1249) 좌표를 그대로 쓰고, --p 로 프레임 너비에 맞춰 비례 확대/축소한다. */
+.stc__cover {
+  background: #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+
+.stc__stage {
+  --p: calc(100cqw / 2082);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2082 / 1249;
+  overflow: hidden;
+}
+
+.stc__stage img { display: block; max-width: none; }
+
+/* PC 상세페이지 (아이패드 뒤로 이어지는 부분) */
+.stc__pc-page {
+  position: absolute;
+  left: calc(168 * var(--p));
+  top: calc(127 * var(--p));
+  width: calc(561 * var(--p));
+  height: auto;
+}
+
+/* 아이패드 (그림자 포함 렌더) */
+.stc__ipad {
+  position: absolute;
+  left: calc(116 * var(--p));
+  top: calc(79 * var(--p));
+  width: calc(669 * var(--p));
+  height: auto;
+}
+
+/* 폰 아래로 번지듯 이어지는 영역 */
+.stc__spill {
+  position: absolute;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  pointer-events: none;
+}
+.stc__spill::-webkit-scrollbar { display: none; }
+.stc__spill img { width: 100%; height: auto; }
+.stc__spill--l { left: calc(861 * var(--p));  top: calc(952 * var(--p)); width: calc(176 * var(--p)); height: calc(297 * var(--p)); }
+.stc__spill--r { left: calc(1104 * var(--p)); top: calc(786 * var(--p)); width: calc(178 * var(--p)); height: calc(463 * var(--p)); }
+
+/* 폰 화면: 베젤 안쪽(4px 안쪽)에 맞춘 스크롤 영역 */
+.stc__screen {
+  position: absolute;
+  overflow: hidden;
+  border-radius: calc(27 * var(--p));
+  pointer-events: none;
+}
+.stc__screen img { width: 100%; height: auto; }
+/* 왼쪽 폰: (839,521) 219x452 / 오른쪽 폰: (1083,648) 219x452, 베젤 두께 약 5 */
+.stc__screen--l { left: calc(844 * var(--p));  top: calc(526 * var(--p)); width: calc(209 * var(--p)); height: calc(442 * var(--p)); }
+.stc__screen--r { left: calc(1088 * var(--p)); top: calc(653 * var(--p)); width: calc(209 * var(--p)); height: calc(442 * var(--p)); }
+
+/* 폰 베젤: 두 화면 부분을 마스크로 뚫어서 아래의 스크롤 화면이 보이게 한다 */
+.stc__phones {
+  position: absolute;
+  left: calc(839 * var(--p));
+  top: calc(521 * var(--p));
+  width: calc(463 * var(--p));
+  height: auto;
+  pointer-events: none;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 463 579'%3E%3Cpath fill-rule='evenodd' d='M0 0H463V579H0Z M31 5H188A26 26 0 0 1 214 31V421A26 26 0 0 1 188 447H31A26 26 0 0 1 5 421V31A26 26 0 0 1 31 5Z M275 132H432A26 26 0 0 1 458 158V548A26 26 0 0 1 432 574H275A26 26 0 0 1 249 548V158A26 26 0 0 1 275 132Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 463 579'%3E%3Cpath fill-rule='evenodd' d='M0 0H463V579H0Z M31 5H188A26 26 0 0 1 214 31V421A26 26 0 0 1 188 447H31A26 26 0 0 1 5 421V31A26 26 0 0 1 31 5Z M275 132H432A26 26 0 0 1 458 158V548A26 26 0 0 1 432 574H275A26 26 0 0 1 249 548V158A26 26 0 0 1 275 132Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* 타이틀 — 동해관광 표지와 같은 글꼴 크기 */
+.stc__cover-text {
+  position: absolute;
+  right: calc((2082 - 1970) * var(--p));
+  top: calc(420 * var(--p));
+  z-index: 5;
+  text-align: right;
+}
+
+.stc__title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  color: #111;
+  margin: 0 0 16px;
+}
+
+.stc__sub {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+/* ── 상세 프레임 (Figma 2082 x 1249 좌표, 글꼴 크기는 동해관광과 통일) ── */
+.stc__d-pc {
+  position: absolute;
+  left: calc(169 * var(--p));
+  top: 0;
+  width: calc(561 * var(--p));
+  height: auto;
+  filter: drop-shadow(0 calc(24 * var(--p)) calc(60 * var(--p)) rgba(0, 0, 0, 0.12));
+}
+
+.stc__par {
+  position: absolute;
+  left: calc(843 * var(--p));
+  top: calc(154 * var(--p));
+  width: calc(683 * var(--p));
+  height: calc(817 * var(--p));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+}
+
+.stc__par-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 6px;
+}
+
+.stc__par-body {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.stc__d-phone {
+  position: absolute;
+  left: calc(1696 * var(--p));
+  top: calc(170 * var(--p));
+  width: calc(219 * var(--p));
+  aspect-ratio: 219 / 452;
+}
+
+.stc__d-phone-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 219 452'%3E%3Cpath fill-rule='evenodd' d='M0 0H219V452H0Z M31 5H188A26 26 0 0 1 214 31V421A26 26 0 0 1 188 447H31A26 26 0 0 1 5 421V31A26 26 0 0 1 31 5Z'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 219 452'%3E%3Cpath fill-rule='evenodd' d='M0 0H219V452H0Z M31 5H188A26 26 0 0 1 214 31V421A26 26 0 0 1 188 447H31A26 26 0 0 1 5 421V31A26 26 0 0 1 31 5Z'/%3E%3C/svg%3E");
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+/* 폰 화면: 휠/터치로 스크롤 (자동 스크롤 없음) */
+.stc__d-screen {
+  position: absolute;
+  left: calc(5 / 219 * 100%);
+  top: calc(5 / 452 * 100%);
+  width: calc(209 / 219 * 100%);
+  height: calc(442 / 452 * 100%);
+  z-index: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border-radius: calc(27 * var(--p));
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.stc__d-screen::-webkit-scrollbar { display: none; }
+.stc__d-screen img { display: block; width: 100%; height: auto; max-width: none; }
+
+/* 툴 / 기여도 */
+.stc__tool {
+  position: absolute;
+  left: calc(1297 * var(--p));
+  top: calc(1052 * var(--p));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stc__figma-icon {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.stc__tool-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.stc__tool-bar-track {
+  position: relative;
+  width: 160px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 99px;
+}
+
+.stc__tool-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #007aff;
+  border-radius: 99px;
+}
+
+.stc__tool-bar-dot {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 2px solid #007aff;
+  border-radius: 50%;
+}
+
+.stc__tool-label {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  color: #474747;
+}
+
+.stc__d-caption {
+  position: absolute;
+  right: calc((2082 - 2033) * var(--p));
+  bottom: calc((1249 - 1194) * var(--p));
+  margin: 0;
+  white-space: nowrap;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  text-align: right;
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .stc { padding: 20px; }
+  .stc__cover { border-radius: 12px; }
+}

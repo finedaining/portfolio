@@ -1,0 +1,263 @@
+.knu {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.knu__back {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #787472;
+  letter-spacing: .04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.knu__back:hover { opacity: 0.5; }
+
+/* ── 섹션 ──
+   Figma 슬라이드(2082 x 1249) 좌표를 그대로 쓰고, --p 로 프레임 너비에 맞춰 비례 배치한다. */
+.knu__section {
+  background: #1c1815;
+  border-radius: 20px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.knu__section--detail {
+  background: linear-gradient(to bottom, #1a1714 0%, #665e4f 100%);
+}
+
+.knu__stage {
+  --p: calc(100cqw / 2082);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2082 / 1249;
+  overflow: hidden;
+}
+.knu__stage img { display: block; max-width: none; }
+
+/* ── 표지 ── */
+.knu__cover-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.knu__cover-overlay { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4); }
+
+.knu__logo {
+  position: absolute;
+  left: calc(82 * var(--p));
+  top: calc(75 * var(--p));
+  width: calc(245 * var(--p));
+  height: auto;
+}
+
+/* 타이틀 — 다른 리디자인 페이지와 같은 글꼴/크기 */
+.knu__cover-text {
+  position: absolute;
+  left: calc(82 * var(--p));
+  bottom: calc(36 * var(--p));
+  z-index: 3;
+}
+.knu__title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.knu__sub {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+/* Problem / Action / Result */
+.knu__par {
+  position: absolute;
+  left: calc(1336 * var(--p));
+  top: calc(331 * var(--p));
+  width: calc(683 * var(--p));
+  display: flex;
+  flex-direction: column;
+  gap: calc(70 * var(--p));
+  z-index: 3;
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+}
+.knu__par-title {
+  margin: 0 0 6px;
+  font-family: 'Inter', 'Pretendard', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+.knu__par-body {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── 상세 ── */
+/* 노트북 (Figma 그룹 좌표: 603,169 / 프레임 1147 x 829) */
+.knu__laptop {
+  position: absolute;
+  left: calc(603 * var(--p));
+  top: calc(169 * var(--p));
+  width: calc(1147 * var(--p));
+  height: calc(1080 * var(--p));
+  z-index: 2;
+}
+.knu__safari {
+  position: absolute;
+  left: calc(106 * var(--p));
+  top: calc(-6 * var(--p));
+  width: calc(930 * var(--p));
+  height: auto;
+}
+/* PC 화면: 화면 안쪽부터 슬라이드 아래까지 이어지는 스크롤 영역 */
+.knu__pc-screen {
+  position: absolute;
+  left: calc(147 * var(--p));
+  top: calc(54 * var(--p));
+  width: calc(858 * var(--p));
+  height: calc(1026 * var(--p));
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.knu__pc-screen::-webkit-scrollbar { display: none; }
+.knu__pc-screen img { width: 100%; height: auto; }
+.knu__laptop-frame {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(1147 * var(--p));
+  height: auto;
+  pointer-events: none;
+}
+
+/* 모바일 시안: 휠/터치로 스크롤 (자동 스크롤 없음) */
+.knu__phone {
+  position: absolute;
+  left: calc(1702 * var(--p));
+  top: calc(28 * var(--p));
+  width: calc(305 * var(--p));
+  height: calc(622 * var(--p));
+  z-index: 3;
+}
+/* 화면은 폰 아래(슬라이드 끝)까지 이어진다 */
+.knu__screen {
+  position: absolute;
+  left: calc(12 * var(--p));
+  top: calc(20 * var(--p));
+  width: calc(285 * var(--p));
+  height: calc(1201 * var(--p));
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  z-index: 1;
+}
+.knu__screen::-webkit-scrollbar { display: none; }
+.knu__screen img { width: 100%; height: auto; }
+.knu__bezel { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.knu__island {
+  position: absolute;
+  left: calc(108 * var(--p));
+  top: calc(20 * var(--p));
+  width: calc(88 * var(--p));
+  height: auto;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* 왼쪽 아래: 툴 / 설명 / 캡션 (글자가 늘어나면 위로 자란다) */
+.knu__info {
+  position: absolute;
+  left: calc(27 * var(--p));
+  bottom: calc(36 * var(--p));
+  width: calc(560 * var(--p));
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: calc(40 * var(--p));
+  z-index: 3;
+}
+
+/* 툴 / 기여도 */
+.knu__tool {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.knu__figma-icon { width: 36px; height: 36px; object-fit: contain; flex-shrink: 0; }
+.knu__tool-bar-wrap { display: flex; flex-direction: column; gap: 4px; }
+.knu__tool-bar-track {
+  position: relative;
+  width: 160px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 99px;
+}
+.knu__tool-bar-fill {
+  position: absolute;
+  inset: 0;
+  background: #007aff;
+  border-radius: 99px;
+}
+.knu__tool-bar-dot {
+  position: absolute;
+  right: -5px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 2px solid #007aff;
+  border-radius: 50%;
+}
+.knu__tool-label {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.knu__desc {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 14px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  word-break: keep-all;
+}
+
+.knu__caption {
+  margin: 0;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 22px;
+  line-height: 1.3;
+  color: #fff;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .knu { padding: 20px; }
+  .knu__section { border-radius: 12px; }
+}

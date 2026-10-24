@@ -18,7 +18,7 @@ const subPcPage = "/images/donghae/sub-pc.png";
 const subMobilePage = "/images/donghae/sub-mobile.png";
 const subIphoneFrame = "/images/donghae/sub-iphone.png";
 const subCamera = "/images/donghae/sub-camera.png";
-const figmaIcon = "/images/donghae/figma-icon.png";
+const psIcon = "/images/donghae/ps-icon.png";
 
 export default function DonghaeWebsite({ onBack }) {
   const phoneContainerRef = React.useRef(null);
@@ -138,40 +138,34 @@ export default function DonghaeWebsite({ onBack }) {
           <div className="dongw__par">
             <h3 className="dongw__par-title">Problem</h3>
             <p className="dongw__par-body">
-              화면 내 요소들이 밀집되어 있고 시각적 위계가 불분명해<br />
-              사용자가 정보를 빠르게 인지하기 어렵습니다.<br />
-              정보량이 많음에도 불구하고 구조적인 정리가 부족해<br />
-              전체적으로 복잡하고 정신없는 인상을 주었습니다.
+              한 화면에 정보량이 많아 전체적으로 복잡한 인상을 주었습니다.
+              전체적으로 깔끔한 레이아웃으로 구성하고 동해관광만의 아이덴티티가 한 눈에 보일 수 있도록 개선할 필요가 있다고 느꼈습니다.
             </p>
           </div>
           <div className="dongw__par">
             <h3 className="dongw__par-title">Action</h3>
             <p className="dongw__par-body">
-              동해 관광의 시원한 이미지를 표현하기 위해<br />
-              바다를 연상시키는 컬러(#0072BB)를 메인 컬러로 사용했습니다.
-              전체적으로 깔끔한 인상을 주기 위해<br />
-              여백과 사진 배치, 타이포그래피의 균형에 신경썼습니다.
+              동해 고유의 청량하고 시원한 이미지를 직관적으로 전달하고자 바다를 연상시키는 블루 컬러(#0072BB)를 메인 컬러로 선정하여 브랜드 아이덴티티를 확립했습니다.
+              또한 여백을 살려 시각적 피로도를 낮추고자 하였고, 이미지 배치와 타이포그래피를 신경썼습니다.
             </p>
           </div>
           <div className="dongw__par">
             <h3 className="dongw__par-title">Result</h3>
             <p className="dongw__par-body">
-              정돈된 레이아웃과 시원한 컬러 톤으로,<br />
-              사용자가 정보를 한눈에 파악할 수 있게 되었습니다.<br />
-              스카이 블루 컬러 (#0072BB) 를 중심으로 통일감을 주어<br />
-              동해의 청량한 분위기를 효과적으로 전달할 수 있습니다.
+              보다 깔끔한 레이아웃으로 인해 사용자가 정보를 한눈에 파악할 수 있게 되었습니다.
+              블루 컬러 (#0072BB) 를 중심으로 통일감을 주어 동해의 청량한 분위기를 효과적으로 전달하고자 하였습니다.
             </p>
           </div>
 
           {/* 툴 / 기여도 */}
           <div className="dongw__tool">
-            <img src={figmaIcon} alt="Figma" className="dongw__figma-icon" />
+            <img src={psIcon} alt="Photoshop" className="dongw__figma-icon" />
             <div className="dongw__tool-bar-wrap">
               <div className="dongw__tool-bar-track">
                 <div className="dongw__tool-bar-fill" />
                 <div className="dongw__tool-bar-dot" />
               </div>
-              <span className="dongw__tool-label">피그마, 개인작업 100%</span>
+              <span className="dongw__tool-label">포토샵, 개인작업 100%</span>
             </div>
           </div>
 

@@ -36,9 +36,9 @@
 }
 
 .ddream__section-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
 }
@@ -47,6 +47,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.ddream__badge-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .ddream__badge-bar-wrap {
@@ -178,12 +185,12 @@
 
 .ddream__cover-desc {
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #333;
   line-height: 1.7;
   margin: 0;
   word-break: keep-all;
-  max-width: 520px;
+  max-width: 580px;
 }
 
 /* 오른쪽 무드보드 */
@@ -192,6 +199,7 @@
   position: relative;
   min-height: 680px;
   overflow: hidden;
+  right:80px;
 }
 
 .ddream__moodboard-img {
@@ -242,7 +250,7 @@
 
 .ddream__role-tag {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #2c3e50;
   margin: 0;
   font-weight: 500;
@@ -256,10 +264,10 @@
 
 .ddream__role-item {
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   margin: 0;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* 6개 와이어프레임 그리드 */

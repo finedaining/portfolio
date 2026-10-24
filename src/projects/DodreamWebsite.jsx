@@ -6,6 +6,8 @@ const logoSvg        = "/images/dodream/logo.svg";
 const moodboard      = "/images/dodream/moodboard.svg";
 const sparkle        = "/images/dodream/sparkle.svg";
 
+const figmaIcon       = "/images/dodream/figma-icon.png";
+
 const wfWeb          = "/images/dodream/wireframe-web.svg";
 const wfLogin        = "/images/dodream/wireframe-login.svg";
 const wfShop         = "/images/dodream/wireframe-shop.svg";
@@ -34,11 +36,11 @@ export default function DodreamWebsite({ onBack }) {
           <div className="ddream__cover-info">
             <p className="ddream__cover-subtitle">두드림 (Doo-Dream)&nbsp; 브랜드 런칭</p>
             <p className="ddream__cover-desc">
-              두드림은 기계부품 제조 분야의 기술력을 바탕으로 미래를 지향하는 브랜드입니다.<br />
-              로고는 '단단하게 두드린 금속'과 '미래를 두드림'의 의미를 담아, 견고함과 발전적인 이미지를 표현하였습니다.
-              컬러는 산업적 특성을 반영해 딥 블루 그레이(#2C3E50)와 라이트 실버 그레이(#C0C5CB)를 사용하여 
+              두드림은 기계·부품 제조 분야의 기술력을 바탕으로 미래를 지향하는 브랜드입니다.<br />
+              로고는 ‘단단하게 두드린 금속’과 ‘미래를 두드림’의 의미를 담아 견고함과 발전적인 이미지를 표현하였습니다.<br />
+              컬러는 산업적 특성을 반영해 딥 블루 그레이(#2C3E50)와 라이트 실버 그레이(#C0C5CB) 컬러를 사용하여
               신뢰감 있는 기술력과 금속 전문 브랜드의 이미지를 강조하였습니다.<br />
-              정보가 자연스럽게 읽히도록 화면 구성을 정리하여, 사용성과 개발 효율을 함께 고려해 설계하였습니다.
+              정보가 자연스럽게 읽히도록 화면 구성을 정리하여 사용성과 개발 효율을 함께 고려해 설계하였습니다.
             </p>
           </div>
           <div className="ddream__badge">
@@ -67,9 +69,8 @@ export default function DodreamWebsite({ onBack }) {
             <div className="ddream__role-info">
               <p className="ddream__role-tag">[프론트엔드 및 디자인 전반 담당]</p>
               <div className="ddream__role-items">
-                <p className="ddream__role-item">브랜드 아이덴티티 수립 및 UI 설계</p>
-                <p className="ddream__role-item">메인 및 제품 상세 페이지 디자인</p>
-                <p className="ddream__role-item">반응형 레이아웃 구현</p>
+                <p className="ddream__role-item">CSS 기반 스타일링과 레이아웃 정리</p>
+                <p className="ddream__role-item">디바이스 환경을 고려한 반응형 UI 구현</p>
               </div>
             </div>
           </div>
@@ -77,13 +78,14 @@ export default function DodreamWebsite({ onBack }) {
           <div className="ddream__wireframe-block">
             <h2 className="ddream__section-title">와이어 프레임</h2>
             <p className="ddream__section-desc">
-              두드림의 와이어프레임은 기계부품 전문 브랜드로서 신뢰감과 기술력을 직관적으로 전달하는 것을 목표로 설계했습니다.<br />
-              UI/UX 관점에서 제품 탐색 흐름을 중심으로 핵심 정보가 자연스럽게 이어지도록 구성하였으며,<br />
-              개발 측면에서는 컴포넌트 기반 구조로 나누어 유지보수와 확장이 용이하도록 고려했습니다.
+              와이어프레임은 흐름을 쉽게 이해할 수 있도록 최대한 단순하게 구성하였습니다.<br />
+              정보는 한눈에 들어오도록 정리하고 개발 환경에서도 컴포넌트 단위로 분리하기 쉬운 구조를 고려하여 설계하였습니다.<br />
+              각 페이지는 작업 효율과 데이터 가독성을 우선으로 구성하였으며 브랜드가 지향하는 ‘미래를 두드리는 기술’의 이미지를 부담 없이 전달되도록 표현하였습니다.
             </p>
           </div>
 
           <div className="ddream__badge">
+            <img src={figmaIcon} alt="Figma" className="ddream__badge-icon" />
             <div className="ddream__badge-bar-wrap">
               <div className="ddream__badge-bar">
                 <div className="ddream__badge-fill ddream__badge-fill--100" />
@@ -146,6 +148,7 @@ export default function DodreamWebsite({ onBack }) {
         </div>
 
         <div className="ddream__badge ddream__badge--mockup">
+          <img src={figmaIcon} alt="Figma" className="ddream__badge-icon" />
           <div className="ddream__badge-bar-wrap">
             <div className="ddream__badge-bar">
               <div className="ddream__badge-fill ddream__badge-fill--40" />

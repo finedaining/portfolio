@@ -479,8 +479,8 @@
 
 .works__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
 /* ── Work Card ── */
@@ -501,7 +501,7 @@
 
 .wcard__thumb {
   position: relative;
-  height: 200px;
+  aspect-ratio: 1411 / 913;
   flex-shrink: 0;
   padding: 20px;
   display: flex;

@@ -101,9 +101,9 @@
 }
 
 .vhaus__section-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
 }
@@ -172,9 +172,9 @@
 
 .vhaus__cover-desc {
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
   max-width: 520px;
@@ -393,10 +393,10 @@
 
 .vhaus__role-item {
   font-family: 'Pretendard', sans-serif;
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 

@@ -151,12 +151,12 @@
 
 .jigu__app .jigu__badge-fill {
   width: 100%;
-  background: #fff;
+  background: #007aff;
 }
 
 .jigu__app .jigu__badge-dot {
   right: -5px;
-  border: 2px solid #178A3B;
+  border: 2px solid #007aff;
   background: #fff;
 }
 
@@ -210,12 +210,12 @@
 }
 
 .jigu__cover-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
-  max-width: 420px;
+  max-width: 550px;
 }
 
 .jigu__cover-right {
@@ -438,9 +438,9 @@
 }
 
 .jigu__section-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: #444;
-  line-height: 1.8;
+  line-height: 1.7;
   margin: 0;
   word-break: keep-all;
 }
@@ -518,7 +518,7 @@
     flex-direction: column;
     gap: 20px;
     position: relative;
-    top: 90px;
+    top: 120px;
     z-index: 5;
 }
 
