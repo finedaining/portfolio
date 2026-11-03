@@ -616,3 +616,71 @@
   right: -5px;
   left: auto;
 }
+
+
+/* ══════════════════════════════════════════
+   4. 성과 / 배운 점
+══════════════════════════════════════════ */
+.vhaus__review {
+  background: #f1eada;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 96px 56px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.vhaus__review-info {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 48px;
+  border-bottom: 1px solid rgba(88, 71, 56, 0.2);
+}
+.vhaus__review-info-item { display: flex; gap: 14px; font-family: 'Pretendard', sans-serif; font-size: 15px; }
+.vhaus__review-info-label { color: #b5927d; }
+.vhaus__review-info-value { color: #584738; }
+
+.vhaus__review-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+}
+@media (max-width: 860px) {
+  .vhaus__review-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+.vhaus__review-block { display: flex; flex-direction: column; gap: 24px; }
+.vhaus__review .vhaus__section-title { color: #584738; }
+
+.vhaus__review-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.vhaus__review-item {
+  position: relative;
+  padding-left: 18px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  word-break: keep-all;
+}
+.vhaus__review-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #b5927d;
+}

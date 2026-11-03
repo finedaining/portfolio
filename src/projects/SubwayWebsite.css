@@ -1,0 +1,227 @@
+.sbw {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+}
+
+.sbw__back {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #787472;
+  letter-spacing: .04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.sbw__back:hover { opacity: 0.5; }
+
+/* ── 섹션 ──
+   다른 프로젝트 페이지와 같이 2082 x 1249 프레임 기준으로 --p 비례 배치 */
+.sbw__section {
+  border-radius: 20px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.sbw__section--cover { background: linear-gradient(135deg, #6A66FF 0%, #4a45e0 100%); }
+.sbw__section--map { background: #f2f1ff; }
+.sbw__section--screens { background: linear-gradient(to bottom, #1f1c66 0%, #6A66FF 100%); }
+
+.sbw__stage {
+  --p: calc(100cqw / 2082);
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2082 / 1249;
+  overflow: hidden;
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+}
+.sbw__stage img { display: block; max-width: none; }
+
+/* ── 표지 ── */
+/* 지하철 노선 모티프 */
+.sbw__line {
+  position: absolute;
+  left: 0;
+  width: calc(1250 * var(--p));
+  top: calc(560 * var(--p));
+  height: calc(34 * var(--p));
+  background: rgba(255, 255, 255, 0.16);
+}
+.sbw__station {
+  position: absolute;
+  top: calc(545 * var(--p));
+  width: calc(64 * var(--p));
+  height: calc(64 * var(--p));
+  border-radius: 50%;
+  background: #6A66FF;
+  border: calc(12 * var(--p)) solid rgba(255, 255, 255, 0.35);
+  box-sizing: border-box;
+}
+.sbw__station--1 { left: calc(160 * var(--p)); }
+.sbw__station--2 { left: calc(640 * var(--p)); }
+.sbw__station--3 { left: calc(1120 * var(--p)); }
+
+.sbw__logo {
+  position: absolute;
+  left: calc(82 * var(--p));
+  top: calc(75 * var(--p));
+  width: calc(150 * var(--p));
+  height: auto;
+  border-radius: calc(32 * var(--p));
+  box-shadow: 0 0 0 calc(4 * var(--p)) rgba(255, 255, 255, 0.9);
+}
+
+.sbw__info {
+  position: absolute;
+  left: calc(82 * var(--p));
+  top: calc(290 * var(--p));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.sbw__info-item { display: flex; gap: 16px; font-size: 14px; }
+.sbw__info-label { color: rgba(255, 255, 255, 0.6); min-width: 32px; }
+.sbw__info-value { color: #fff; }
+
+.sbw__cover-text {
+  position: absolute;
+  left: calc(82 * var(--p));
+  bottom: calc(36 * var(--p));
+  z-index: 3;
+}
+.sbw__title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  color: #fff;
+  margin: 0 0 16px;
+}
+.sbw__sub {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0;
+}
+
+/* 맡은 역할 / 성과 / 배운 점 */
+.sbw__par {
+  position: absolute;
+  left: calc(1336 * var(--p));
+  top: calc(220 * var(--p));
+  width: calc(683 * var(--p));
+  display: flex;
+  flex-direction: column;
+  gap: calc(60 * var(--p));
+  z-index: 3;
+}
+.sbw__par-title {
+  margin: 0 0 6px;
+  font-size: max(15px, calc(33 * var(--p)));
+  font-weight: 700;
+  color: #fff;
+}
+.sbw__par-body {
+  margin: 0;
+  font-size: max(11px, calc(21.5 * var(--p)));
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── 공통 제목 ── */
+.sbw__eyebrow {
+  margin: 0 0 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #6A66FF;
+}
+.sbw__eyebrow--light { color: rgba(255, 255, 255, 0.7); }
+.sbw__h2 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  color: #1a1840;
+  letter-spacing: -1px;
+}
+.sbw__h2--light { color: #fff; }
+
+/* ── 노선도 ── */
+.sbw__map-text {
+  position: absolute;
+  left: calc(82 * var(--p));
+  bottom: calc(90 * var(--p));
+  width: calc(620 * var(--p));
+}
+.sbw__desc {
+  margin: 24px 0 24px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #4a4870;
+}
+.sbw__chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.sbw__chip {
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(106, 102, 255, 0.4);
+  color: #4a45e0;
+  font-size: 13px;
+  background: #fff;
+}
+.sbw__map-wrap {
+  position: absolute;
+  left: calc(800 * var(--p));
+  top: calc(70 * var(--p));
+  width: calc(1200 * var(--p));
+  height: calc(1110 * var(--p));
+  background: #fff;
+  border-radius: calc(28 * var(--p));
+  box-shadow: 0 20px 50px rgba(60, 50, 160, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sbw__map {
+  width: 92%;
+  height: 92%;
+  object-fit: contain;
+}
+
+/* ── 실행 화면 ── */
+.sbw__screens-head {
+  position: absolute;
+  left: calc(82 * var(--p));
+  top: calc(75 * var(--p));
+}
+.sbw__screens {
+  position: absolute;
+  left: calc(82 * var(--p));
+  right: calc(82 * var(--p));
+  top: calc(250 * var(--p));
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: calc(48 * var(--p));
+}
+.sbw__screen { margin: 0; display: flex; flex-direction: column; gap: 16px; }
+.sbw__screen-img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(16 * var(--p));
+  box-shadow: 0 24px 48px rgba(10, 8, 60, 0.35);
+}
+.sbw__screen-cap { display: flex; flex-direction: column; gap: 4px; }
+.sbw__screen-title { font-size: 16px; font-weight: 700; color: #fff; }
+.sbw__screen-text { font-size: 13px; line-height: 1.6; color: rgba(255, 255, 255, 0.8); }

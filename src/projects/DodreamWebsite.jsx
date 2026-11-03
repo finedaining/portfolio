@@ -19,6 +19,31 @@ const browserMain   = "/images/dodream/ddr_web1.svg";
 const browserShop   = "/images/dodream/ddr_web2.svg";
 const browserDetail = "/images/dodream/ddr_web3.svg";
 
+const REVIEW_INFO = [
+  { label: '기간', value: '2025.09 - 2025.10' },
+  { label: '인원', value: '4명 (백엔드 / RPA·OCR / 프론트엔드 2)' },
+  { label: '기술', value: 'React · Spring Boot · MariaDB · Python OCR · Brity RPA · Figma' },
+];
+
+const REVIEW = [
+  {
+    title: '성과',
+    items: [
+      '판매 사이트와 관리자 대시보드와 OCR과 RPA까지 이어지는 재고·판매 관리 시스템을 팀원들과 완성했습니다',
+      '발주서 사진을 올리면 OCR로 글자를 읽어 제품 정보가 자동으로 입력되고 RPA로 매출 분석 보고서를 만들어 메일로 보내는 흐름을 만들었습니다',
+      '기업 사용자와 관리자 화면을 나눠 로그인과 상품 주문부터 매출 대시보드와 제품 관리와 고객 관리까지 구현했습니다',
+      '실제 재무 흐름을 반영한 목업 데이터를 써서 대시보드가 현실적인 수치를 보여주도록 했습니다',
+    ],
+  },
+  {
+    title: '배운 점',
+    items: [
+      '재무제표와 손익계산서를 DB로 관리하는 시스템까지 발전시키지 못한 점이 아쉬웠습니다',
+      '회사와 상품 정보를 충분히 담지 못해서 실제 서비스처럼 만들려면 데이터 설계를 처음부터 더 꼼꼼히 해야 한다는 걸 배웠습니다',
+    ],
+  },
+];
+
 export default function DodreamWebsite({ onBack }) {
   return (
     <div className="ddream">
@@ -69,8 +94,10 @@ export default function DodreamWebsite({ onBack }) {
             <div className="ddream__role-info">
               <p className="ddream__role-tag">[프론트엔드 및 디자인 전반 담당]</p>
               <div className="ddream__role-items">
-                <p className="ddream__role-item">CSS 기반 스타일링과 레이아웃 정리</p>
-                <p className="ddream__role-item">디바이스 환경을 고려한 반응형 UI 구현</p>
+                <p className="ddream__role-item">두드림 로고 디자인</p>
+                <p className="ddream__role-item">브랜드 컬러와 폰트를 정하고 피그마로 화면 레이아웃 설계</p>
+                <p className="ddream__role-item">CSS로 전체 페이지 스타일과 레이아웃 정리</p>
+                <p className="ddream__role-item">다양한 화면 크기에 맞춘 반응형 UI 구현</p>
               </div>
             </div>
           </div>
@@ -156,6 +183,33 @@ export default function DodreamWebsite({ onBack }) {
             </div>
             <span className="ddream__badge-label">피그마, 팀 작업 40%</span>
           </div>
+        </div>
+      </section>
+
+      {/* ── 4. 성과 / 배운 점 ── */}
+      <section className="ddream__review">
+        <img src={logoSvg} alt="두드림" className="ddream__wf-logo" />
+
+        <ul className="ddream__review-info">
+          {REVIEW_INFO.map(({ label, value }) => (
+            <li key={label} className="ddream__review-info-item">
+              <span className="ddream__review-info-label">{label}</span>
+              <span className="ddream__review-info-value">{value}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="ddream__review-grid">
+          {REVIEW.map(({ title, items }) => (
+            <div key={title} className="ddream__review-block">
+              <h2 className="ddream__section-title">{title}</h2>
+              <ul className="ddream__review-list">
+                {items.map((t) => (
+                  <li key={t} className="ddream__review-item">{t}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
       <TopButton />

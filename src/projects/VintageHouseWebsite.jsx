@@ -30,6 +30,31 @@ const decoTeacup     = "/images/vintagehouse/deco-teacup.png";
 const decoChair      = "/images/vintagehouse/deco-chair.png";
 const figmaIcon      = "/images/vintagehouse/Figma-app.png";
 
+const REVIEW_INFO = [
+  { label: '기간', value: '2025.05.26 - 2025.06.18' },
+  { label: '인원', value: '4명 (프론트엔드 2 / 백엔드 2)' },
+  { label: '기술', value: 'React · Node.js · MariaDB · Figma · GitHub' },
+];
+
+const REVIEW = [
+  {
+    title: '성과',
+    items: [
+      '기획부터 디자인과 개발과 DB 연동까지 실제 쇼핑몰처럼 돌아가는 사이트를 팀원들과 완성했습니다',
+      '매일 작업이 끝나면 진행 상황을 공유하면서 일정을 조정했고 덕분에 협업이 원활했습니다',
+      'React와 GitHub와 데이터베이스를 처음 써보면서 각각의 역할과 흐름을 직접 익혔습니다',
+    ],
+  },
+  {
+    title: '배운 점',
+    items: [
+      '처음 디자인할 때 넣고 싶던 기능이 많았는데 시간이 부족해 여러 개를 빼야 했습니다',
+      '공통 디자인을 먼저 정하지 않고 각자 작업해서 나중에 수정할 때 어려움이 있었습니다',
+      'GitHub를 처음 써서 충돌을 해결하는 데 시간이 많이 들었고 다음엔 브랜치 관리부터 제대로 익히고 싶습니다',
+    ],
+  },
+];
+
 export default function VintageHouseWebsite({ onBack }) {
   return (
     <div className="vhaus">
@@ -96,8 +121,10 @@ export default function VintageHouseWebsite({ onBack }) {
             <div className="vhaus__role-info">
               <p className="vhaus__role-tag">[프론트엔드 및 디자인 전반 담당]</p>
               <div className="vhaus__role-items">
-                <p className="vhaus__role-item">인터랙션 요소 구현</p>
-                <p className="vhaus__role-item">메인 및 이벤트 페이지 UI 설계</p>
+                <p className="vhaus__role-item">메인 페이지와 이벤트 페이지 디자인 및 React 구현</p>
+                <p className="vhaus__role-item">자동 슬라이드와 캐로셀과 텍스트 마키 같은 인터랙션 구현</p>
+                <p className="vhaus__role-item">마우스를 올리면 사진이 바뀌는 효과와 가로 스크롤 구현</p>
+                <p className="vhaus__role-item">이벤트 팝업 디자인 및 이벤트 페이지 연결</p>
               </div>
             </div>
           </div>
@@ -155,7 +182,7 @@ export default function VintageHouseWebsite({ onBack }) {
             <img src={cursorTop} alt="" className="vhaus__cursor-img vhaus__cursor-img--tl" />
             <div className="vhaus__mockup-tag-lines">
               <span className="vhaus__mockup-tag-line">빈티지 하우스 pc web</span>
-              <span className="vhaus__mockup-tag-line">[상세 페이지]</span>
+              <span className="vhaus__mockup-tag-line">[이벤트 페이지]</span>
             </div>
             <img src={cursorBottom} alt="" className="vhaus__cursor-img vhaus__cursor-img--br" />
           </div>
@@ -163,12 +190,12 @@ export default function VintageHouseWebsite({ onBack }) {
 
         {/* 상세 브라우저 목업 */}
         <div className="vhaus__mockup-item vhaus__mockup-item--event">
-          <img src={webEventMockup} alt="빈티지하우스 상세 브라우저" className="vhaus__mockup-browser" />
+          <img src={webEventMockup} alt="빈티지하우스 이벤트 브라우저" className="vhaus__mockup-browser" />
         </div>
 
         {/* 상세 스크롤 (긴 페이지) */}
         <div className="vhaus__mockup-scroll-wrap vhaus__mockup-scroll-wrap--event">
-          <img src={webEvent} alt="빈티지하우스 상세 페이지" className="vhaus__mockup-scroll" />
+          <img src={webEvent} alt="빈티지하우스 이벤트 페이지" className="vhaus__mockup-scroll" />
         </div>
 
         <div className="vhaus__badge vhaus__badge--mockup">
@@ -180,6 +207,33 @@ export default function VintageHouseWebsite({ onBack }) {
             </div>
             <span className="vhaus__badge-label">피그마, 개인작업 100%</span>
           </div>
+        </div>
+      </section>
+
+      {/* ── 4. 성과 / 배운 점 ── */}
+      <section className="vhaus__review">
+        <span className="vhaus__wireframe-logo">vintage haus</span>
+
+        <ul className="vhaus__review-info">
+          {REVIEW_INFO.map(({ label, value }) => (
+            <li key={label} className="vhaus__review-info-item">
+              <span className="vhaus__review-info-label">{label}</span>
+              <span className="vhaus__review-info-value">{value}</span>
+            </li>
+          ))}
+        </ul>
+
+        <div className="vhaus__review-grid">
+          {REVIEW.map(({ title, items }) => (
+            <div key={title} className="vhaus__review-block">
+              <h2 className="vhaus__section-title">{title}</h2>
+              <ul className="vhaus__review-list">
+                {items.map((t) => (
+                  <li key={t} className="vhaus__review-item">{t}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </section>
       <TopButton />

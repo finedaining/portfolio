@@ -9,6 +9,8 @@ import JiguJavaWebsite from './projects/JiguJavaWebsite'
 import InobelWebsite from './projects/InobelWebsite'
 import DodreamWebsite from './projects/DodreamWebsite'
 import VintageHouseWebsite from './projects/VintageHouseWebsite'
+import SubwayWebsite from './projects/SubwayWebsite'
+import RpaWebsite from './projects/RpaWebsite'
 import './App.css'
 
 const PROJECTS = [
@@ -117,13 +119,40 @@ const PROJECTS = [
       { label: 'Tool', value: 'Figma · HTML/CSS' },
     ],
   },
+  {
+    id: 9, cat: 'frontend', catLabel: 'Python · Frontend Dev',
+    title: '대구 지하철 노선도',
+    desc: '대구 지하철 1, 2, 3호선 노선도에서 출발역과 도착역을 고르면 가장 빠른 경로와 도착 시간을 알려주는 데스크톱 앱 팀 프로젝트. 프론트엔드를 맡아 Python Tkinter로 노선도를 직접 찍어서 앱의 메인 화면을 만들었고 발표 PPT 디자인도 맡았습니다.',
+    tags: ['Python', 'Tkinter', '팀 프로젝트'],
+    thumb: '/images/subway/thumb.jpg',
+    year: '2025.07-2025.07',
+    images: [],
+    overview: [
+      { label: 'Role', value: 'Frontend · 노선도 구현 · PPT 디자인' },
+      { label: 'Tool', value: 'Python · Tkinter · Figma' },
+    ],
+  },
+  {
+    id: 10, cat: 'data', catLabel: 'Data · RPA',
+    title: '수익성 개선 자동 분석 시스템',
+    desc: '기업 재무 데이터를 자동으로 모으고 분석해서 수익성 지표와 개선안을 차트로 만들고 메일로 보내주는 RPA 팀 프로젝트. 데이터 관리를 맡아 재무 데이터를 가공하고 피벗 테이블과 차트로 시각화했습니다.',
+    tags: ['Brity RPA', 'Excel', '팀 프로젝트'],
+    thumb: '/images/rpa/thumb.jpg',
+    year: '2025.08-2025.08',
+    images: [],
+    overview: [
+      { label: 'Role', value: '데이터 관리 · 시각화' },
+      { label: 'Tool', value: 'Brity RPA · Python · Excel' },
+    ],
+  },
 ]
 
 const FILTER_OPTIONS = [
-  { value: 'all', label: 'All', count: 8 },
+  { value: 'all', label: 'All', count: 10 },
   { value: 'redesign', label: 'Re-design', count: 4 },
   { value: 'branding', label: 'Branding', count: 2 },
-  { value: 'frontend', label: 'Frontend dev', count: 2 },
+  { value: 'frontend', label: 'Frontend dev', count: 3 },
+  { value: 'data', label: 'Data · RPA', count: 1 },
 ]
 
 const EDUCATION = [
@@ -427,6 +456,8 @@ const PROJECT_PAGE_MAP = {
   6: (back) => <VintageHouseWebsite onBack={back} />,
   7: (back) => <SaveTheChildrenWebsite onBack={back} />,
   8: (back) => <KanuWebsite onBack={back} />,
+  9: (back) => <SubwayWebsite onBack={back} />,
+  10: (back) => <RpaWebsite onBack={back} />,
 }
 
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual'

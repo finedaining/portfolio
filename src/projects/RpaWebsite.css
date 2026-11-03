@@ -1,0 +1,175 @@
+.rpa {
+  background: #fff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+  font-family: 'Pretendard', sans-serif;
+  word-break: keep-all;
+}
+
+.rpa__back {
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: #787472;
+  letter-spacing: .04em;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+  width: fit-content;
+  transition: opacity 0.2s;
+}
+.rpa__back:hover { opacity: 0.5; }
+
+.rpa__img { display: block; width: 100%; height: auto; }
+
+/* ── 표지 ── */
+.rpa__cover {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  min-height: 680px;
+  padding: 56px;
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.rpa__logo {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .04em;
+}
+.rpa__cover-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 520px);
+  gap: 64px;
+  margin-top: 48px;
+}
+.rpa__cover-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+}
+.rpa__info { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.rpa__info-item { display: flex; gap: 16px; font-size: 14px; }
+.rpa__info-label { color: rgba(255, 255, 255, 0.6); min-width: 32px; }
+.rpa__title {
+  font-family: 'Arial', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -4px;
+  margin: 0 0 16px;
+}
+.rpa__sub { font-size: 24px; margin: 0; color: rgba(255, 255, 255, 0.92); }
+
+.rpa__par { display: flex; flex-direction: column; justify-content: center; gap: 40px; }
+.rpa__par-title { margin: 0 0 6px; font-size: 22px; font-weight: 700; }
+.rpa__par-body { margin: 0; font-size: 14px; line-height: 1.8; color: rgba(255, 255, 255, 0.9); }
+
+/* ── 공통 제목 ── */
+.rpa__eyebrow {
+  margin: 0 0 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+.rpa__eyebrow--light { color: rgba(255, 255, 255, 0.7); }
+.rpa__h2 { margin: 0 0 40px; font-size: 40px; font-weight: 700; color: #0f1f4d; letter-spacing: -1px; }
+.rpa__h2--light { color: #fff; }
+
+.rpa__cap { margin-top: 12px; font-size: 13px; color: #5b6478; }
+
+/* ── 자동화 흐름 ── */
+.rpa__flow {
+  border-radius: 20px;
+  background: #eef3ff;
+  padding: 56px;
+}
+.rpa__steps {
+  list-style: none;
+  margin: 0 0 48px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.rpa__step {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.08);
+}
+.rpa__step-no { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 700; color: #2563eb; }
+.rpa__step-title { font-size: 18px; font-weight: 700; color: #0f1f4d; }
+.rpa__step-text { font-size: 14px; line-height: 1.7; color: #4b5568; }
+
+.rpa__figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(29, 78, 216, 0.08);
+}
+
+/* ── 분석 결과 ── */
+.rpa__result {
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #0f1f4d 0%, #1d4ed8 100%);
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.rpa__result .rpa__h2 { margin-bottom: 16px; }
+.rpa__card {
+  margin: 0;
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 24px 48px rgba(5, 15, 50, 0.3);
+}
+.rpa__result-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.rpa__result-side { display: flex; flex-direction: column; gap: 24px; }
+.rpa__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  color: #fff;
+  padding: 8px 4px;
+}
+.rpa__stat-num { font-family: 'Inter', sans-serif; font-size: 64px; font-weight: 700; letter-spacing: -2px; line-height: 1; }
+.rpa__stat-label { font-size: 15px; color: rgba(255, 255, 255, 0.8); }
+.rpa__mail-row {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 48px;
+  align-items: center;
+}
+.rpa__mail-title { margin: 0 0 12px; font-size: 24px; font-weight: 700; color: #fff; }
+.rpa__mail-desc { margin: 0; font-size: 15px; line-height: 1.8; color: rgba(255, 255, 255, 0.85); max-width: 520px; }
+
+@media (max-width: 960px) {
+  .rpa__cover-grid, .rpa__result-row { grid-template-columns: 1fr; }
+  .rpa__steps { grid-template-columns: repeat(2, 1fr); }
+  .rpa__mail-row { grid-template-columns: 1fr; }
+}

@@ -393,3 +393,51 @@
   bottom: 85px;
   z-index: 10;
 }
+
+/* ── 4. 성과 / 배운 점 ── */
+.ddream__review {
+  background: linear-gradient(135deg, #e9edf2 0%, #d5dbe1 100%);
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  padding: 96px 56px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+.ddream__review-info {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 48px;
+  border-bottom: 1px solid rgba(70, 85, 101, 0.25);
+}
+.ddream__review-info-item { display: flex; gap: 14px; font-family: 'Pretendard', sans-serif; font-size: 15px; }
+.ddream__review-info-label { color: #7e8a94; }
+.ddream__review-info-value { color: #465565; }
+.ddream__review-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 64px; }
+@media (max-width: 860px) { .ddream__review-grid { grid-template-columns: 1fr; gap: 40px; } }
+.ddream__review-block { display: flex; flex-direction: column; gap: 24px; }
+.ddream__review .ddream__section-title { color: #2c3e50; }
+.ddream__review-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.ddream__review-item {
+  position: relative;
+  padding-left: 18px;
+  font-family: 'Pretendard', sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  word-break: keep-all;
+}
+.ddream__review-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #465565;
+}
